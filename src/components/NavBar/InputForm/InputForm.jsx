@@ -1,9 +1,14 @@
 import React from 'react'
 
 const InputForm = () => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <div className=" bg-emerald-600">
-            <form className="container mx-auto flex flex-col w-2/3">
+            <form onSubmit={(e) => handleSubmit(e)} className="container mx-auto flex flex-col w-2/3">
                 <label className="mt-2">Name: </label>
                 <input type="text" name="name" className="rounded px-2 py-1.5"/>
                 <label className="mt-2">Ingredients: </label>
