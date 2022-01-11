@@ -13,7 +13,7 @@ const NavBar = () => {
 
     return (
         <div className="h-16 bg-emerald-900 ">
-            <nav className="h-full container mx-auto max-w-6xl flex justify-around items-center">
+            <nav className="h-full container mx-auto max-w-2/3 flex justify-around items-center">
                 <h1 className="text-slate-200 text-4xl">Recipes</h1>
                 <button
                     onClick={() => setIsCreating(!isCreating)}
