@@ -2,7 +2,7 @@ import React from "react";
 
 const Recipe = ({ recipe }) => {
   return (
-    <div>
+    <div className="">
       <h2>{recipe.name}</h2>
       <p>{recipe.ingredients}</p>
       <p>{recipe.directions}</p>

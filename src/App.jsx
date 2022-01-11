@@ -9,7 +9,11 @@ function App() {
   return (
     <div className="h-screen bg-emerald-500">
       <NavBar />
-      <Recipe recipe={recipes[0]} />
+      <Recipe
+        recipe={
+          recipes[0] || { name: "", ingredients: "", directions: "", notes: "" }
+        }
+      />
     </div>
   );
 }
