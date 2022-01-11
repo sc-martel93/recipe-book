@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
+import InputForm from './InputForm/InputForm'
 
 const NavBar = () => {
 
@@ -27,6 +28,7 @@ const NavBar = () => {
                     </button>
                 </form>
             </nav>
+            <InputForm />
         </div>
     )
 }
