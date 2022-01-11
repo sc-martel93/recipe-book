@@ -11,8 +11,8 @@ const NavBar = () => {
   };
 
   return (
-    <div className="h-16 bg-emerald-900 ">
-      <nav className="h-full container mx-auto max-w-2/3 flex justify-around items-center">
+    <div className="bg-emerald-900 ">
+      <nav className="h-16 container mx-auto max-w-2/3 flex justify-around items-center">
         <h1 className="text-slate-200 text-4xl">Recipes</h1>
         <button
           onClick={() => setIsCreating(!isCreating)}

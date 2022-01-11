@@ -1,10 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
-const Recipe = () => {
-  const recipes = useSelector((state) => state.recipes);
-  console.log(recipes);
-  return <div></div>;
+const Recipe = ({ recipe }) => {
+  return (
+    <div>
+      <h2>{recipe.name}</h2>
+      <p>{recipe.ingredients}</p>
+      <p>{recipe.directions}</p>
+      <p>{recipe.notes}</p>
+    </div>
+  );
 };
 
 export default Recipe;

@@ -28,7 +28,7 @@ const InputForm = () => {
   };
 
   return (
-    <div className=" bg-emerald-600">
+    <div className="bg-emerald-600">
       <form
         onSubmit={(e) => handleSubmit(e)}
         className="container mx-auto flex flex-col w-2/3"
