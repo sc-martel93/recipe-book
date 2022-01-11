@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
 import { createRecipe } from "../../../state/actions/recipes";
 
 const InputForm = () => {
@@ -14,9 +15,9 @@ const InputForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setRecipeData((recipeData.id = Date.now()));
-
+    recipeData.id = uuidv4();
     dispatch(createRecipe(recipeData));
+
     setRecipeData({
       id: "",
       name: "",
