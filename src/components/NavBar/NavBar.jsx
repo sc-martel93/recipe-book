@@ -14,7 +14,7 @@ const NavBar = () => {
             <nav className="h-full container mx-auto max-w-6xl flex justify-around items-center">
                 <h1 className="text-slate-200 text-4xl">Recipes</h1>
                 <button 
-                    className="bg-slate-300 hover:bg-cyan-600 transition-colors font-bold rounded px-5 py-1.5"
+                    className="bg-slate-300 hover:bg-cyan-600 hover:outline  transition-colors font-bold rounded px-5 py-1.5"
                 >
                     Create
                 </button>
@@ -22,7 +22,7 @@ const NavBar = () => {
                     <input type="text" className="rounded px-2 py-1.5" />
                     <button
                         type="submit"
-                        className="bg-slate-300 hover:bg-cyan-600 transition-colors rounded px-2 py-1.5"
+                        className="bg-slate-300 hover:bg-cyan-600 hover:outline transition-colors rounded px-2 py-1.5"
                     >
                         <FontAwesomeIcon icon={faSearch} />
                     </button>
