@@ -22,7 +22,7 @@ const NavBar = () => {
                     {isCreating ? "Close" : "Creating"}
                 </button>
                 <form onSubmit={e => handleSubmit(e)} className="">
-                    <input type="text" className="rounded px-2 py-1.5" />
+                    <input type="text" className="rounded px-2 py-1.5 mr-1" />
                     <button
                         type="submit"
                         className="bg-slate-300 hover:bg-cyan-600 hover:outline transition-colors rounded px-2 py-1.5"
