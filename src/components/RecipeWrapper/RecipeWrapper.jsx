@@ -8,16 +8,17 @@ import Recipe from "./Recipe/Recipe";
 const RecipeWrapper = () => {
   let [recipeIndex, setRecipeIndex] = useState(0);
   const recipes = useSelector((state) => state.recipes);
+  const recipeCount = recipes.length;
 
   const handlePrevious = () => {
-    if (recipes.length == 0) return;
-    if (recipeIndex <= 0) return setRecipeIndex(recipes.length - 1);
+    if (recipeCount == 0) return;
+    if (recipeIndex <= 0) return setRecipeIndex(recipeCount - 1);
 
     setRecipeIndex(recipeIndex - 1);
   };
 
   const handleNext = () => {
-    if (recipeIndex >= recipes.length - 1) return setRecipeIndex(0);
+    if (recipeIndex >= recipeCount - 1) return setRecipeIndex(0);
 
     setRecipeIndex(recipeIndex + 1);
   };
@@ -40,7 +41,7 @@ const RecipeWrapper = () => {
         </button>
       </div>
 
-      {recipes.length === 0 ? (
+      {recipeCount === 0 ? (
         <h2 className="font-bold text-center text-3xl mt-20">No Recipes</h2>
       ) : (
         <Recipe recipe={recipes[recipeIndex]} />
