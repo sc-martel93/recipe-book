@@ -1,4 +1,4 @@
-import db = require("../config/db");
+const db = require("../config/db");
 
 class Recipe {
   constructor(recipe) {
@@ -33,6 +33,8 @@ class Recipe {
 
   static findAll = () => {
     const sql = `SELECT * FROM recipes ORDER BY name`;
-    return db.execute(sql)
+    return db.execute(sql);
   };
 }
+
+module.exports = Recipe;
