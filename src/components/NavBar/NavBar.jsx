@@ -18,7 +18,7 @@ const NavBar = () => {
     e.preventDefault();
 
     recipes.map((recipe, index) => {
-      if (recipe.name === searchValue) {
+      if (recipe.name.includes(searchValue)) {
         targetIndex = index;
         dispatch(setIndex(targetIndex));
       }
