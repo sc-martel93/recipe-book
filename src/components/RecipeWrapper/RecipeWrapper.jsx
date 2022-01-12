@@ -12,11 +12,13 @@ const RecipeWrapper = () => {
   const handlePrevious = () => {
     if (recipes.length == 0) return;
     if (recipeIndex <= 0) return setRecipeIndex(recipes.length - 1);
+
     setRecipeIndex(recipeIndex - 1);
   };
 
   const handleNext = () => {
     if (recipeIndex >= recipes.length - 1) return setRecipeIndex(0);
+
     setRecipeIndex(recipeIndex + 1);
   };
 
@@ -38,7 +40,7 @@ const RecipeWrapper = () => {
         </button>
       </div>
       {recipes.length === 0 ? (
-        <h2>No Recipes</h2>
+        <h2 className="font-bold text-center text-3xl mt-20">No Recipes</h2>
       ) : (
         <Recipe recipe={recipes[recipeIndex]} />
       )}
