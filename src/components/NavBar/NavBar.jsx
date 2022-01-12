@@ -12,7 +12,7 @@ const NavBar = () => {
 
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
     dispatch(searchRecipe(searchValue));
     setSearchValue("");
@@ -30,7 +30,7 @@ const NavBar = () => {
           {isCreating ? "Close" : "Create"}
         </button>
 
-        <form onSubmit={(e) => handleSubmit(e)} className="">
+        <form onSubmit={(e) => handleSearch(e)} className="">
           <input
             type="text"
             value={searchValue}
