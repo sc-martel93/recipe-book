@@ -12,15 +12,23 @@ const NavBar = () => {
 
   const [isCreating, setIsCreating] = useState(false);
   const [searchValue, setSearchValue] = useState("");
-  let targetIndex = 0;
+  let targetIndex = -1;
 
   const handleSearch = (e) => {
     e.preventDefault();
+
     recipes.map((recipe, index) => {
       if (recipe.name === searchValue) {
         targetIndex = index;
       }
     });
+
+    if (targetIndex === -1) {
+      alert("Not found!");
+      setSearchValue("");
+      return;
+    }
+
     dispatch(setIndex(targetIndex));
     setSearchValue("");
   };
