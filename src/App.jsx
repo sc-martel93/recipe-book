@@ -1,11 +1,11 @@
 import NavBar from "./components/NavBar/NavBar";
-import Recipe from "./components/Recipe/Recipe";
+import RecipeWrapper from "./components/RecipeWrapper/RecipeWrapper";
 
 function App() {
   return (
     <div className="h-screen bg-emerald-500">
       <NavBar />
-      <Recipe />
+      <RecipeWrapper />
     </div>
   );
 }
