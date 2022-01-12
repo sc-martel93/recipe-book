@@ -30,7 +30,9 @@ const RecipeWrapper = () => {
         >
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
-        <h3>Page {recipeIndex + 1}</h3>
+        <h3>
+          Page {recipeIndex + 1} out of {recipeCount}
+        </h3>
         <button
           onClick={() => next()}
           className="bg-slate-300 hover:bg-cyan-600 hover:outline transition-colors rounded px-5 py-1.5"
