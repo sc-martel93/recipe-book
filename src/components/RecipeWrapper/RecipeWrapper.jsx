@@ -33,7 +33,7 @@ const RecipeWrapper = () => {
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
         <h3>
-          Page {recipeIndex + 1} out of {recipeCount}
+          Page {recipeCount == 0 ? 0 : recipeIndex + 1} out of {recipeCount}
         </h3>
         <button
           onClick={() => handleNext()}
