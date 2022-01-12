@@ -1,20 +1,27 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-import { searchRecipe } from "../../state/actions/recipes";
+import { setIndex } from "../../state/actions/recipeIndex";
 import InputForm from "./InputForm/InputForm";
 
 const NavBar = () => {
+  const dispatch = useDispatch();
+  const recipes = useSelector((state) => state.recipes);
+
   const [isCreating, setIsCreating] = useState(false);
   const [searchValue, setSearchValue] = useState("");
-
-  const dispatch = useDispatch();
+  let targetIndex = 0;
 
   const handleSearch = (e) => {
     e.preventDefault();
-    dispatch(searchRecipe(searchValue));
+    recipes.map((recipe, index) => {
+      if (recipe.name === searchValue) {
+        targetIndex = index;
+      }
+    });
+    dispatch(setIndex(targetIndex));
     setSearchValue("");
   };
 

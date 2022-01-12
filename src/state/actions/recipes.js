@@ -5,11 +5,3 @@ export const createRecipe = (recipe) => async (dispatch) => {
     console.error(error.message);
   }
 };
-
-export const searchRecipe = (recipeName) => (dispatch) => {
-  try {
-    dispatch({ type: "SEARCH", payload: recipeName });
-  } catch (error) {
-    console.error(error.message);
-  }
-};
