@@ -1,6 +1,7 @@
 import React from "react";
 
-const Recipe = ({ name, ingredients, directions, notes }) => {
+const Recipe = ({ recipe }) => {
+  const { name, ingredients, directions, notes } = recipe;
   return (
     <div>
       <h2>{name}</h2>
