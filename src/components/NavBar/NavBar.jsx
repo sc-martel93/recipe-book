@@ -20,16 +20,11 @@ const NavBar = () => {
     recipes.map((recipe, index) => {
       if (recipe.name === searchValue) {
         targetIndex = index;
+        dispatch(setIndex(targetIndex));
       }
     });
 
-    if (targetIndex === -1) {
-      alert("Not found!");
-      setSearchValue("");
-      return;
-    }
-
-    dispatch(setIndex(targetIndex));
+    if (targetIndex === -1) alert("Not found!");
     setSearchValue("");
   };
 
