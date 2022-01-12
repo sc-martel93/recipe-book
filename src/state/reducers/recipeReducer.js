@@ -1,7 +1,7 @@
 export const recipeReducer = (recipes = [], action) => {
   switch (action.type) {
     case "CREATE":
-      return [action.payload, ...recipes];
+      return [...recipes, action.payload];
     default:
       return recipes;
   }
