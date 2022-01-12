@@ -10,12 +10,13 @@ const RecipeWrapper = () => {
   const recipes = useSelector((state) => state.recipes);
 
   const handlePrevious = () => {
-    if (recipeIndex == 0) return setRecipeIndex(recipes.length - 1);
+    if (recipes.length == 0) return;
+    if (recipeIndex <= 0) return setRecipeIndex(recipes.length - 1);
     setRecipeIndex(recipeIndex - 1);
   };
 
   const handleNext = () => {
-    if (recipeIndex === recipes.length - 1) return setRecipeIndex(0);
+    if (recipeIndex >= recipes.length - 1) return setRecipeIndex(0);
     setRecipeIndex(recipeIndex + 1);
   };
 
@@ -28,7 +29,7 @@ const RecipeWrapper = () => {
         >
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
-        <h3>{recipeIndex}</h3>
+        <h3>{recipeIndex + 1}</h3>
         <button
           onClick={() => handleNext()}
           className="bg-slate-300 hover:bg-cyan-600 hover:outline transition-colors rounded px-5 py-1.5"
@@ -36,7 +37,11 @@ const RecipeWrapper = () => {
           <FontAwesomeIcon icon={faArrowRight} />
         </button>
       </div>
-      {recipes.length > 0 ? <Recipe recipe={recipes[recipeIndex]} /> : null}
+      {recipes.length === 0 ? (
+        <h2>No Recipes</h2>
+      ) : (
+        <Recipe recipe={recipes[recipeIndex]} />
+      )}
     </>
   );
 };
