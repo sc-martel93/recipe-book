@@ -10,16 +10,14 @@ const RecipeWrapper = () => {
   const recipes = useSelector((state) => state.recipes);
   const recipeCount = recipes.length;
 
-  const handlePrevious = () => {
+  const previous = () => {
     if (recipeCount == 0) return;
     if (recipeIndex <= 0) return setRecipeIndex(recipeCount - 1);
-
     setRecipeIndex(recipeIndex - 1);
   };
 
-  const handleNext = () => {
+  const next = () => {
     if (recipeIndex >= recipeCount - 1) return setRecipeIndex(0);
-
     setRecipeIndex(recipeIndex + 1);
   };
 
@@ -27,14 +25,14 @@ const RecipeWrapper = () => {
     <>
       <div className="flex justify-around items-center font-bold max-w-2/3 mt-5">
         <button
-          onClick={() => handlePrevious()}
+          onClick={() => previous()}
           className="bg-slate-300 hover:bg-cyan-600 hover:outline transition-colors rounded px-5 py-1.5"
         >
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
         <h3>{recipeIndex + 1}</h3>
         <button
-          onClick={() => handleNext()}
+          onClick={() => next()}
           className="bg-slate-300 hover:bg-cyan-600 hover:outline transition-colors rounded px-5 py-1.5"
         >
           <FontAwesomeIcon icon={faArrowRight} />
