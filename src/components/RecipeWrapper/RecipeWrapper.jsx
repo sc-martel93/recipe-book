@@ -8,7 +8,6 @@ import Recipe from "./Recipe/Recipe";
 const RecipeWrapper = () => {
   let [recipeIndex, setRecipeIndex] = useState(0);
   const recipes = useSelector((state) => state.recipes);
-  console.log(recipes);
 
   const handlePrevious = () => {
     if (recipeIndex == 0) return setRecipeIndex(recipes.length - 1);
