@@ -10,4 +10,14 @@ app.use(express.json());
 
 app.use("/recipes", require("./routes/recipeRoutes"));
 
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  console.error(err.name);
+  console.error(err.message);
+
+  res.status(500).json({
+    message: "Something went wrong",
+  });
+});
+
 app.listen(PORT, () => console.log(`Server running on PORT: ${PORT}`));
