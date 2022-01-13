@@ -15,9 +15,7 @@ exports.createNewRecipe = async (req, res, next) => {
     const recipeData = req.body;
     const recipe = new Recipe(recipeData);
     await recipe.save();
-    res
-      .status(201)
-      .json({ message: "Recipe Created Successfully", recipe: { recipe } });
+    res.status(201).json({ message: "Recipe Created Successfully", recipe });
   } catch (error) {
     console.log(error);
     next(error);
