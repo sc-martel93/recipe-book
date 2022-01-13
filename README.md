@@ -10,6 +10,8 @@ Recipe book is a web app that simplifies the storage of recipes
 
 ## TODO
 
+- Change NavBar.jsx for mobile
+
 - Styles for Recipe.jsx
 
 - Set up MySql db
