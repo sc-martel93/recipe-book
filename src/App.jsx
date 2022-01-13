@@ -13,7 +13,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="h-100 min-h-screen bg-emerald-500">
+    <div className="h-100 min-h-screen bg-emerald-500 font-poppins">
       <NavBar />
       <RecipeWrapper />
     </div>
