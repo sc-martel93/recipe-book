@@ -11,6 +11,7 @@ export const getRecipes = () => async (dispatch) => {
 
 export const createRecipe = (recipe) => async (dispatch) => {
   try {
+    await api.createRecipe(recipe);
     dispatch({ type: "CREATE", payload: recipe });
   } catch (error) {
     console.error(error.message);
