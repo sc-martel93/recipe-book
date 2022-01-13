@@ -10,18 +10,18 @@ const Recipe = ({ recipe }) => {
   return (
     <article className="w-5/6 max-w-3xl mx-auto px-10 py-10 space-y-10 mt-10  break-words bg-neutral-300 rounded-lg shadow-lg shadow-emerald-800">
       <section className="flex justify-between border-b-4 border-zinc-900">
-        <button title="Edit">
-          <FontAwesomeIcon
-            className="text-xl hover:text-sky-500 hover:text-2xl ease-in duration-100"
-            icon={faEdit}
-          />
+        <button
+          title="Edit"
+          className="outline-none text-xl hover:text-sky-500 hover:text-2xl focus:text-sky-500 focus:text-2xl ease-in duration-100"
+        >
+          <FontAwesomeIcon icon={faEdit} />
         </button>
         <h2 className="text-3xl font-bold text-center py-5">{name}</h2>
-        <button title="Delete">
-          <FontAwesomeIcon
-            className="text-xl hover:text-red-700 hover:text-2xl ease-in duration-100"
-            icon={faTrash}
-          />
+        <button
+          title="Delete"
+          className="outline-none text-xl hover:text-red-700 hover:text-2xl focus:text-red-700 focus:text-2xl ease-in duration-100"
+        >
+          <FontAwesomeIcon icon={faTrash} />
         </button>
       </section>
 

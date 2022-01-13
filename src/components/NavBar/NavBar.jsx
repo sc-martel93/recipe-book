@@ -39,7 +39,7 @@ const NavBar = () => {
         <button
           onClick={() => setIsCreating(!isCreating)}
           title="Create Recipe"
-          className="bg-slate-300 hover:bg-cyan-600 w-[252px] md:w-fit lg:w-fit hover:outline transition-colors font-bold rounded px-5 py-1.5"
+          className="bg-slate-300 hover:bg-cyan-600 hover:outline focus:bg-cyan-600 focus:outline  w-[252px] md:w-fit lg:w-fit transition-colors font-bold rounded px-5 py-1.5"
         >
           {isCreating ? "Close" : "Create"}
         </button>
@@ -49,12 +49,12 @@ const NavBar = () => {
             type="text"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
-            className="rounded px-2 py-1.5 mr-1"
+            className="outline-none hover:bg-cyan-200 focus:bg-cyan-200 rounded px-2 py-1.5 mr-1"
           />
           <button
             type="submit"
             title="Search"
-            className="bg-slate-300 hover:bg-cyan-600 hover:outline transition-colors rounded px-2 py-1.5"
+            className="bg-slate-300 hover:bg-cyan-600 hover:outline focus:bg-cyan-600 focus:outline transition-colors rounded px-2 py-1.5"
           >
             <FontAwesomeIcon icon={faSearch} />
           </button>

@@ -29,7 +29,7 @@ const RecipeWrapper = () => {
         <button
           onClick={() => handlePrevious()}
           title="Previous"
-          className="bg-slate-300 hover:bg-cyan-600 hover:outline transition-colors rounded px-5 py-1.5"
+          className="bg-slate-300 hover:bg-cyan-600 hover:outline focus:bg-cyan-600 focus:outline transition-colors rounded px-5 py-1.5"
         >
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
@@ -39,7 +39,7 @@ const RecipeWrapper = () => {
         <button
           onClick={() => handleNext()}
           title="Next"
-          className="bg-slate-300 hover:bg-cyan-600 hover:outline transition-colors rounded px-5 py-1.5"
+          className="bg-slate-300 hover:bg-cyan-600 hover:outline focus:bg-cyan-600 focus:outline  transition-colors rounded px-5 py-1.5"
         >
           <FontAwesomeIcon icon={faArrowRight} />
         </button>
