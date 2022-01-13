@@ -30,12 +30,12 @@ const NavBar = () => {
 
   return (
     <div className="bg-emerald-900">
-      <nav className="max-w-6xl container mx-auto h-16 flex flex-col md:flex-row lg:flex-row justify-around items-center">
+      <nav className="max-w-6xl mx-auto flex flex-col md:flex-row lg:flex-row justify-between md:justify-evenly lg:justify-evenly items-center h-36 md:h-16 lg:h-16">
         <h1 className="text-slate-200 text-4xl">Recipes</h1>
 
         <button
           onClick={() => setIsCreating(!isCreating)}
-          className="bg-slate-300 hover:bg-cyan-600 hover:outline  transition-colors font-bold rounded px-5 py-1.5"
+          className="bg-slate-300 hover:bg-cyan-600 w-[252px] md:w-fit lg:w-fit hover:outline transition-colors font-bold rounded px-5 py-1.5"
         >
           {isCreating ? "Close" : "Create"}
         </button>
