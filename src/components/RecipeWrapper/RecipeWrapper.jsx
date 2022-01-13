@@ -28,6 +28,7 @@ const RecipeWrapper = () => {
       <div className="flex justify-around items-center font-bold max-w-6xl mx-auto mt-5">
         <button
           onClick={() => handlePrevious()}
+          title="Previous"
           className="bg-slate-300 hover:bg-cyan-600 hover:outline transition-colors rounded px-5 py-1.5"
         >
           <FontAwesomeIcon icon={faArrowLeft} />
@@ -37,6 +38,7 @@ const RecipeWrapper = () => {
         </h3>
         <button
           onClick={() => handleNext()}
+          title="Next"
           className="bg-slate-300 hover:bg-cyan-600 hover:outline transition-colors rounded px-5 py-1.5"
         >
           <FontAwesomeIcon icon={faArrowRight} />

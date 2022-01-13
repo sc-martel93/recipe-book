@@ -38,6 +38,7 @@ const NavBar = () => {
 
         <button
           onClick={() => setIsCreating(!isCreating)}
+          title="Create Recipe"
           className="bg-slate-300 hover:bg-cyan-600 w-[252px] md:w-fit lg:w-fit hover:outline transition-colors font-bold rounded px-5 py-1.5"
         >
           {isCreating ? "Close" : "Create"}
@@ -52,6 +53,7 @@ const NavBar = () => {
           />
           <button
             type="submit"
+            title="Search"
             className="bg-slate-300 hover:bg-cyan-600 hover:outline transition-colors rounded px-2 py-1.5"
           >
             <FontAwesomeIcon icon={faSearch} />
