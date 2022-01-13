@@ -5,7 +5,7 @@ const Recipe = ({ recipe }) => {
   const ingredientArray = ingredients.split(", ");
 
   return (
-    <article className="max-w-2xl mx-auto px-10 py-10 space-y-5 mt-10  break-words bg-neutral-300 rounded-lg shadow-lg shadow-emerald-800">
+    <article className="w-5/6 max-w-3xl mx-auto px-10 py-10 space-y-5 mt-10  break-words bg-neutral-300 rounded-lg shadow-lg shadow-emerald-800">
       <h2 className="text-3xl font-bold text-center">{name}</h2>
 
       <section>
