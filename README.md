@@ -10,9 +10,8 @@ Recipe book is a web app that simplifies the storage of recipes
 
 ## TODO
 
-- Fix Recipe.jsx margins
-
-- Styles for Recipe.jsx (make like a paper)
+- Increase NavBar opacity on scroll
+- In small push NavBar to hamburger icon on scroll
 
 - Add ability to edit recipes
   - server
