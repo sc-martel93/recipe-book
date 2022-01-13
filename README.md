@@ -10,7 +10,7 @@ Recipe book is a web app that simplifies the storage of recipes
 
 ## TODO
 
-- Change NavBar.jsx for mobile
+- Fix Recipe.jsx margins
 
 - Styles for Recipe.jsx (make like a paper)
 
