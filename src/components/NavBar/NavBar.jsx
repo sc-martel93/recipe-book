@@ -44,7 +44,7 @@ const NavBar = () => {
         <button
           onClick={() => setIsCreating(!isCreating)}
           title="Create Recipe"
-          className="outline-none bg-slate-300 hover:bg-cyan-400 focus:bg-cyan-400 w-[252px] md:w-fit lg:w-fit transition-colors font-bold rounded px-5 py-1.5"
+          className="outline-none bg-slate-300 hover:bg-cyan-400 focus:bg-cyan-400 w-56 md:w-fit lg:w-fit transition-colors font-bold rounded px-5 py-1.5"
         >
           {isCreating ? "Close" : "Create"}
         </button>
@@ -54,7 +54,7 @@ const NavBar = () => {
             type="text"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
-            className="outline-none hover:bg-cyan-200 focus:bg-cyan-200 rounded px-2 py-1.5 mr-1"
+            className="w-48 outline-none hover:bg-cyan-200 focus:bg-cyan-200 rounded px-2 py-1.5 mr-1"
           />
           <button
             type="submit"
