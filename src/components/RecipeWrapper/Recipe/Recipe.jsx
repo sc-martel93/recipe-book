@@ -9,14 +9,14 @@ const Recipe = ({ recipe }) => {
 
   return (
     <article className="w-5/6 max-w-3xl mx-auto px-10 py-10 space-y-5 mt-10  break-words bg-neutral-300 rounded-lg shadow-lg shadow-emerald-800">
-      <section className="flex justify-between">
+      <section className="flex justify-between border-b-4 border-zinc-900">
         <button>
           <FontAwesomeIcon
             className="text-xl hover:text-indigo-600"
             icon={faEdit}
           />
         </button>
-        <h2 className="text-3xl font-bold text-center">{name}</h2>
+        <h2 className="text-3xl font-bold text-center py-5">{name}</h2>
         <button>
           <FontAwesomeIcon
             className="text-xl hover:text-red-700"
