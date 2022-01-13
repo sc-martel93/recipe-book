@@ -54,12 +54,12 @@ const NavBar = () => {
             type="text"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
-            className="w-48 outline-none hover:bg-cyan-200 focus:bg-cyan-200 rounded px-2 py-1.5 mr-1"
+            className="w-44 outline-none hover:bg-cyan-200 focus:bg-cyan-200 rounded px-2 py-1.5 mr-1"
           />
           <button
             type="submit"
             title="Search"
-            className="outline-none bg-slate-300 hover:bg-cyan-400 focus:bg-cyan-400 transition-colors rounded px-2 py-1.5"
+            className="w-10 outline-none bg-slate-300 hover:bg-cyan-400 focus:bg-cyan-400 transition-colors rounded px-2 py-1.5"
           >
             <FontAwesomeIcon icon={faSearch} />
           </button>
