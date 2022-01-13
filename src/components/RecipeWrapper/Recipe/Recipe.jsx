@@ -26,7 +26,7 @@ const Recipe = ({ recipe }) => {
       </section>
 
       <section>
-        <h3 className="font-bold mb-2">Ingredients</h3>
+        <h3 className="font-bold text-xl mb-2">Ingredients</h3>
         <ol className="list-disc">
           {ingredientArray.map((ingredient, index) => {
             return (
@@ -39,12 +39,12 @@ const Recipe = ({ recipe }) => {
       </section>
 
       <section>
-        <h3 className="font-bold mb-2">Directions</h3>
+        <h3 className="font-bold text-xl mb-2">Directions</h3>
         <p className="ml-10">{directions}</p>
       </section>
 
       <section>
-        <h3 className="font-bold mb-2">Notes</h3>
+        <h3 className="font-bold text-xl mb-2">Notes</h3>
         <p className="ml-10">{notes}</p>
       </section>
     </article>
