@@ -30,7 +30,7 @@ const Recipe = ({ recipe }) => {
         <ol className="list-disc">
           {ingredientArray.map((ingredient, index) => {
             return (
-              <li key={index} className="ml-10">
+              <li key={index} className="ml-8 md:ml-7 lg:ml-10">
                 {ingredient}
               </li>
             );
@@ -40,12 +40,12 @@ const Recipe = ({ recipe }) => {
 
       <section>
         <h3 className="font-bold text-xl mb-2">Directions</h3>
-        <p className="ml-10">{directions}</p>
+        <p className="ml-5 md:ml-7 lg:ml-10">{directions}</p>
       </section>
 
       <section>
         <h3 className="font-bold text-xl mb-2">Notes</h3>
-        <p className="ml-10">{notes}</p>
+        <p className="ml-5 md:ml-7 lg:ml-10">{notes}</p>
       </section>
     </article>
   );
