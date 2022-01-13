@@ -1,12 +1,29 @@
 import React from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+
 const Recipe = ({ recipe }) => {
   const { name, ingredients, directions, notes } = recipe;
   const ingredientArray = ingredients.split(", ");
 
   return (
     <article className="w-5/6 max-w-3xl mx-auto px-10 py-10 space-y-5 mt-10  break-words bg-neutral-300 rounded-lg shadow-lg shadow-emerald-800">
-      <h2 className="text-3xl font-bold text-center">{name}</h2>
+      <section className="flex justify-between">
+        <button>
+          <FontAwesomeIcon
+            className="text-xl hover:text-indigo-600"
+            icon={faEdit}
+          />
+        </button>
+        <h2 className="text-3xl font-bold text-center">{name}</h2>
+        <button>
+          <FontAwesomeIcon
+            className="text-xl hover:text-red-700"
+            icon={faTrash}
+          />
+        </button>
+      </section>
 
       <section>
         <h3 className="font-bold mb-2">Ingredients</h3>
