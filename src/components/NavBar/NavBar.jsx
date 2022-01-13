@@ -16,9 +16,12 @@ const NavBar = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
+    const target = searchValue.toLowerCase();
 
     recipes.map((recipe, index) => {
-      if (recipe.name.includes(searchValue)) {
+      let recipeName = recipe.name.toLowerCase();
+
+      if (recipeName.includes(target)) {
         targetIndex = index;
         dispatch(setIndex(targetIndex));
       }
