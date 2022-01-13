@@ -80,7 +80,7 @@ const InputForm = () => {
 
         <button
           type="submit"
-          className="bg-slate-300 hover:bg-cyan-600 hover:outline transition-colors font-bold rounded px-5 py-1.5 my-3"
+          className="outline-none bg-slate-300 hover:bg-cyan-400 focus:bg-cyan-400 transition-colors font-bold rounded px-5 py-1.5 my-3"
         >
           Submit
         </button>
