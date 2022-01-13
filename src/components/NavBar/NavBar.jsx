@@ -29,8 +29,8 @@ const NavBar = () => {
   };
 
   return (
-    <div className="bg-emerald-900 ">
-      <nav className="h-16 container mx-auto max-w-2/3 flex justify-around items-center">
+    <div className="bg-emerald-900">
+      <nav className="max-w-6xl container mx-auto h-16 flex flex-col md:flex-row lg:flex-row justify-around items-center">
         <h1 className="text-slate-200 text-4xl">Recipes</h1>
 
         <button

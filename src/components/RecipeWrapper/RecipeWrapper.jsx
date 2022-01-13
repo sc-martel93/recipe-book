@@ -25,7 +25,7 @@ const RecipeWrapper = () => {
 
   return (
     <>
-      <div className="flex justify-around items-center font-bold max-w-2/3 mt-5">
+      <div className="flex justify-around items-center font-bold max-w-6xl mx-auto mt-5">
         <button
           onClick={() => handlePrevious()}
           className="bg-slate-300 hover:bg-cyan-600 hover:outline transition-colors rounded px-5 py-1.5"
