@@ -8,7 +8,7 @@ const Recipe = ({ recipe }) => {
   const ingredientArray = ingredients.split(", ");
 
   return (
-    <article className="w-5/6 max-w-3xl mx-auto px-10 py-10 space-y-5 mt-10  break-words bg-neutral-300 rounded-lg shadow-lg shadow-emerald-800">
+    <article className="w-5/6 max-w-3xl mx-auto px-10 py-10 space-y-10 mt-10  break-words bg-neutral-300 rounded-lg shadow-lg shadow-emerald-800">
       <section className="flex justify-between border-b-4 border-zinc-900">
         <button title="Edit">
           <FontAwesomeIcon
