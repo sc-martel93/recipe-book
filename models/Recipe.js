@@ -20,15 +20,15 @@ class Recipe {
         directions,
         notes
      )
-     VALUE (
-        '${this.id}',
-        '${this.name}',
-        '${this.ingredients}',
-        '${this.directions}',
-        '${this.notes}'
-     )`;
+     VALUE ( ?, ?, ?, ?, ?)`;
 
-    return db.execute(sql);
+    return db.execute(sql, [
+      this.id,
+      this.name,
+      this.ingredients,
+      this.directions,
+      this.notes,
+    ]);
   }
 
   static findAll = () => {
