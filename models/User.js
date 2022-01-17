@@ -11,7 +11,7 @@ class User {
     this.email = email;
   }
 
-  save() {
+  async save() {
     const sql =
       "INSERT INTO users (id, name, password, email) VALUES (?, ?, ?, ?)";
 
