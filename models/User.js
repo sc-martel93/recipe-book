@@ -1,4 +1,7 @@
 const db = require("../config/db");
+const bcrypt = require("bcrypt");
+
+const saltRounds = 10;
 
 class User {
   constructor({ id, name, password, email }) {
@@ -12,7 +15,13 @@ class User {
     const sql =
       "INSERT INTO users (id, name, password, email) VALUES (?, ?, ?, ?)";
 
-    return db.execute(sql, [this.id, this.name, this.password, this.email]);
+    bcrypt.hash(this.password, saltRounds, (err, hash) => {
+      if (err) console.log(err);
+
+      db.query(sql, [this.id, this.name, hash, this.email], (err, res) => {
+        console.error(err);
+      });
+    });
   }
 }
 
