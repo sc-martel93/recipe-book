@@ -18,9 +18,13 @@ class User {
     bcrypt.hash(this.password, saltRounds, (err, hash) => {
       if (err) console.log(err);
 
-      db.query(sql, [this.id, this.name, hash, this.email], (err, res) => {
-        console.error(err);
-      });
+      return db.query(
+        sql,
+        [this.id, this.name, hash, this.email],
+        (err, res) => {
+          console.error(err);
+        }
+      );
     });
   }
 }

@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/recipes", require("./routes/recipeRoutes"));
-app.use("/users", require("./routes/userRoutes"));
+app.use("/register", require("./routes/userRoutes"));
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
