@@ -9,7 +9,7 @@ const Registration = () => {
           <input
             type="text"
             name="username"
-            className="rounded px-2 py-1.5"
+            className="rounded px-2 py-1.5 outline-none hover:bg-cyan-200 focus:bg-cyan-200"
             required
           />
         </div>
@@ -18,7 +18,7 @@ const Registration = () => {
           <input
             type="password"
             name="password"
-            className="rounded px-2 py-1.5"
+            className="rounded px-2 py-1.5 outline-none hover:bg-cyan-200 focus:bg-cyan-200"
             required
           />
         </div>
@@ -27,7 +27,7 @@ const Registration = () => {
           <input
             type="password"
             name="password"
-            className="rounded px-2 py-1.5"
+            className="rounded px-2 py-1.5 outline-none hover:bg-cyan-200 focus:bg-cyan-200"
             required
           />
         </div>
