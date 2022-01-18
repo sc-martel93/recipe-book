@@ -4,16 +4,18 @@ const Registration = () => {
   return (
     <div className="h-screen bg-emerald-800 m-10 rounded shadow-lg shadow-emerald-800">
       <h2 className="text-white text-3xl font-bold text-center mt-20 pt-20 pb-10">
-        Welcome To Recipe<span className="text-orange-400">Book</span>
+        Welcome To Recipe
+        <span className="text-orange-400 ">Book</span>
       </h2>
       <p className="text-white text-center text-lg pb-5">
         A place to
-        <span className="text-orange-400"> share </span>
-        and <span className="text-orange-400">explore</span> recipes..
+        <span className="font-semibold text-orange-400"> share </span>
+        and <span className="font-semibold text-orange-400">explore</span>{" "}
+        recipes..
       </p>
       <p className="text-white text-center text-lg">
-        Register <span className="text-orange-400">now</span> for{" "}
-        <span className="text-orange-400">Free!</span>
+        Register <span className="font-semibold text-orange-400">now</span> for{" "}
+        <span className="font-semibold text-orange-400">Free!</span>
       </p>
       <form className="mx-auto flex flex-col w-2/3 max-w-lg mt-20">
         <div className="mt-2 flex justify-evenly flex-col">
