@@ -7,7 +7,9 @@ const Registration = () => {
         Welcome To Recipe<span className="text-orange-400">Book</span>
       </h2>
       <p className="text-white text-center text-lg pb-5">
-        A place to share and explore recipes..
+        A place to
+        <span className="text-orange-400"> share </span>
+        and <span className="text-orange-400">explore</span> recipes..
       </p>
       <p className="text-white text-center text-lg">
         Register <span className="text-orange-400">now</span> for{" "}
