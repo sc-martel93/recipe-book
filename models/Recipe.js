@@ -1,9 +1,10 @@
 const db = require("../config/db");
+const uuid = require("uuid");
 
 class Recipe {
   constructor(recipe) {
     const { id, name, ingredients, directions, notes } = recipe;
-    this.id = id;
+    this.id = uuid.v4();
     this.name = name;
     this.ingredients = ingredients;
     this.directions = directions;
