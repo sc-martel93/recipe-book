@@ -17,3 +17,12 @@ export const createRecipe = (recipe) => async (dispatch) => {
     console.error(error.message);
   }
 };
+
+export const deleteRecipe = (id) => async (dispatch) => {
+  try {
+    await api.deleteRecipe(id);
+    dispatch({ type: "DELETE", payload: id });
+  } catch (error) {
+    console.error(error.message);
+  }
+};

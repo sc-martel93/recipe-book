@@ -1,11 +1,25 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { deleteRecipe } from "../../../state/actions/recipes";
+import { setIndex } from "../../../state/actions/recipeIndex";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Recipe = ({ recipe }) => {
+  const dispatch = useDispatch();
+
   const { name, ingredients, directions, notes } = recipe;
   const ingredientArray = ingredients.split(", ");
+
+  const handleDelete = () => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this recipe?"
+    );
+    if (!confirmDelete) return;
+    dispatch(deleteRecipe(recipe.id));
+    dispatch(setIndex(0));
+  };
 
   return (
     <article className="w-5/6 max-w-3xl mx-auto px-10 py-10 space-y-10 mt-10  break-words bg-neutral-300 rounded-lg shadow-lg shadow-emerald-800">
@@ -19,6 +33,7 @@ const Recipe = ({ recipe }) => {
         <h2 className="text-3xl font-bold text-center py-5">{name}</h2>
         <button
           title="Delete"
+          onClick={() => handleDelete()}
           className="outline-none text-xl hover:text-red-700 hover:text-2xl focus:text-red-700 focus:text-2xl ease-in duration-100"
         >
           <FontAwesomeIcon icon={faTrash} />
