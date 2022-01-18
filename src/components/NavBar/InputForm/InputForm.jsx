@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
 import { createRecipe } from "../../../state/actions/recipes";
 
 const InputForm = () => {
   const dispatch = useDispatch();
   const [recipeData, setRecipeData] = useState({
-    id: "",
     name: "",
     ingredients: "",
     directions: "",
@@ -15,11 +13,9 @@ const InputForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    recipeData.id = uuidv4();
     dispatch(createRecipe(recipeData));
 
     setRecipeData({
-      id: "",
       name: "",
       ingredients: "",
       directions: "",
