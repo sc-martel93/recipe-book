@@ -37,7 +37,7 @@ const InputForm = () => {
           onChange={(e) =>
             setRecipeData({ ...recipeData, name: e.target.value })
           }
-          className="rounded px-2 py-1.5"
+          className="rounded px-2 py-1.5 outline-none hover:bg-cyan-200 focus:bg-cyan-200"
           required
         />
 
@@ -49,7 +49,7 @@ const InputForm = () => {
           onChange={(e) =>
             setRecipeData({ ...recipeData, ingredients: e.target.value })
           }
-          className="rounded px-2 py-1.5"
+          className="rounded px-2 py-1.5 outline-none hover:bg-cyan-200 focus:bg-cyan-200"
           required
         />
 
@@ -60,7 +60,7 @@ const InputForm = () => {
           onChange={(e) =>
             setRecipeData({ ...recipeData, directions: e.target.value })
           }
-          className="rounded px-2 py-1.5 resize-none"
+          className="rounded px-2 py-1.5 resize-none outline-none hover:bg-cyan-200 focus:bg-cyan-200"
           required
         />
 
@@ -71,7 +71,7 @@ const InputForm = () => {
           onChange={(e) =>
             setRecipeData({ ...recipeData, notes: e.target.value })
           }
-          className="rounded px-2 py-1.5 resize-none"
+          className="rounded px-2 py-1.5 resize-none outline-none hover:bg-cyan-200 focus:bg-cyan-200"
         />
 
         <button
