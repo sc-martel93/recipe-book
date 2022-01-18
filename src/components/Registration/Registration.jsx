@@ -3,8 +3,8 @@ import React from "react";
 const Registration = () => {
   return (
     <div className="h-screen flex mt-52">
-      <form className="mx-auto flex flex-col w-2/3 max-w-3xl">
-        <div className="mt-2 flex justify-evenly flex-col md:flex-row lg:flex-row">
+      <form className="mx-auto flex flex-col w-2/3 max-w-lg">
+        <div className="mt-2 flex justify-evenly flex-col">
           <label>Username</label>
           <input
             type="text"
@@ -13,7 +13,7 @@ const Registration = () => {
             required
           />
         </div>
-        <div className="mt-2 flex justify-evenly flex-col md:flex-row lg:flex-row">
+        <div className="mt-2 flex justify-evenly flex-col">
           <label>Password </label>
           <input
             type="password"
@@ -22,7 +22,7 @@ const Registration = () => {
             required
           />
         </div>
-        <div className="mt-2 flex flex-col md:flex-row lg:flex-row justify-evenly">
+        <div className="mt-2 flex flex-col justify-evenly">
           <label>Password </label>
           <input
             type="password"
@@ -31,7 +31,7 @@ const Registration = () => {
             required
           />
         </div>
-        <button className="outline-none bg-slate-300 hover:bg-cyan-400 focus:bg-cyan-400 transition-colors font-bold rounded px-5 py-1.5 my-3 w-full md:w-7/12 lg:w-7/12 mx-auto">
+        <button className="outline-none bg-slate-300 hover:bg-cyan-400 focus:bg-cyan-400 transition-colors font-bold rounded px-5 py-1.5 my-3 w-full mx-auto">
           Register
         </button>
       </form>
