@@ -2,7 +2,7 @@ import React from "react";
 
 const Registration = () => {
   return (
-    <div>
+    <div className="h-screen flex items-center">
       <form className="mx-auto flex flex-col items-center w-2/3 max-w-3xl">
         <div className="mt-2 flex justify-evenly">
           <label>Username</label>
