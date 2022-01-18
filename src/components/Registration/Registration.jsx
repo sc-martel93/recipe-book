@@ -3,16 +3,17 @@ import React from "react";
 const Registration = () => {
   return (
     <div className="h-screen bg-emerald-800 m-10 rounded shadow-lg shadow-emerald-800">
-      <h2 className="text-white text-3xl font-bold text-center mt-20 py-10">
+      <h2 className="text-white text-3xl font-bold text-center mt-20 pt-20 pb-10">
         Welcome To Recipe<span className="text-orange-400">Book</span>
       </h2>
-      <p className="text-white text-center text-lg mt-10">
+      <p className="text-white text-center text-lg pb-5">
         A place to share and explore recipes..
       </p>
-      <p className="text-white text-center text-lg mt-10">
-        Register now for free!
+      <p className="text-white text-center text-lg">
+        Register <span className="text-orange-400">now</span> for{" "}
+        <span className="text-orange-400">Free!</span>
       </p>
-      <form className="mx-auto flex flex-col w-2/3 max-w-lg mt-32">
+      <form className="mx-auto flex flex-col w-2/3 max-w-lg mt-20">
         <div className="mt-2 flex justify-evenly flex-col">
           <label className="text-white">Username</label>
           <input
