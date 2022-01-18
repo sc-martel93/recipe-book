@@ -32,12 +32,18 @@ const NavBar = () => {
   };
 
   const navBar = document.getElementById("navBar");
-  if (navBar !== null) {
-    console.log(navBar.offsetTop);
-  }
+  let navbarMoved = false;
+
+  const handleScroll = () => {
+    navbarMoved = true;
+  };
 
   return (
-    <div id="navBar" className="bg-emerald-900 sticky top-0">
+    <div
+      onScroll={handleScroll}
+      id="navBar"
+      className="bg-emerald-900 sticky top-0"
+    >
       <nav className="max-w-6xl mx-auto flex flex-col md:flex-row lg:flex-row justify-evenly items-center h-44 md:h-16 lg:h-16">
         <h1 className="text-slate-200 text-4xl">Recipes</h1>
 
