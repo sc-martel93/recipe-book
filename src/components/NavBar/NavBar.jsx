@@ -44,12 +44,12 @@ const NavBar = () => {
       className="bg-emerald-900 sticky top-0 shadow-lg shadow-emerald-800 opacity-90"
     >
       <nav className="max-w-6xl mx-auto flex flex-col md:flex-row lg:flex-row justify-evenly items-center h-44 md:h-16 lg:h-16">
-        <h1 className="text-slate-200 text-4xl">Recipes</h1>
+        <h1 className="text-orange-400 text-4xl">Recipes</h1>
 
         <button
           onClick={() => setIsCreating(!isCreating)}
           title="Create Recipe"
-          className="outline-none bg-slate-300 hover:bg-cyan-400 focus:bg-cyan-400 w-56 md:w-fit lg:w-fit transition-colors font-bold rounded px-5 py-1.5"
+          className="outline-none bg-slate-300 hover:bg-orange-400 focus:bg-orange-400 w-56 md:w-fit lg:w-fit transition-colors font-bold rounded px-5 py-1.5"
         >
           {isCreating ? "Close" : "Create"}
         </button>
@@ -59,12 +59,12 @@ const NavBar = () => {
             type="text"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
-            className="w-44 outline-none hover:bg-cyan-200 focus:bg-cyan-200 rounded px-2 py-1.5 mr-1"
+            className="w-44 outline-none hover:bg-orange-200 focus:bg-orange-200 rounded px-2 py-1.5 mr-1"
           />
           <button
             type="submit"
             title="Search"
-            className="w-10 outline-none bg-slate-300 hover:bg-cyan-400 focus:bg-cyan-400 transition-colors rounded px-2 py-1.5"
+            className="w-10 outline-none bg-slate-300 hover:bg-orange-400 focus:bg-orange-400 transition-colors rounded px-2 py-1.5"
           >
             <FontAwesomeIcon icon={faSearch} />
           </button>
