@@ -4,6 +4,7 @@ import { getRecipes } from "./state/actions/recipes";
 
 import NavBar from "./components/NavBar/NavBar";
 import RecipeWrapper from "./components/RecipeWrapper/RecipeWrapper";
+import Registration from "./components/Registration/Registration";
 
 function App() {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="h-100 min-h-screen bg-emerald-500 font-poppins">
       <NavBar />
+      <Registration />
       <RecipeWrapper />
     </div>
   );
