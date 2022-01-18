@@ -39,7 +39,10 @@ const NavBar = () => {
   // };
 
   return (
-    <div id="navBar" className="bg-emerald-900 sticky top-0">
+    <div
+      id="navBar"
+      className="bg-emerald-900 sticky top-0 shadow-lg shadow-emerald-800 opacity-90"
+    >
       <nav className="max-w-6xl mx-auto flex flex-col md:flex-row lg:flex-row justify-evenly items-center h-44 md:h-16 lg:h-16">
         <h1 className="text-slate-200 text-4xl">Recipes</h1>
 
