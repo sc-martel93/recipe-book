@@ -27,7 +27,7 @@ const InputForm = () => {
     <div className="bg-emerald-600">
       <form
         onSubmit={(e) => handleSubmit(e)}
-        className="container mx-auto flex flex-col w-2/3"
+        className="mx-auto flex flex-col w-2/3 max-w-3xl"
       >
         <label className="mt-2">Name: </label>
         <input

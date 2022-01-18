@@ -25,7 +25,7 @@ const RecipeWrapper = () => {
 
   return (
     <>
-      <div className="flex justify-around items-center font-bold max-w-6xl mx-auto mt-5">
+      <div className="flex justify-around items-center font-bold max-w-4xl mx-auto mt-5">
         <button
           onClick={() => handlePrevious()}
           title="Previous"
