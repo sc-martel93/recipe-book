@@ -36,6 +36,11 @@ class Recipe {
     const sql = `SELECT * FROM recipes ORDER BY name`;
     return db.execute(sql);
   };
+
+  static deleteById = (id) => {
+    const sql = "DELETE FROM recipes WHERE id = ?";
+    return db.execute(sql, [id]);
+  };
 }
 
 module.exports = Recipe;

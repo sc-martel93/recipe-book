@@ -21,3 +21,14 @@ exports.createNewRecipe = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.deleteRecipeById = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    await Recipe.deleteById(id);
+    res.status(204).json({ message: "Recipe deleted successfully" });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
