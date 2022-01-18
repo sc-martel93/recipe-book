@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { next, previous, setIndex } from "../../state/actions/recipeIndex";
+import { getRecipes } from "../../state/actions/recipes";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -11,6 +12,10 @@ const RecipeWrapper = () => {
   const recipeIndex = useSelector((state) => state.recipeIndex);
   const recipes = useSelector((state) => state.recipes);
   const recipeCount = recipes.length;
+
+  useEffect(() => {
+    dispatch(getRecipes());
+  }, [dispatch]);
 
   const handlePrevious = () => {
     if (recipeCount == 0) return;
