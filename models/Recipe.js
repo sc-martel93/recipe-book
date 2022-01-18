@@ -3,7 +3,7 @@ const uuid = require("uuid");
 
 class Recipe {
   constructor(recipe) {
-    const { id, name, ingredients, directions, notes } = recipe;
+    const { name, ingredients, directions, notes } = recipe;
     this.id = uuid.v4();
     this.name = name;
     this.ingredients = ingredients;

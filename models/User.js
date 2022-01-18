@@ -1,11 +1,10 @@
 const db = require("../config/db");
+const uuid = require("uuid");
 const bcrypt = require("bcrypt");
 
-const saltRounds = 10;
-
 class User {
-  constructor({ id, name, password, email }) {
-    this.id = id;
+  constructor({ name, password, email }) {
+    this.id = uuid.v4();
     this.name = name;
     this.password = password;
     this.email = email;
@@ -14,6 +13,7 @@ class User {
   async save() {
     const sql =
       "INSERT INTO users (id, name, password, email) VALUES (?, ?, ?, ?)";
+    const saltRounds = 10;
 
     bcrypt.hash(this.password, saltRounds, (err, hash) => {
       if (err) console.log(err);
