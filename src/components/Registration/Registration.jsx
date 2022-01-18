@@ -2,9 +2,9 @@ import React from "react";
 
 const Registration = () => {
   return (
-    <div className="h-screen flex items-center">
+    <div className="h-screen flex mt-52">
       <form className="mx-auto flex flex-col items-center w-2/3 max-w-3xl">
-        <div className="mt-2 flex justify-evenly">
+        <div className="mt-2 flex justify-evenly flex-col md:flex-row lg:flex-row">
           <label>Username</label>
           <input
             type="text"
@@ -13,7 +13,7 @@ const Registration = () => {
             required
           />
         </div>
-        <div className="mt-2 flex justify-evenly">
+        <div className="mt-2 flex justify-evenly flex-col md:flex-row lg:flex-row">
           <label>Password </label>
           <input
             type="password"
@@ -22,7 +22,7 @@ const Registration = () => {
             required
           />
         </div>
-        <div className="mt-2 flex justify-evenly">
+        <div className="mt-2 flex flex-col md:flex-row lg:flex-row justify-evenly">
           <label>Password </label>
           <input
             type="password"
