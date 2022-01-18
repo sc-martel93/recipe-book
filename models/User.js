@@ -13,20 +13,19 @@ class User {
   async save() {
     const sql =
       "INSERT INTO users (id, name, password, email) VALUES (?, ?, ?, ?)";
-    const saltRounds = 10;
 
-    bcrypt.hash(this.password, saltRounds, (err, hash) => {
-      if (err) console.log(err);
-
-      return db.query(
-        sql,
-        [this.id, this.name, hash, this.email],
-        (err, res) => {
-          console.error(err);
-        }
-      );
-    });
+    const hash = await hashPassword(this.password);
+    return db
+      .execute(sql, [this.id, this.name, hash, this.email])
+      .catch((err) => {
+        return err.code;
+      });
   }
 }
+
+const hashPassword = (password) => {
+  const saltRounds = 10;
+  return bcrypt.hash(password, saltRounds);
+};
 
 module.exports = User;
