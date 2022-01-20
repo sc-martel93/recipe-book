@@ -11,7 +11,7 @@ const Registration = () => {
         A place to
         <span className="font-semibold text-orange-400"> share </span>
         and <span className="font-semibold text-orange-400">explore</span>{" "}
-        recipes..
+        recipes
       </p>
       <p className="text-white text-center text-lg">
         Register <span className="font-semibold text-orange-400">now</span> for{" "}
