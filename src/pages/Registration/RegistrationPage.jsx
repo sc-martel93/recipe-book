@@ -2,7 +2,7 @@ import React from "react";
 
 const Registration = () => {
   return (
-    <div className=" bg-emerald-700 mx-10  rounded shadow-lg shadow-emerald-800 py-10">
+    <div className=" bg-emerald-700 mx-10 rounded shadow-lg shadow-emerald-800 py-20">
       <h2 className="text-white text-3xl font-bold text-center pb-10">
         Welcome To Recipe
         <span className="text-orange-400 ">Book</span>
