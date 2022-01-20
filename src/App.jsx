@@ -11,7 +11,7 @@ function App() {
       <div className="h-100 min-h-screen bg-emerald-500 font-poppins">
         <NavBar />
         <Routes>
-          <Route path="/" element={<Registration />} />
+          <Route path="/register" element={<Registration />} />
           <Route path="recipes" element={<RecipeWrapper />} />
         </Routes>
       </div>

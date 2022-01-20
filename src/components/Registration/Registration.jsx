@@ -2,12 +2,12 @@ import React from "react";
 
 const Registration = () => {
   return (
-    <div className="h-screen bg-emerald-800 m-10 rounded shadow-lg shadow-emerald-800">
-      <h2 className="text-white text-3xl font-bold text-center mt-20 pt-20 pb-10">
+    <div className=" bg-emerald-700 mx-10  rounded shadow-lg shadow-emerald-800 py-10">
+      <h2 className="text-white text-3xl font-bold text-center pb-10">
         Welcome To Recipe
         <span className="text-orange-400 ">Book</span>
       </h2>
-      <p className="text-white text-center text-lg pb-5">
+      <p className="text-white text-center text-lg pb-7">
         A place to
         <span className="font-semibold text-orange-400"> share </span>
         and <span className="font-semibold text-orange-400">explore</span>{" "}
@@ -17,8 +17,9 @@ const Registration = () => {
         Register <span className="font-semibold text-orange-400">now</span> for{" "}
         <span className="font-semibold text-orange-400">Free!</span>
       </p>
-      <form className="mx-auto flex flex-col w-2/3 max-w-lg mt-20">
-        <div className="mt-2 flex justify-evenly flex-col">
+
+      <form className="mx-auto flex flex-col w-2/3 max-w-lg space-y-7 bg-emerald-800 py-10 px-5 my-10 rounded">
+        <div className="flex justify-evenly flex-col">
           <label className="text-white">Username</label>
           <input
             type="text"
@@ -27,7 +28,7 @@ const Registration = () => {
             required
           />
         </div>
-        <div className="mt-2 flex justify-evenly flex-col">
+        <div className="flex justify-evenly flex-col">
           <label className="text-white">Password </label>
           <input
             type="password"
@@ -36,7 +37,7 @@ const Registration = () => {
             required
           />
         </div>
-        <div className="mt-2 flex flex-col justify-evenly">
+        <div className="flex flex-col justify-evenly">
           <label className="text-white">Password </label>
           <input
             type="password"
