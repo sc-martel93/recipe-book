@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar/NavBar";
 import RecipeWrapper from "./components/RecipeWrapper/RecipeWrapper";
-import Registration from "./components/Registration/Registration";
+import Registration from "./pages/Registration/Registration";
 
 function App() {
   return (
