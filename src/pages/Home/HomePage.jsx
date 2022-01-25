@@ -13,7 +13,7 @@ const HomePage = () => {
         <h1 className="text-5xl md:text-6xl lg:text-6xl">
           Recipe <span className="font-semibold text-orange-400">Book</span>
         </h1>
-        <div>
+        <section>
           <p className="text-white text-center text-lg pb-7">
             A place to
             <span className="font-semibold text-orange-400"> share </span>
@@ -22,7 +22,7 @@ const HomePage = () => {
             </span>{" "}
             recipes
           </p>
-        </div>
+        </section>
 
         <nav className="flex justify-around mx-auto space-x-5">
           <Link
@@ -46,14 +46,18 @@ const HomePage = () => {
         </nav>
       </header>
 
-      <section className="flex justify-evenly max-w-5xl mx-auto space-x-5">
-        <img src={cake} alt="cake" className="w-1/4 min-w-3xl" />
-        <img src={vegetables} alt="vegetables" className="w-1/4 max-w-3xl" />
-        <img src={spaghetti} alt="spaghetti" className="w-1/4 max-w-3xl" />
-        <img src={salmon} alt="salmon" className="w-1/4 max-w-3xl" />
+      <section className="max-w-6xl space-y-5 mx-auto">
+        <h3 className="text-xl text-center font-bold mt-5">Desserts!</h3>
+        <img src={cake} alt="cake" className="w-5/6 mx-auto" />
+        <h3 className="text-xl text-center font-bold">Pasta!</h3>
+        <img src={spaghetti} alt="spaghetti" className="w-5/6 mx-auto" />
+        <h3 className="text-xl text-center font-bold">Vegetarian!</h3>
+        <img src={vegetables} alt="vegetables" className="w-5/6 mx-auto" />
+        <h3 className="text-xl text-center font-bold">Seafood!</h3>
+        <img src={salmon} alt="salmon" className="w-5/6 mx-auto" />
       </section>
 
-      <footer className="h-60 absolute inset-x-0 bottom-0 bg-emerald-700"></footer>
+      {/* <footer className="h-60 absolute inset-x-0 bottom-0 bg-emerald-700"></footer> */}
     </main>
   );
 };
