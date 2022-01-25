@@ -19,10 +19,14 @@ Recipe book is a web app that simplifies the storage of recipes
 
 - Add ability to edit recipes client side and server side
 
+--- Redesign Recipes in DB
+
+- Add created_by to Recipe
 - Add is vegetarian/gluten free to recipes
 - Add cooktime to recipe
 - Add optional image to recipe
 - Add sort options ?
 
 - Remove Create from explore recipes
-- Make exlore show every recipe
+- Make exlore show every recipe (Sort by most liked)
+- Remove delete and edit buttons from explore
