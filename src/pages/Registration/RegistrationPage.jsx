@@ -28,6 +28,7 @@ const Registration = () => {
             required
           />
         </section>
+
         <section className="flex justify-evenly flex-col">
           <label className="text-white">Password </label>
           <input
@@ -37,6 +38,7 @@ const Registration = () => {
             required
           />
         </section>
+
         <section className="flex flex-col justify-evenly">
           <label className="text-white">Password </label>
           <input
@@ -46,6 +48,7 @@ const Registration = () => {
             required
           />
         </section>
+
         <button className="outline-none bg-slate-300 hover:bg-orange-400 focus:bg-orange-400 transition-colors font-bold rounded px-5 py-1.5 my-3 w-full mx-auto">
           Register
         </button>
