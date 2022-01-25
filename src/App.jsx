@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/Home/HomePage";
 import LoginPage from "./pages/Login/LoginPage";
 
 import RecipePage from "./pages/Recipes/RecipePage";
@@ -10,8 +11,9 @@ function App() {
     <BrowserRouter>
       <main className="h-100 min-h-screen bg-emerald-500 font-poppins">
         <Routes>
-          <Route path="/register" element={<RegistrationPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="register" element={<RegistrationPage />} />
+          <Route path="login" element={<LoginPage />} />
           <Route path="recipes" element={<RecipePage />} />
         </Routes>
       </main>
