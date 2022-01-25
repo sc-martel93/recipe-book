@@ -10,12 +10,18 @@ Recipe book is a web app that simplifies the storage of recipes
 
 ## TODO
 
-- Increase NavBar opacity on scroll
-- In small push NavBar to hamburger icon on scroll
+-Improve register and login pages on mobile
 
-- Add ability to edit recipes
-  - server
-  - client
-- Add delete recipe
-  - server
-  - client
+- Connect registration to server
+
+- Create login auth on server
+- Connect login to server
+
+- Add ability to edit recipes client side and server side
+
+- Add is vegetarian/gluten free to recipes
+- Add cooktime to recipe
+- Add optional image to recipe
+- Add sort options ?
+
+- Remove Create from explore recipes
