@@ -21,6 +21,11 @@ const Recipe = ({ recipe }) => {
     dispatch(setIndex(0));
   };
 
+  const checkForNotes = (notes) => {
+    if (notes == null || notes == "") return false;
+    return true;
+  };
+
   return (
     <article className="w-5/6 max-w-3xl mx-auto px-10 py-10 space-y-10 mt-10  break-words bg-neutral-300 rounded-lg shadow-lg shadow-emerald-800">
       <section className="flex justify-between border-b-4 border-zinc-900">
@@ -58,10 +63,12 @@ const Recipe = ({ recipe }) => {
         <p className="ml-5 md:ml-7 lg:ml-10">{directions}</p>
       </section>
 
-      <section>
-        <h3 className="font-bold text-xl mb-2">Notes</h3>
-        <p className="ml-5 md:ml-7 lg:ml-10">{notes}</p>
-      </section>
+      {checkForNotes(notes) && (
+        <section>
+          <h3 className="font-bold text-xl mb-2">Notes</h3>
+          <p className="ml-5 md:ml-7 lg:ml-10">{notes}</p>
+        </section>
+      )}
     </article>
   );
 };
