@@ -19,7 +19,7 @@ const Registration = () => {
       </p>
 
       <form className="mx-auto flex flex-col w-2/3 max-w-lg space-y-7 bg-emerald-800 py-10 px-5 my-10 rounded">
-        <div className="flex justify-evenly flex-col">
+        <section className="flex justify-evenly flex-col">
           <label className="text-white">Username</label>
           <input
             type="text"
@@ -27,8 +27,8 @@ const Registration = () => {
             className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
             required
           />
-        </div>
-        <div className="flex justify-evenly flex-col">
+        </section>
+        <section className="flex justify-evenly flex-col">
           <label className="text-white">Password </label>
           <input
             type="password"
@@ -36,8 +36,8 @@ const Registration = () => {
             className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
             required
           />
-        </div>
-        <div className="flex flex-col justify-evenly">
+        </section>
+        <section className="flex flex-col justify-evenly">
           <label className="text-white">Password </label>
           <input
             type="password"
@@ -45,7 +45,7 @@ const Registration = () => {
             className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
             required
           />
-        </div>
+        </section>
         <button className="outline-none bg-slate-300 hover:bg-orange-400 focus:bg-orange-400 transition-colors font-bold rounded px-5 py-1.5 my-3 w-full mx-auto">
           Register
         </button>
