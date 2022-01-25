@@ -25,3 +25,4 @@ Recipe book is a web app that simplifies the storage of recipes
 - Add sort options ?
 
 - Remove Create from explore recipes
+- Make exlore show every recipe
