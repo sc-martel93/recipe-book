@@ -24,7 +24,7 @@ const InputForm = () => {
   };
 
   return (
-    <div className="bg-emerald-600">
+    <section className="bg-emerald-600">
       <form
         onSubmit={(e) => handleSubmit(e)}
         className="mx-auto flex flex-col w-2/3 max-w-3xl"
@@ -81,7 +81,7 @@ const InputForm = () => {
           Submit
         </button>
       </form>
-    </div>
+    </section>
   );
 };
 

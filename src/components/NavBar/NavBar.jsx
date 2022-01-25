@@ -31,15 +31,8 @@ const NavBar = () => {
     setSearchValue("");
   };
 
-  // const navBar = document.getElementById("navBar");
-  // let navbarMoved = false;
-
-  // const handleScroll = () => {
-  //   navbarMoved = true;
-  // };
-
   return (
-    <div
+    <section
       id="navBar"
       className="bg-emerald-900 sticky top-0 shadow-lg shadow-emerald-800 opacity-90"
     >
@@ -71,8 +64,8 @@ const NavBar = () => {
         </form>
       </nav>
 
-      {isCreating ? <InputForm /> : null}
-    </div>
+      {isCreating && <InputForm />}
+    </section>
   );
 };
 

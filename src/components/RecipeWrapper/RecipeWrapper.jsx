@@ -30,7 +30,7 @@ const RecipeWrapper = () => {
 
   return (
     <>
-      <div className="flex justify-around items-center font-bold max-w-4xl mx-auto mt-5">
+      <section className="flex justify-around items-center font-bold max-w-4xl mx-auto mt-5">
         <button
           onClick={() => handlePrevious()}
           title="Previous"
@@ -48,7 +48,7 @@ const RecipeWrapper = () => {
         >
           <FontAwesomeIcon icon={faArrowRight} />
         </button>
-      </div>
+      </section>
 
       {recipeCount === 0 ? (
         <h2 className="font-bold text-center text-3xl mt-20">No Recipes</h2>
