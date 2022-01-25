@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
-    <>
+    <main>
       <section className="bg-emerald-700 shadow-lg shadow-emerald-800 h-72 flex items-center justify-center flex-col">
         <h1 className="text-5xl md:text-6xl lg:text-6xl">
           Recipe <span className="font-semibold text-orange-400">Book</span>
@@ -39,7 +39,8 @@ const HomePage = () => {
           Explore
         </Link>
       </section>
-    </>
+      <footer className="h-60 absolute inset-x-0 bottom-0 bg-emerald-700"></footer>
+    </main>
   );
 };
 
