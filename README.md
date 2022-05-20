@@ -2,7 +2,7 @@
 
 author: Scott Martel
 email: sc.martel93@gmail.com
-date: 1/12/2021
+date: 5/20/2022
 
 ## About
 
@@ -12,7 +12,9 @@ Recipe book is a web app that simplifies the storage of recipes
 
 -Improve register and login pages on mobile
 
-- Connect registration to server
+- Check if passwords match in user Registration
+    - Output error if they dont match
+- Output error when user name taken
 
 - Create login auth on server
 - Connect login to server
