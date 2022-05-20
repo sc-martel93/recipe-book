@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { createUser } from '../../state/actions/users';
 
 const Registration = () => {
+const dispatch = useDispatch();
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
 
 const registerUser = (e) => {
   e.preventDefault();
-  
+  let newUser = {name: username, password: password};
+  dispatch(createUser(newUser));
 }
 
   return (
