@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Registration = () => {
+const [username, setUsername] = useState("");
+const [password, setPassword] = useState("");
+
+const registerUser = (e) => {
+  e.preventDefault();
+  
+}
+
   return (
     <section className=" bg-emerald-700 mx-10 rounded shadow-lg shadow-emerald-800 py-20">
       <h2 className="text-white text-3xl font-bold text-center pb-10">
@@ -18,7 +26,11 @@ const Registration = () => {
         <span className="font-semibold text-orange-400">Free!</span>
       </p>
 
-      <form className="mx-auto flex flex-col w-2/3 max-w-lg space-y-7 bg-emerald-800 py-10 px-5 my-10 rounded">
+      <form
+        onSubmit={registerUser} 
+        className="mx-auto flex flex-col w-2/3 max-w-lg space-y-7 
+                bg-emerald-800 py-10 px-5 my-10 rounded"
+        >
         <section className="flex justify-evenly flex-col">
           <label className="text-white">Username</label>
           <input
@@ -26,6 +38,8 @@ const Registration = () => {
             name="username"
             className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
             required
+            value={username}
+            onChange={e => setUsername(e.target.value)}
           />
         </section>
 
@@ -36,6 +50,8 @@ const Registration = () => {
             name="password"
             className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
             required
+            value={password}
+            onChange={e => setPassword(e.target.value)}
           />
         </section>
 
@@ -49,7 +65,12 @@ const Registration = () => {
           />
         </section>
 
-        <button className="outline-none bg-slate-300 hover:bg-orange-400 focus:bg-orange-400 transition-colors font-bold rounded px-5 py-1.5 my-3 w-full mx-auto">
+        <button
+          type="submit"
+          className="outline-none bg-slate-300 hover:bg-orange-400 
+                  focus:bg-orange-400 transition-colors font-bold rounded 
+                    px-5 py-1.5 my-3 w-full mx-auto"
+          >
           Register
         </button>
       </form>
