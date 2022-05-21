@@ -9,8 +9,7 @@ export const createUser = (newUser) => async (dispatch) => {
         }
 
       } catch (error) {
-        console.error(error.message);
-        window.alert("Username is already in use. Enter a new name.");
+        return error;
       }
 }
 

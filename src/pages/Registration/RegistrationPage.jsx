@@ -38,12 +38,13 @@ const registerUser = (e) => {
       setPasswordCopy("");
       return;
     }
-  })
-
-  // Handle if duplicate username
-  nameInput.current.focus();
-  setIsNameTaken(true);
-  setIsPassMatch(true);
+    else {
+      // Handle if duplicate username
+      nameInput.current.focus();
+      setIsNameTaken(true);
+      setIsPassMatch(true);
+    }
+  })  
 }
 
   return (

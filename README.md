@@ -32,3 +32,7 @@ Recipe book is a web app that simplifies the storage of recipes
 - Remove Create from explore recipes
 - Make exlore show every recipe (Sort by most liked)
 - Remove delete and edit buttons from explore
+
+
+-- CREATE 404 NOT FOUND PAGE ON SERVER!!!!!!!
+-- Handles if no connection to server on registration
