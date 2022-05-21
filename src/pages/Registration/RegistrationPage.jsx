@@ -1,7 +1,7 @@
 import React from "react";
 import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
 
-const Registration = () => {
+const RegistrationPage = () => {
   return (
     <section className=" bg-emerald-700 mx-10 rounded shadow-lg shadow-emerald-800 py-20">
       <h2 className="text-white text-3xl font-bold text-center pb-10">
@@ -18,10 +18,11 @@ const Registration = () => {
         Register <span className="font-semibold text-orange-400">now</span> for{" "}
         <span className="font-semibold text-orange-400">Free!</span>
       </p>
+
       <RegistrationForm />
       
     </section>
   );
 };
 
-export default Registration;
+export default RegistrationPage;
