@@ -2,7 +2,12 @@ import * as api from "../api";
 
 export const createUser = (newUser) => async (dispatch) => {
     try {
-        await api.createUser(newUser)
+        let res = await api.createUser(newUser);
+
+        if (res.data.status === "ok"){
+          return res.data.status;
+        }
+
       } catch (error) {
         console.error(error.message);
         window.alert("Username is already in use. Enter a new name.");

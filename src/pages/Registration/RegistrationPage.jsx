@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { createUser, fetchUserId } from '../../state/actions/users';
 
 const Registration = () => {
+
 const dispatch = useDispatch();
 
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
 const [passwordCopy, setPasswordCopy] = useState("");
 const [isRegistered, setIsRegistered] = useState(false);
-
-const user = useSelector((state) => state.user);
-
 
 const registerUser = (e) => {
   e.preventDefault();
@@ -23,13 +21,17 @@ const registerUser = (e) => {
 
   let newUser = {name: username, password: password};
 
-  dispatch(createUser(newUser));
-  dispatch(fetchUserId(username));
+  dispatch(createUser(newUser)).then( result => {
+    if(result === "ok") {
+      setIsRegistered(true);
+      window.alert("Registration was successful!")
+      setUsername("");
+      setPassword("");
+      setPasswordCopy("");
+    }
+  })
   
-  console.log(user)
- // setUsername("");
-  // setPassword("");
-  // setPasswordCopy("");
+  // dispatch(fetchUserId(username));
 }
 
   return (
