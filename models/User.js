@@ -12,7 +12,6 @@ class User {
   async save() {
     const sql =
       "INSERT INTO users (id, name, password) VALUES (?, ?, ?)";
-      // db.execute(sql, [this.id, this.name, this.password]);
 
     const hash = await hashPassword(this.password);
     return db
