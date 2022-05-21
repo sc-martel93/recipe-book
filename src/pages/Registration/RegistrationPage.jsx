@@ -8,6 +8,7 @@ const dispatch = useDispatch();
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
 const [passwordCopy, setPasswordCopy] = useState("");
+const [isRegistered, setIsRegistered] = useState(false);
 
 const registerUser = (e) => {
   e.preventDefault();
@@ -19,12 +20,13 @@ const registerUser = (e) => {
 
   let newUser = {name: username, password: password};
 
-  dispatch(createUser(newUser))
-
-  // setUsername("");
-  // setPassword("");
-  // setPasswordCopy("");
+  dispatch(createUser(newUser));
+ 
+  setUsername("");
+  setPassword("");
+  setPasswordCopy("");
 }
+
 
   return (
     <section className=" bg-emerald-700 mx-10 rounded shadow-lg shadow-emerald-800 py-20">
