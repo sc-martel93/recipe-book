@@ -12,10 +12,6 @@ Recipe book is a web app that simplifies the storage of recipes
 
 -Improve register and login pages on mobile
 
-- Check if passwords match in user Registration
-    - Output error if they dont match
-- Output error when user name taken
-
 - Create login auth on server
 - Connect login to server
 
