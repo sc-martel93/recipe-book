@@ -18,3 +18,13 @@ exports.createUser = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.getUserId = async (req, res, next) => {
+  try {
+    let user = await User.findUserId(req.params.name);
+    res.status(200).json({message: "User found", user});
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+}
