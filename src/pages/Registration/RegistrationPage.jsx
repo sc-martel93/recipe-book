@@ -18,9 +18,12 @@ const registerUser = (e) => {
   } 
 
   let newUser = {name: username, password: password};
-  
-  dispatch(createUser(newUser));
 
+  dispatch(createUser(newUser))
+
+  // setUsername("");
+  // setPassword("");
+  // setPasswordCopy("");
 }
 
   return (
