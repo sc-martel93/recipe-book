@@ -4,11 +4,19 @@ import { createUser } from '../../state/actions/users';
 
 const Registration = () => {
 const dispatch = useDispatch();
+
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
+const [passwordCopy, setPasswordCopy] = useState("");
 
 const registerUser = (e) => {
   e.preventDefault();
+
+  if(password !== passwordCopy) {
+    window.alert("Passwords must match!");
+    return;
+  } 
+
   let newUser = {name: username, password: password};
   dispatch(createUser(newUser));
 }
@@ -66,6 +74,8 @@ const registerUser = (e) => {
             name="password"
             className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
             required
+            value={passwordCopy}
+            onChange={e => setPasswordCopy(e.target.value)}
           />
         </section>
 
