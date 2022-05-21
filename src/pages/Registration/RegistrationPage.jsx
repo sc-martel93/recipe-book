@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createUser, fetchUserId } from '../../state/actions/users';
+import { Link } from "react-router-dom";
+import { createUser } from '../../state/actions/users';
 
 const Registration = () => {
 
@@ -10,6 +11,7 @@ const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
 const [passwordCopy, setPasswordCopy] = useState("");
 const [isRegistered, setIsRegistered] = useState(false);
+
 
 const registerUser = (e) => {
   e.preventDefault();
@@ -22,16 +24,18 @@ const registerUser = (e) => {
   let newUser = {name: username, password: password};
 
   dispatch(createUser(newUser)).then( result => {
+    console.log(result)
     if(result === "ok") {
       setIsRegistered(true);
-      window.alert("Registration was successful!")
       setUsername("");
       setPassword("");
       setPasswordCopy("");
+      return;
     }
   })
-  
-  // dispatch(fetchUserId(username));
+
+  // 
+
 }
 
   return (
@@ -50,6 +54,24 @@ const registerUser = (e) => {
         Register <span className="font-semibold text-orange-400">now</span> for{" "}
         <span className="font-semibold text-orange-400">Free!</span>
       </p>
+
+      {isRegistered ? 
+      
+      <section className="mx-auto flex flex-col w-2/3 max-w-lg space-y- 
+      bg-emerald-800 py-10 px-5 my-10 rounded">
+         <p className="text-white text-center text-lg">Registration successful! Click to login.</p>
+
+        <Link
+          to="/login"
+          className="outline-none bg-slate-300 hover:bg-orange-400 
+          focus:bg-orange-400 transition-colors font-bold rounded 
+          px-5 py-1.5 my-3 w-full mx-auto text-center mt-12"
+          >
+            Login
+          </Link>
+      </section>
+    
+      :             
 
       <form
         onSubmit={registerUser} 
@@ -101,6 +123,7 @@ const registerUser = (e) => {
           Register
         </button>
       </form>
+    } {/*End of conditional */}
     </section>
   );
 };
