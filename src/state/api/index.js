@@ -7,3 +7,4 @@ export const createRecipe = (newRecipe) => axios.post(`${URL}/recipes`, newRecip
 export const deleteRecipe = (id) => axios.delete(`${URL}/recipes/${id}`);
 
 export const createUser = (newUser) => axios.post(`${URL}/register`, newUser);
+export const fetchUserId = (name) => axios.get(`${URL}/register/${name}`)

@@ -2,7 +2,7 @@ import * as api from "../api";
 
 export const createUser = (newUser) => async (dispatch) => {
     try {
-        await api.createUser(newUser);
+        await api.createUser(newUser)
       } catch (error) {
         console.error(error.message);
         window.alert("Username is already in use. Enter a new name.");
@@ -10,5 +10,14 @@ export const createUser = (newUser) => async (dispatch) => {
 }
 
 export const fetchUserId = (username) => async (dispatch) =>{
+  try {
+    const user  = await api.fetchUserId(username)
+      .then((user) => {
+        dispatch({type: "SET_ID", payload: user.data.userId[0].id});
+      })
 
+    
+  } catch (error) {
+    console.error(error.message);
+  }
 }

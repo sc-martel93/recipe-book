@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { createUser } from '../../state/actions/users';
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createUser, fetchUserId } from '../../state/actions/users';
 
 const Registration = () => {
 const dispatch = useDispatch();
@@ -9,6 +9,9 @@ const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
 const [passwordCopy, setPasswordCopy] = useState("");
 const [isRegistered, setIsRegistered] = useState(false);
+
+const user = useSelector((state) => state.user);
+
 
 const registerUser = (e) => {
   e.preventDefault();
@@ -21,12 +24,13 @@ const registerUser = (e) => {
   let newUser = {name: username, password: password};
 
   dispatch(createUser(newUser));
- 
-  setUsername("");
-  setPassword("");
-  setPasswordCopy("");
+  dispatch(fetchUserId(username));
+  
+  console.log(user)
+ // setUsername("");
+  // setPassword("");
+  // setPasswordCopy("");
 }
-
 
   return (
     <section className=" bg-emerald-700 mx-10 rounded shadow-lg shadow-emerald-800 py-20">
