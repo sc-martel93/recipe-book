@@ -8,3 +8,4 @@ export const deleteRecipe = (id) => axios.delete(`${URL}/recipes/${id}`);
 
 export const createUser = (newUser) => axios.post(`${URL}/user/register`, newUser);
 
+export const loginUser = (userInfo) => axios.post(`${URL}/user/login`, userInfo);

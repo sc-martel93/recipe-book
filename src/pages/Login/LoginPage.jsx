@@ -1,6 +1,31 @@
-import React from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../../state/actions/users"
 
 const LoginPage = () => {
+  const dispatch = useDispatch();
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [token, setToken] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+const handleLogin = (e) => {
+  e.preventDefault();
+
+  const userInfo = {username: username, password: password};
+  dispatch(loginUser(userInfo))
+    .then((result) => {
+      if(result.data.status === "ok")
+      {
+        setToken(result.data.token);
+        console.log(token)
+      }
+      
+    })
+
+}
+
   return (
     <section className=" bg-emerald-700 mx-10 rounded shadow-lg shadow-emerald-800 py-20">
       <h2 className="text-white text-3xl font-bold text-center pb-10">
@@ -14,12 +39,18 @@ const LoginPage = () => {
         recipes
       </p>
 
-      <form className="mx-auto flex flex-col w-2/3 max-w-lg space-y-7 bg-emerald-800 py-10 px-5 my-10 rounded">
+      <form
+        onSubmit={e => handleLogin(e)}
+        className="mx-auto flex flex-col w-2/3 max-w-lg space-y-7 bg-emerald-800 py-10 px-5 my-10 rounded"
+        >
         <section className="flex justify-evenly flex-col">
           <label className="text-white">Username</label>
           <input
             type="text"
             name="username"
+            placeholder="Username"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
             className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
             required
           />
@@ -30,12 +61,18 @@ const LoginPage = () => {
           <input
             type="password"
             name="password"
+            placeholder="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
             className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
             required
           />
         </section>
 
-        <button className="outline-none bg-slate-300 hover:bg-orange-400 focus:bg-orange-400 transition-colors font-bold rounded px-5 py-1.5 my-3 w-full mx-auto">
+        <button
+          type="submit"
+          className="outline-none bg-slate-300 hover:bg-orange-400 focus:bg-orange-400 transition-colors font-bold rounded px-5 py-1.5 my-3 w-full mx-auto"
+        >
           Login
         </button>
       </form>

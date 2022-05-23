@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { createUser } from "../../state/actions/users";
@@ -29,7 +29,8 @@ const RegistrationForm = () => {
 
     let newUser = { name: username, password: password };
 
-    dispatch(createUser(newUser)).then((result) => {
+    dispatch(createUser(newUser))
+    .then((result) => {
       if (result === "ok") {
         setIsRegistered(true);
         setUsername("");

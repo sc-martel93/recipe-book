@@ -13,3 +13,12 @@ export const createUser = (newUser) => async (dispatch) => {
       }
 }
 
+export const loginUser = (userInfo) => async (dispatch) => {
+  try {
+    let results = await api.loginUser(userInfo);
+    
+    return results;
+  } catch (error) {
+    return error;
+  }
+}
