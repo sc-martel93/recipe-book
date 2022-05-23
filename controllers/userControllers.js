@@ -17,3 +17,9 @@ exports.createUser = async (req, res, next) => {
   }
 };
 
+exports.findUser = async (req, res, next) => {
+  const { username, password } = req.body;
+  
+  const user = await user.find(username);
+}
+

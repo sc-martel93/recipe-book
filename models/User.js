@@ -9,17 +9,27 @@ class User {
     this.password = password;
   }
 
-  async save() {
-    const sql =
+  async save () {
+    const SQL =
       "INSERT INTO users (id, name, password) VALUES (?, ?, ?)";
 
     const hash = await hashPassword(this.password);
     return db
-      .execute(sql, [this.id, this.name, hash])
+      .execute(SQL, [this.id, this.name, hash])
       .catch((err) => {
         return err.code;
       });
   }
+
+
+  async find (username) {
+    const SQL = "SELECT FROM users where name = (?)";
+    return db.execute(SQL, [username])
+      .catch(err => {
+        return err.code
+      });
+  }
+  
 }
 
 const hashPassword = (password) => {
