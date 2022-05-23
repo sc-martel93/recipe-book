@@ -9,19 +9,36 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [token, setToken] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
 const handleLogin = (e) => {
   e.preventDefault();
 
   const userInfo = {username: username, password: password};
   dispatch(loginUser(userInfo))
-    .then((result) => {
+    .then((result) =>
+    {
       if(result.data.status === "ok")
       {
+        console.log("logged in");
         setToken(result.data.token);
-        console.log(token)
+        setIsLoggedIn(true);
+        setIsError(false);
+        setErrorMessage("")
+        return;
       }
-      
+      else
+      {
+        setIsError(true);
+        setErrorMessage(result.data.message)
+        console.log(result.data.message)
+      }
+    })
+    .catch((error) => 
+    {
+      console.log(error);
+      throw error;
     })
 
 }
@@ -41,10 +58,14 @@ const handleLogin = (e) => {
 
       <form
         onSubmit={e => handleLogin(e)}
-        className="mx-auto flex flex-col w-2/3 max-w-lg space-y-7 bg-emerald-800 py-10 px-5 my-10 rounded"
+        className="mx-auto flex flex-col w-2/3 max-w-lg space-y-7 bg-emerald-800 py-5 px-5 my-10 rounded"
         >
         <section className="flex justify-evenly flex-col">
-          <label className="text-white">Username</label>
+          { isError ? 
+              <p className="text-orange-400 text-center">{errorMessage}</p> 
+            : null 
+          }
+          <label className="text-white pt-5">Username</label>
           <input
             type="text"
             name="username"
