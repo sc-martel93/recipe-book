@@ -17,13 +17,3 @@ exports.createUser = async (req, res, next) => {
   }
 };
 
-exports.getUserId = async (req, res, next) => {
-  try {
-    let [userId, _] = await User.findUserId(req.params.name);
-    res.status(200).json({ status: "ok", message: "User found", userId});
-  } catch (error) {
-    console.log(error);
-    next(error);
-    return res.status(404).json({ status: "error", message: "User name not found" });
-  }
-}

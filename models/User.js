@@ -20,12 +20,6 @@ class User {
         return err.code;
       });
   }
-
-  static findUserId = (name) => {
-    const sql = "SELECT id FROM users WHERE name = (?)";
-    return db.execute(sql, [name]);
-  };
-
 }
 
 const hashPassword = (password) => {
