@@ -35,7 +35,7 @@ exports.login = async (req, res, next) => {
       if(result){
         const token = jwt.sign({ id: user[0].id, username: user[0].name}, JWT_SECRET);
 
-        return res.status(201).json({ status: "ok", data: token });
+        return res.status(201).json({ status: "ok", token: token });
       }
       else
         return res.status(404).json({ status: "error", message: "Incorrect login."})
