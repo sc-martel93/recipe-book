@@ -24,10 +24,10 @@ exports.createUser = async (req, res, next) => {
 
 exports.login = async (req, res, next) => {
   const { username, password } = req.body;
-  
+
   try {
     const [ user , _ ]= await User.find(username);
-    
+
     if(user.length === 0)
       return res.status(404).json({ status: "error", message: "Incorrect login."})
 
