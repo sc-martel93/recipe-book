@@ -1,4 +1,5 @@
 const User = require("../models/User");
+const bcrypt = require("bcrypt");
 
 exports.createUser = async (req, res, next) => {
   try {
@@ -21,12 +22,17 @@ exports.login = async (req, res, next) => {
   const { username, password } = req.body;
   
   try {
-    const [ user, _ ]= await User.find(username);
+    const [ user , _ ]= await User.find(username);
     
     if(user.length === 0)
       return res.status(404).json({ status: "error", message: "Incorrect login."})
-    
-    return res.status(201).json({ status: "ok", data: user });
+
+    await bcrypt.compare(password, user[0].password, (err, result) => {
+      if(result)
+        return res.status(201).json({ status: "ok", data: "JWT" });
+      else
+        return res.status(404).json({ status: "error", message: "Incorrect login."})
+    })
     
   } catch (error) {
     return res.status(500).json({ status : "error", message: "Internal server error." })
