@@ -9,6 +9,7 @@ const RegistrationForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordCopy, setPasswordCopy] = useState("");
+
   const [isRegistered, setIsRegistered] = useState(false);
   const [isNameTaken, setIsNameTaken] = useState(false);
   const [isPassMatch, setIsPassMatch] = useState(true);
@@ -63,7 +64,8 @@ const RegistrationForm = () => {
             Login
           </Link>
         </section>
-      ) : (
+      ) 
+      : (
         <form
           onSubmit={registerUser}
           className="mx-auto flex flex-col w-2/3 max-w-lg space-y-7 

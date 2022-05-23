@@ -13,15 +13,3 @@ export const createUser = (newUser) => async (dispatch) => {
       }
 }
 
-export const fetchUserId = (username) => async (dispatch) =>{
-  try {
-    const user  = await api.fetchUserId(username)
-      .then((user) => {
-        dispatch({type: "SET_ID", payload: user.data.userId[0].id});
-      })
-
-    
-  } catch (error) {
-    console.error(error.message);
-  }
-}
