@@ -16,7 +16,6 @@ exports.createUser = async (req, res, next) => {
     }
     return res.status(201).json({ status: "ok", message: "User Created Successfully", name: user.name });
   } catch (error) {
-    console.log(error);
     next(error);
     return res.status(503).json({ status: "error", message: "Service error" });
   }
@@ -26,19 +25,20 @@ exports.login = async (req, res, next) => {
   const { username, password } = req.body;
 
   try {
-    const [ user , _ ]= await User.find(username);
+    const [ user , _ ] = await User.find(username);
 
     if(user.length === 0)
-      return res.status(404).json({ status: "error", message: "Incorrect login."})
+      return res.status(401).json({ status: "error", message: "Incorrect login."})
 
-    await bcrypt.compare(password, user[0].password, (err, result) => {
+    bcrypt.compare(password, user[0].password, (err, result) => {
       if(result){
         const token = jwt.sign({ id: user[0].id, username: user[0].name}, JWT_SECRET);
 
         return res.status(201).json({ status: "ok", token: token });
       }
       else
-        return res.status(404).json({ status: "error", message: "Incorrect login."})
+     
+        return res.status(401).send({ status: "error", message: "Incorrect login."})
     })
 
   } catch (error) {
