@@ -17,9 +17,20 @@ exports.createUser = async (req, res, next) => {
   }
 };
 
-exports.findUser = async (req, res, next) => {
+exports.login = async (req, res, next) => {
   const { username, password } = req.body;
   
-  const user = await user.find(username);
+  try {
+    const [ user, _ ]= await User.find(username);
+    
+    if(user.length === 0)
+      return res.status(404).json({ status: "error", message: "Incorrect login."})
+    
+    return res.status(201).json({ status: "ok", data: user });
+    
+  } catch (error) {
+    return res.status(500).json({ status : "error", message: "Internal server error." })
+  }
+ 
 }
 

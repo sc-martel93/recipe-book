@@ -22,9 +22,10 @@ class User {
   }
 
 
-  async find (username) {
-    const SQL = "SELECT FROM users where name = (?)";
-    return db.execute(SQL, [username])
+  static async find (username) {
+    const SQL = "SELECT * FROM users WHERE name = (?)";
+    return db
+      .execute(SQL, [ username ])
       .catch(err => {
         return err.code
       });
