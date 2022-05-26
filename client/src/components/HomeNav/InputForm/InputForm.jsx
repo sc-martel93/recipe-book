@@ -33,6 +33,7 @@ const InputForm = () => {
         <input
           type="text"
           name="name"
+          placeholder="Recipe Name"
           value={recipeData.name}
           onChange={(e) =>
             setRecipeData({ ...recipeData, name: e.target.value })
@@ -41,11 +42,12 @@ const InputForm = () => {
           required
         />
 
-        <label className="mt-2">Ingredients: </label>
+        <label className="mt-2">Ingredients (comma between):  </label>
         <input
           type="text"
           name="ingredient"
           value={recipeData.ingredients}
+          placeholder="Ingredient 1, ingredient 2, ..."
           onChange={(e) =>
             setRecipeData({ ...recipeData, ingredients: e.target.value })
           }
@@ -57,6 +59,7 @@ const InputForm = () => {
         <textarea
           name="directions"
           value={recipeData.directions}
+          placeholder="Directions..."
           onChange={(e) =>
             setRecipeData({ ...recipeData, directions: e.target.value })
           }
@@ -68,6 +71,7 @@ const InputForm = () => {
         <textarea
           name="notes"
           value={recipeData.notes}
+          placeholder="Optional notes..."
           onChange={(e) =>
             setRecipeData({ ...recipeData, notes: e.target.value })
           }
