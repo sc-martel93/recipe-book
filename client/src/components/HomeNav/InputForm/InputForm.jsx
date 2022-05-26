@@ -24,7 +24,7 @@ const InputForm = () => {
   };
 
   return (
-    <section className="bg-emerald-600">
+    <section className="bg-blue-400">
       <form
         onSubmit={(e) => handleSubmit(e)}
         className="mx-auto flex flex-col w-2/3 max-w-3xl"
@@ -37,7 +37,7 @@ const InputForm = () => {
           onChange={(e) =>
             setRecipeData({ ...recipeData, name: e.target.value })
           }
-          className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
+          className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
           required
         />
 
@@ -49,7 +49,7 @@ const InputForm = () => {
           onChange={(e) =>
             setRecipeData({ ...recipeData, ingredients: e.target.value })
           }
-          className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
+          className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
           required
         />
 
@@ -60,7 +60,7 @@ const InputForm = () => {
           onChange={(e) =>
             setRecipeData({ ...recipeData, directions: e.target.value })
           }
-          className="rounded px-2 py-1.5 resize-none outline-none hover:bg-orange-200 focus:bg-orange-200"
+          className="rounded px-2 py-1.5 resize-none outline-none hover:bg-yellow-200 focus:bg-yellow-200"
           required
         />
 
@@ -71,12 +71,12 @@ const InputForm = () => {
           onChange={(e) =>
             setRecipeData({ ...recipeData, notes: e.target.value })
           }
-          className="rounded px-2 py-1.5 resize-none outline-none hover:bg-orange-200 focus:bg-orange-200"
+          className="rounded px-2 py-1.5 resize-none outline-none hover:bg-yellow-200 focus:bg-yellow-200"
         />
 
         <button
           type="submit"
-          className="outline-none bg-slate-300 hover:bg-orange-400 focus:bg-orange-400 transition-colors font-bold rounded px-5 py-1.5 my-3"
+          className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 transition-colors font-bold rounded px-5 py-1.5 my-3"
         >
           Submit
         </button>
