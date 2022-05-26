@@ -27,11 +27,11 @@ const RegistrationForm = () => {
       return;
     }
 
-    let newUser = { name: username, password: password };
+    const newUser = { username: username, password: password };
 
     dispatch(createUser(newUser))
-    .then((result) => {
-      if (result === "ok") {
+      .then((result) => {
+      if (result.status === "ok") {
         setIsRegistered(true);
         setUsername("");
         setPassword("");
