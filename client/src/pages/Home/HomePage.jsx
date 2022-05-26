@@ -56,7 +56,7 @@ const HomePage = () => {
           </button>
         </nav>
       </header>
-      { register ? <RegistrationForm /> : null }
+      { register ? <RegistrationForm handleLogin={handleLogin}/> : null }
       { login ? <LoginForm /> : null }
     </main>
   );

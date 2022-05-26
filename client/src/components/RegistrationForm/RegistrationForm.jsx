@@ -1,9 +1,8 @@
 import { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import { createUser } from "../../state/actions/users";
 
-const RegistrationForm = () => {
+const RegistrationForm = (props) => {
   const dispatch = useDispatch();
 
   const [username, setUsername] = useState("");
@@ -45,6 +44,11 @@ const RegistrationForm = () => {
       }
     });
   };
+
+  const handleClick = () => {
+   console.log() 
+  }
+
   return (
     <>
       {isRegistered ? (
@@ -56,14 +60,14 @@ const RegistrationForm = () => {
             Registration successful! Click to login.
           </p>
 
-          <Link
-            to="/login"
+          <button
+            onClick={() => props.handleLogin()}
             className="outline-none bg-slate-300 hover:bg-orange-400 
             focus:bg-orange-400 transition-colors font-bold rounded 
             px-5 py-1.5 my-3 w-full mx-auto text-center mt-12"
           >
             Login
-          </Link>
+          </button>
         </section>
       ) 
       : (
