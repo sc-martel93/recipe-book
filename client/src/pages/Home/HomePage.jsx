@@ -6,6 +6,20 @@ const HomePage = () => {
   const [login, setLogin] = useState(false);
   const [register, setRegister] = useState(false);
 
+  const handleRegister = () => {
+    setRegister(register => !register);
+
+    if(login)
+      setLogin(login => !login);
+  }
+
+  const handleLogin = () => {
+    setLogin(login => !login);
+
+    if(register)
+      setRegister(register => !register);
+  }
+
   return (
     <main>
       <header className="bg-emerald-700 shadow-lg shadow-emerald-800 h-72 flex items-center justify-center flex-col space-y-8">
@@ -25,7 +39,7 @@ const HomePage = () => {
 
         <nav className="flex justify-around mx-auto space-x-5">
           <button
-            onClick={() => setLogin(login => !login)}
+            onClick={handleLogin}
             className="outline-none bg-slate-300 hover:bg-orange-400 
                     focus:bg-orange-400 transition-colors font-bold 
                       rounded px-5 py-1.5 mx-auto"
@@ -33,7 +47,7 @@ const HomePage = () => {
             Login
           </button>
           <button
-            onClick={() => setRegister(register => !register)}
+            onClick={handleRegister}
             className="outline-none bg-slate-300 hover:bg-orange-400 
                     focus:bg-orange-400 transition-colors font-bold 
                       rounded px-5 py-1.5 mx-auto"
