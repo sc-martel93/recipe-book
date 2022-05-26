@@ -6,7 +6,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { setIndex } from "../../state/actions/recipeIndex";
 import InputForm from "./InputForm/InputForm";
 
-const NavBar = () => {
+const HomeNav = () => {
   const dispatch = useDispatch();
   const recipes = useSelector((state) => state.recipes);
 
@@ -69,4 +69,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default HomeNav;

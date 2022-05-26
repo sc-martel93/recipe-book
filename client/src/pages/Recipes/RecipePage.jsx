@@ -1,10 +1,10 @@
-import NavBar from "../../components/NavBar/NavBar";
+import HomeNav from "../../components/HomeNav/HomeNav";
 import RecipeWrapper from "../../components/RecipeWrapper/RecipeWrapper";
 
 const RecipePage = () => {
   return (
     <>
-      <NavBar />
+      <HomeNav />
       <RecipeWrapper />
     </>
   );
