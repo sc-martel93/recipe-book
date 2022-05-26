@@ -25,6 +25,7 @@ const InputForm = (props) => {
     });
 
     props.setIsCreating(false);
+    alert("Recipe Created!");
   };
 
   return (
