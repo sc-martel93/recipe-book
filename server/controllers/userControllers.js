@@ -14,7 +14,7 @@ exports.createUser = async (req, res, next) => {
     if (result === "ER_DUP_ENTRY") {
       return res.status(409).json({ status: "error", message: "User name already exists" });
     }
-    return res.status(201).json({ status: "ok", message: "User Created Successfully", name: user.name });
+    return res.status(201).json({ status: "ok", message: "User Created Successfully", username: user.username });
   } catch (error) {
     next(error);
     return res.status(503).json({ status: "error", message: "Service error" });
@@ -32,7 +32,7 @@ exports.login = async (req, res, next) => {
 
     bcrypt.compare(password, user[0].password, (err, result) => {
       if(result){
-        const token = jwt.sign({ id: user[0].id, username: user[0].name}, JWT_SECRET);
+        const token = jwt.sign({ id: user[0].id, username: user[0].username}, JWT_SECRET);
 
         return res.status(201).json({ status: "ok", token: token });
       }

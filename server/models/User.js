@@ -3,19 +3,19 @@ const uuid = require("uuid");
 const bcrypt = require("bcrypt");
 
 class User {
-  constructor({ name, password }) {
+  constructor({ username, password }) {
     this.id = uuid.v4();
-    this.name = name;
+    this.username = username;
     this.password = password;
   }
 
   async save () {
     const SQL =
-      "INSERT INTO users (id, name, password) VALUES (?, ?, ?)";
+      "INSERT INTO users (id, username, password) VALUES (?, ?, ?)";
 
     const hash = await hashPassword(this.password);
     return db
-      .execute(SQL, [this.id, this.name, hash])
+      .execute(SQL, [this.id, this.username, hash])
       .catch((err) => {
         return err.code;
       });
@@ -23,7 +23,7 @@ class User {
 
 
   static async find (username) {
-    const SQL = "SELECT * FROM users WHERE name = (?)";
+    const SQL = "SELECT * FROM users WHERE username = (?)";
     return db
       .execute(SQL, [ username ])
       .catch(err => {
