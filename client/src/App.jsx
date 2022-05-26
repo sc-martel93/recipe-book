@@ -9,7 +9,7 @@ import RegistrationPage from "./pages/Registration/RegistrationPage";
 function App() {
   return (
     <BrowserRouter>
-      <main className="h-100 min-h-screen bg-emerald-500 font-poppins">
+      <main className="h-100 min-h-screen bg-blue-300 font-poppins">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="register" element={<RegistrationPage />} />

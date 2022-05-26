@@ -74,7 +74,7 @@ const RegistrationForm = (props) => {
         <form
           onSubmit={registerUser}
           className="mx-auto flex flex-col w-2/3 max-w-lg space-y-7 
-                  bg-emerald-800 py-5 px-5 my-10 rounded"
+                  bg-blue-900 py-5 px-5 my-10 rounded"
         >
           <section className="flex justify-evenly flex-col">
             {isNameTaken ? (

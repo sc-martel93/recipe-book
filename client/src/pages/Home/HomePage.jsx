@@ -22,7 +22,7 @@ const HomePage = () => {
 
   return (
     <main>
-      <header className="bg-emerald-700 shadow-lg shadow-emerald-800 h-72 flex items-center justify-center flex-col space-y-8">
+      <header className="bg-blue-900 shadow-lg shadow-slate-600 h-72 flex items-center justify-center flex-col space-y-8">
         <h1 className="text-5xl md:text-6xl lg:text-6xl">
           Recipe <span className="font-semibold text-orange-400">Book</span>
         </h1>
