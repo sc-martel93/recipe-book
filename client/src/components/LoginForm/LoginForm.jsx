@@ -69,7 +69,7 @@ const handleLogin = (e) => {
           <input
             type="password"
             name="password"
-            placeholder="password"
+            placeholder="Password"
             value={password}
             onChange={e => setPassword(e.target.value)}
             className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"

@@ -90,6 +90,7 @@ const RegistrationForm = (props) => {
               ref={nameInput}
               type="text"
               name="username"
+              placeholder="Username"
               className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
               required
               value={username}
@@ -103,6 +104,7 @@ const RegistrationForm = (props) => {
               ref={passInput}
               type="password"
               name="password"
+              placeholder="Password"
               className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
               required
               value={password}
@@ -115,6 +117,7 @@ const RegistrationForm = (props) => {
             <input
               type="password"
               name="password"
+              placeholder="Confirm Password"
               className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
               required
               value={passwordCopy}
