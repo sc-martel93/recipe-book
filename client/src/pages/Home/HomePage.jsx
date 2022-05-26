@@ -60,12 +60,12 @@ const HomePage = () => {
             Register
           </button>
         </nav>
-      </header>
+      </header> 
       { register ? <RegistrationForm handleLogin={handleLogin}/> : null }
       { login ? <LoginForm /> : null }
       
       <section className="max-w-6xl space-y-5 mx-auto">
-        <h3 h3 className="text-xl text-center font-bold mt-5">Desserts!</h3>
+        <h3 className="text-xl text-center font-bold mt-5">Desserts!</h3>
 
         <img src={cake} alt="cake" className="w-5/6 mx-auto" />
         <h3 className="text-xl text-center font-bold">Pasta!</h3>
