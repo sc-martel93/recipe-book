@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 import { loginUser } from "../../state/actions/users"
 
 const LoginForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -19,9 +22,9 @@ const handleLogin = (e) => {
     {
       if(result.status === "ok")
       {
-        console.log("logged in");
         setIsError(false);
         setErrorMessage("")
+        navigate("/recipes");
         return;
       }
       else
