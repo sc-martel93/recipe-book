@@ -19,10 +19,10 @@ const handleLogin = (e) => {
   dispatch(loginUser(userInfo))
     .then((result) =>
     {
-      if(result.data.status === "ok")
+      if(result.status === "ok")
       {
         console.log("logged in");
-        setToken(result.data.token);
+        setToken(result.token);
         setIsLoggedIn(true);
         setIsError(false);
         setErrorMessage("")
@@ -31,8 +31,8 @@ const handleLogin = (e) => {
       else
       {
         setIsError(true);
-        setErrorMessage(result.data.message)
-        console.log(result.data.message)
+        setErrorMessage(result.message)
+        console.log(result.message)
       }
     })
     .catch((error) => 
