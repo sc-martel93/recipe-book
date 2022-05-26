@@ -10,8 +10,6 @@ Recipe book is a web app that simplifies storinf and sharing recipes
 
 ## TODO
 
--Improve register and login pages on mobile
-
 - Add ability to edit recipes client side and server side
 
 --- Redesign Recipes in DB
@@ -21,10 +19,7 @@ Recipe book is a web app that simplifies storinf and sharing recipes
 - Add optional image to recipe
 - Add sort options ?
 
-- Remove Create from explore recipes
-- Make exlore show every recipe (Sort by most liked)
-- Remove delete and edit buttons from explore
-
+- Create public explore page new
+    - NavBar with search and sort options (alphabetically, most     liked,  least liked)
 
 -- CREATE 404 NOT FOUND PAGE ON SERVER!!!!!!!
--- Handles if no connection to server on registration
