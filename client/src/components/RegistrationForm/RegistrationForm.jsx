@@ -62,8 +62,8 @@ const RegistrationForm = (props) => {
 
           <button
             onClick={() => props.handleLogin()}
-            className="outline-none bg-slate-300 hover:bg-orange-400 
-            focus:bg-orange-400 transition-colors font-bold rounded 
+            className="outline-none bg-slate-300 hover:bg-yellow-400 
+            focus:bg-yellow-400 transition-colors font-bold rounded 
             px-5 py-1.5 my-3 w-full mx-auto text-center mt-12"
           >
             Login
@@ -78,11 +78,11 @@ const RegistrationForm = (props) => {
         >
           <section className="flex justify-evenly flex-col">
             {isNameTaken ? (
-              <p className="text-orange-400">Username already registered.</p>
+              <p className="text-yellow-400">Username already registered.</p>
             ) : null}
 
             {isPassMatch ? null : (
-              <p className="text-orange-400">Passwords must match!</p>
+              <p className="text-yellow-400">Passwords must match!</p>
             )}
 
             <label className="text-white pt-5">Username</label>
@@ -91,7 +91,7 @@ const RegistrationForm = (props) => {
               type="text"
               name="username"
               placeholder="Username"
-              className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
+              className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
               required
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -105,7 +105,7 @@ const RegistrationForm = (props) => {
               type="password"
               name="password"
               placeholder="Password"
-              className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
+              className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -118,7 +118,7 @@ const RegistrationForm = (props) => {
               type="password"
               name="password"
               placeholder="Confirm Password"
-              className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
+              className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
               required
               value={passwordCopy}
               onChange={(e) => setPasswordCopy(e.target.value)}
@@ -127,8 +127,8 @@ const RegistrationForm = (props) => {
 
           <button
             type="submit"
-            className="outline-none bg-slate-300 hover:bg-orange-400 
-                    focus:bg-orange-400 transition-colors font-bold rounded 
+            className="outline-none bg-slate-300 hover:bg-yellow-400 
+                    focus:bg-yellow-400 transition-colors font-bold rounded 
                       px-5 py-1.5 my-3 w-full mx-auto"
           >
             Register
