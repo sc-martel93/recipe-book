@@ -37,12 +37,12 @@ const HomePage = () => {
           </p>
         </section>
 
-        <nav className="flex justify-around mx-auto space-x-5">
+        <nav className="flex justify-evenly mx-auto lg:w-7/12 md:w-7/12 w-full">
           <button
             onClick={handleLogin}
             className="outline-none bg-slate-300 hover:bg-yellow-400 
                     focus:bg-yellow-400 transition-colors font-bold 
-                      rounded px-5 py-1.5 mx-auto"
+                      rounded px-5 py-1.5 mx-auto w-1/3 min-w-fit"
           >
             Login
           </button>
@@ -50,7 +50,7 @@ const HomePage = () => {
             onClick={handleRegister}
             className="outline-none bg-slate-300 hover:bg-yellow-400 
                     focus:bg-yellow-400 transition-colors font-bold 
-                      rounded px-5 py-1.5 mx-auto"
+                      rounded px-5 py-1.5 mx-auto w-1/3 min-w-fit"
           >
             Register
           </button>
