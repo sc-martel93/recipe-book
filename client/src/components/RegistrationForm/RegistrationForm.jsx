@@ -74,7 +74,7 @@ const RegistrationForm = (props) => {
         <form
           onSubmit={registerUser}
           className="mx-auto flex flex-col w-4/5 max-w-lg space-y-7 
-                  bg-blue-900 py-5 px-5 my-10 rounded shadow-xl
+                  bg-blue-900 pt-5 pb-10 px-5 my-10 rounded shadow-xl
                   shadow-slate-600"
         >
           <section className="flex justify-evenly flex-col">
@@ -130,7 +130,7 @@ const RegistrationForm = (props) => {
             type="submit"
             className="outline-none bg-slate-300 hover:bg-yellow-400 
                     focus:bg-yellow-400 transition-colors font-bold rounded 
-                      px-5 py-1.5 my-3 w-full mx-auto"
+                      px-5 py-1.5 w-full mx-auto"
           >
             Register
           </button>
