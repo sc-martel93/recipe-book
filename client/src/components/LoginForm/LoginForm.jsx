@@ -49,7 +49,7 @@ const handleLogin = (e) => {
       >
         <section className="flex justify-evenly flex-col">
           { isError ? 
-              <p className="text-orange-400 text-center">{errorMessage}</p> 
+              <p className="text-yellow-400 text-center">{errorMessage}</p> 
             : null 
           }
           <label className="text-white pt-5">Username</label>
@@ -59,7 +59,7 @@ const handleLogin = (e) => {
             placeholder="Username"
             value={username}
             onChange={e => setUsername(e.target.value)}
-            className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
+            className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
             required
           />
         </section>
@@ -72,13 +72,13 @@ const handleLogin = (e) => {
             placeholder="Password"
             value={password}
             onChange={e => setPassword(e.target.value)}
-            className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
+            className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
             required
           />
         </section>
       <button
         type="submit"
-        className="outline-none bg-slate-300 hover:bg-orange-400 focus:bg-orange-400 transition-colors font-bold rounded px-5 py-1.5 my-3 w-full mx-auto"
+        className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 transition-colors font-bold rounded px-5 py-1.5 my-3 w-full mx-auto"
       >
         Login
       </button>
