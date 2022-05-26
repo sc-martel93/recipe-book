@@ -74,11 +74,11 @@ const RegistrationForm = (props) => {
                   shadow-slate-600"
         >
           <section className="flex justify-evenly flex-col">
-            {isNameTaken ? (
+            {isNameTaken && (
               <p className="text-yellow-400">Username already registered.</p>
-            ) : null}
+            )}
 
-            {isPassMatch ? null : (
+            {!isPassMatch && (
               <p className="text-yellow-400">Passwords must match!</p>
             )}
 
