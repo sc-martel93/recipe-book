@@ -45,16 +45,12 @@ const RegistrationForm = (props) => {
     });
   };
 
-  const handleClick = () => {
-   console.log() 
-  }
-
   return (
     <>
       {isRegistered ? (
         <section
           className="mx-auto flex flex-col w-2/3 max-w-lg space-y- 
-        bg-emerald-800 py-10 px-5 my-10 rounded"
+          bg-blue-900 py-10 px-5 my-10 rounded"
         >
           <p className="text-white text-center text-lg">
             Registration successful! Click to login.
