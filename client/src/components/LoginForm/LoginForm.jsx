@@ -49,9 +49,8 @@ const handleLogin = (e) => {
                 shadow-slate-600"
       >
         <section className="flex justify-evenly flex-col">
-          { isError ? 
+          { isError &&
               <p className="text-yellow-400 text-center">{errorMessage}</p> 
-            : null 
           }
           <label className="text-white pt-5">Username</label>
           <input
