@@ -6,7 +6,7 @@ date: 5/26/2022
 
 ## About
 
-Recipe book is a web app that simplifies the storage of recipes
+Recipe book is a web app that simplifies storinf and sharing recipes
 
 ## TODO
 
