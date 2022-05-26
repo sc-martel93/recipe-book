@@ -12,16 +12,12 @@ Recipe book is a web app that simplifies the storage of recipes
 
 -Improve register and login pages on mobile
 
-- Create login auth on server
-- Connect login to server
-
 - Add ability to edit recipes client side and server side
 
 --- Redesign Recipes in DB
 
 - Add created_by to Recipe
-- Add is vegetarian/gluten free to recipes
-- Add cooktime to recipe
+- Add likes
 - Add optional image to recipe
 - Add sort options ?
 
