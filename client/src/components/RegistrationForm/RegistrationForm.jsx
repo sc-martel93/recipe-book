@@ -1,0 +1,136 @@
+import { useState, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { createUser } from "../../state/actions/users";
+
+const RegistrationForm = () => {
+  const dispatch = useDispatch();
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordCopy, setPasswordCopy] = useState("");
+
+  const [isRegistered, setIsRegistered] = useState(false);
+  const [isNameTaken, setIsNameTaken] = useState(false);
+  const [isPassMatch, setIsPassMatch] = useState(true);
+
+  const nameInput = useRef(null);
+  const passInput = useRef(null);
+
+  const registerUser = (e) => {
+    e.preventDefault();
+
+    if (password !== passwordCopy) {
+      passInput.current.focus();
+      setIsNameTaken(false);
+      setIsPassMatch(false);
+      return;
+    }
+
+    let newUser = { name: username, password: password };
+
+    dispatch(createUser(newUser))
+    .then((result) => {
+      if (result === "ok") {
+        setIsRegistered(true);
+        setUsername("");
+        setPassword("");
+        setPasswordCopy("");
+        return;
+      } else {
+        // Handle if duplicate username
+        nameInput.current.focus();
+        setIsNameTaken(true);
+        setIsPassMatch(true);
+      }
+    });
+  };
+  return (
+    <>
+      {isRegistered ? (
+        <section
+          className="mx-auto flex flex-col w-2/3 max-w-lg space-y- 
+        bg-emerald-800 py-10 px-5 my-10 rounded"
+        >
+          <p className="text-white text-center text-lg">
+            Registration successful! Click to login.
+          </p>
+
+          <Link
+            to="/login"
+            className="outline-none bg-slate-300 hover:bg-orange-400 
+            focus:bg-orange-400 transition-colors font-bold rounded 
+            px-5 py-1.5 my-3 w-full mx-auto text-center mt-12"
+          >
+            Login
+          </Link>
+        </section>
+      ) 
+      : (
+        <form
+          onSubmit={registerUser}
+          className="mx-auto flex flex-col w-2/3 max-w-lg space-y-7 
+                  bg-emerald-800 py-5 px-5 my-10 rounded"
+        >
+          <section className="flex justify-evenly flex-col">
+            {isNameTaken ? (
+              <p className="text-orange-400">Username already registered.</p>
+            ) : null}
+
+            {isPassMatch ? null : (
+              <p className="text-orange-400">Passwords must match!</p>
+            )}
+
+            <label className="text-white pt-5">Username</label>
+            <input
+              ref={nameInput}
+              type="text"
+              name="username"
+              className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
+              required
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </section>
+
+          <section className="flex justify-evenly flex-col">
+            <label className="text-white">Password </label>
+            <input
+              ref={passInput}
+              type="password"
+              name="password"
+              className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </section>
+
+          <section className="flex flex-col justify-evenly">
+            <label className="text-white">Password </label>
+            <input
+              type="password"
+              name="password"
+              className="rounded px-2 py-1.5 outline-none hover:bg-orange-200 focus:bg-orange-200"
+              required
+              value={passwordCopy}
+              onChange={(e) => setPasswordCopy(e.target.value)}
+            />
+          </section>
+
+          <button
+            type="submit"
+            className="outline-none bg-slate-300 hover:bg-orange-400 
+                    focus:bg-orange-400 transition-colors font-bold rounded 
+                      px-5 py-1.5 my-3 w-full mx-auto"
+          >
+            Register
+          </button>
+        </form>
+      )}
+      {/*End of conditional */}
+    </>
+  );
+};
+
+export default RegistrationForm;
