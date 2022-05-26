@@ -64,7 +64,7 @@ const HomeNav = () => {
         </form>
       </nav>
 
-      {isCreating && <InputForm />}
+      {isCreating && <InputForm setIsCreating={setIsCreating} />}
     </section>
   );
 };

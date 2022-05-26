@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createRecipe } from "../../../state/actions/recipes";
 
-const InputForm = () => {
+const InputForm = (props) => {
   const dispatch = useDispatch();
   const [recipeData, setRecipeData] = useState({
     name: "",
@@ -10,6 +10,8 @@ const InputForm = () => {
     directions: "",
     notes: "",
   });
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +23,8 @@ const InputForm = () => {
       directions: "",
       notes: "",
     });
+
+    props.setIsCreating(false);
   };
 
   return (
