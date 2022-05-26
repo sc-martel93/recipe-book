@@ -7,8 +7,6 @@ const LoginForm = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [token, setToken] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -22,8 +20,6 @@ const handleLogin = (e) => {
       if(result.status === "ok")
       {
         console.log("logged in");
-        setToken(result.token);
-        setIsLoggedIn(true);
         setIsError(false);
         setErrorMessage("")
         return;
