@@ -67,15 +67,15 @@ const HomePage = () => {
       <section className="max-w-6xl space-y-5 mx-auto">
         <h3 className="text-xl text-center font-bold mt-5">Desserts!</h3>
 
-        <img src={cake} alt="cake" className="w-5/6 mx-auto" />
+        <img src={cake} alt="cake" className="w-5/6 mx-auto rounded-lg shadow-xl shadow-slate-600" />
         <h3 className="text-xl text-center font-bold">Pasta!</h3>
-        <img src={spaghetti} alt="spaghetti" className="w-5/6 mx-auto" />
+        <img src={spaghetti} alt="spaghetti" className="w-5/6 mx-auto rounded-lg shadow-xl shadow-slate-600" />
 
         <h3 className="text-xl text-center font-bold">Vegetarian!</h3>
-        <img src={vegetables} alt="vegetables" className="w-5/6 mx-auto" />
+        <img src={vegetables} alt="vegetables" className="w-5/6 mx-auto rounded-lg shadow-xl shadow-slate-600" />
 
         <h3 className="text-xl text-center font-bold">Seafood!</h3>
-        <img src={salmon} alt="salmon" className="w-5/6 mx-auto" />
+        <img src={salmon} alt="salmon" className="w-5/6 mx-auto rounded-lg shadow-xl shadow-slate-600" />
       </section>
       
     </section>
