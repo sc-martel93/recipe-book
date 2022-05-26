@@ -1,10 +1,11 @@
-export const userReducer = (user = {id:"", name: ""}, action) => {
+export const userReducer = (user = {id:"", username: "", isLoggedIn: false, iat: ""}, action) => {
   switch (action.type) {
-    case "SET_NAME":
-      return {...user, name: action.payload};
-
-    case "SET_ID":
-      return {...user, id: action.payload};
+    case "LOGIN":
+      return {id: action.payload.id, 
+              username: action.payload.username,
+              isLoggedIn: true,
+              iat: action.payload.iat
+            };
 
     default:
       return user;
