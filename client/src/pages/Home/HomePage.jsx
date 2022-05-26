@@ -23,14 +23,14 @@ const HomePage = () => {
   return (
     <main>
       <header className="bg-blue-900 shadow-lg shadow-slate-600 h-72 flex items-center justify-center flex-col space-y-8">
-        <h1 className="text-5xl md:text-6xl lg:text-6xl">
-          Recipe <span className="font-semibold text-orange-400">Book</span>
+        <h1 className="text-white text-5xl md:text-6xl lg:text-6xl">
+          Recipe <span className="font-semibold text-yellow-400">Book</span>
         </h1>
         <section>
           <p className="text-white text-center text-lg pb-7">
             A place to
-            <span className="font-semibold text-orange-400"> share </span>
-            and <span className="font-semibold text-orange-400">
+            <span className="font-semibold text-yellow-400"> share </span>
+            and <span className="font-semibold text-yellow-400">
               explore
             </span>{" "}
             recipes
@@ -40,16 +40,16 @@ const HomePage = () => {
         <nav className="flex justify-around mx-auto space-x-5">
           <button
             onClick={handleLogin}
-            className="outline-none bg-slate-300 hover:bg-orange-400 
-                    focus:bg-orange-400 transition-colors font-bold 
+            className="outline-none bg-slate-300 hover:bg-yellow-400 
+                    focus:bg-yellow-400 transition-colors font-bold 
                       rounded px-5 py-1.5 mx-auto"
           >
             Login
           </button>
           <button
             onClick={handleRegister}
-            className="outline-none bg-slate-300 hover:bg-orange-400 
-                    focus:bg-orange-400 transition-colors font-bold 
+            className="outline-none bg-slate-300 hover:bg-yellow-400 
+                    focus:bg-yellow-400 transition-colors font-bold 
                       rounded px-5 py-1.5 mx-auto"
           >
             Register
