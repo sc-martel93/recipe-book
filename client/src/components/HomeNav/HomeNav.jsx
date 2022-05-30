@@ -52,7 +52,7 @@ const HomeNav = () => {
             type="text"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
-            className="w-44 outline-none hover:bg-yellow-300 focus:bg-yellow-300 rounded px-2 py-1.5 mr-1"
+            className="w-44 outline-none hover:bg-yellow-200 focus:bg-yellow-200 rounded px-2 py-1.5 mr-1"
           />
           <button
             type="submit"
