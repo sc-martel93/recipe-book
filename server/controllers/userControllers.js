@@ -39,7 +39,7 @@ exports.login = async (req, res, next) => {
       else
         return res.status(401).json({ status: "error", message: "Invalid credentials."});
     })
-
+    
   } catch (error) {
       return res.status(500).json({ status : "error", message: "Internal server error." });
   }
