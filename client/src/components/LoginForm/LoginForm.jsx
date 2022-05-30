@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -11,6 +11,8 @@ const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  const nameInput = useRef(null);
 
 const handleLogin = (e) => {
   e.preventDefault();
@@ -26,7 +28,12 @@ const handleLogin = (e) => {
         navigate("/recipes");
       
       if(result.status === "error")
+      {
         setError(result.message);
+        nameInput.current.focus();
+        setPassword("");
+      }
+        
 
     })
     .catch((error) => 
@@ -52,6 +59,7 @@ const handleLogin = (e) => {
             type="text"
             name="username"
             placeholder="Username"
+            ref={nameInput}
             value={username}
             onChange={e => setUsername(e.target.value)}
             className="rounded px-2 py-1.5 outline-none hover:bg-yellow-300 focus:bg-yellow-300"
