@@ -48,7 +48,6 @@ const RegistrationForm = (props) => {
          // Handle if duplicate username
         if (result.message === "Request failed with status code 409")
         {
-          console.log(result)
           nameInput.current.focus();
           setIsNameTaken(true);
           setIsPassMatch(true);
