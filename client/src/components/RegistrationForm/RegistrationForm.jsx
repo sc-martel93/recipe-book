@@ -91,7 +91,7 @@ const RegistrationForm = (props) => {
               type="text"
               name="username"
               placeholder="Username"
-              className="rounded px-2 py-1.5 outline-none hover:bg-yellow-300 focus:bg-yellow-300"
+              className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
               required
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -105,7 +105,7 @@ const RegistrationForm = (props) => {
               type="password"
               name="password"
               placeholder="Password"
-              className="rounded px-2 py-1.5 outline-none hover:bg-yellow-300 focus:bg-yellow-300"
+              className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -118,7 +118,7 @@ const RegistrationForm = (props) => {
               type="password"
               name="password"
               placeholder="Confirm Password"
-              className="rounded px-2 py-1.5 outline-none hover:bg-yellow-300 focus:bg-yellow-300"
+              className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
               required
               value={passwordCopy}
               onChange={(e) => setPasswordCopy(e.target.value)}

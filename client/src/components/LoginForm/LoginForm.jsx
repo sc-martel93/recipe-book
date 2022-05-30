@@ -62,7 +62,7 @@ const handleLogin = (e) => {
             ref={nameInput}
             value={username}
             onChange={e => setUsername(e.target.value)}
-            className="rounded px-2 py-1.5 outline-none hover:bg-yellow-300 focus:bg-yellow-300"
+            className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
             required
           />
         </section>
@@ -75,7 +75,7 @@ const handleLogin = (e) => {
             placeholder="Password"
             value={password}
             onChange={e => setPassword(e.target.value)}
-            className="rounded px-2 py-1.5 outline-none hover:bg-yellow-300 focus:bg-yellow-300"
+            className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
             required
           />
         </section>
