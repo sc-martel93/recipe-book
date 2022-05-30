@@ -85,6 +85,7 @@ const RegistrationForm = (props) => {
             <label className="text-white pt-5">Username</label>
             <input
               ref={nameInput}
+              autocomplete="off"
               type="text"
               name="username"
               placeholder="Username"
