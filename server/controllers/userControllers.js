@@ -28,7 +28,7 @@ exports.login = async (req, res, next) => {
     const [ user , _ ] = await User.find(username);
 
     if(user.length === 0)
-      return res.status(401).json({ status: "error", message: "Incorrect login."})
+      return res.status(401).json({ status: "error", message: "Invalid credentials."})
 
     bcrypt.compare(password, user[0].password, (err, result) => {
       if(result){
@@ -37,7 +37,7 @@ exports.login = async (req, res, next) => {
         return res.status(201).json({ status: "ok", token: token });
       }
       else
-        return res.status(401).json({ status: "error", message: "Invalid login."});
+        return res.status(401).json({ status: "error", message: "Invalid credentials."});
     })
 
   } catch (error) {
