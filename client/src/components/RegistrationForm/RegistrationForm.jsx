@@ -30,19 +30,31 @@ const RegistrationForm = (props) => {
 
     dispatch(createUser(newUser))
       .then((result) => {
-      if (result.status === "ok") {
-        setIsRegistered(true);
-        setUsername("");
-        setPassword("");
-        setPasswordCopy("");
-        return;
-      } else {
-        // Handle if duplicate username
-        nameInput.current.focus();
-        setIsNameTaken(true);
-        setIsPassMatch(true);
-      }
-    });
+        if (result.status === "ok") 
+        {
+          setIsRegistered(true);
+          setUsername("");
+          setPassword("");
+          setPasswordCopy("");
+          return;
+        }
+        
+        // Handle server down
+        if (result.message === "Network Error")
+        {
+          alert("Network Error! Please try again later.")
+        }
+
+         // Handle if duplicate username
+        if (result.message === "Request failed with status code 409")
+        {
+          console.log(result)
+          nameInput.current.focus();
+          setIsNameTaken(true);
+          setIsPassMatch(true);
+        }
+    })
+    
   };
 
   return (

@@ -3,9 +3,8 @@ import jwt from 'jwt-decode'
 
 export const createUser = (newUser) => async (dispatch) => {
     try {
-        const results = await api.createUser(newUser);
-        return results;
-
+        const res = await api.createUser(newUser);
+        return res;
       } catch (error) {
         return error;
       }
@@ -13,9 +12,9 @@ export const createUser = (newUser) => async (dispatch) => {
 
 export const loginUser = (userInfo) => async (dispatch) => {
   try {
-    const results = await api.loginUser(userInfo);
-    dispatch({ type: "LOGIN", payload: jwt(results.token) });
-    return results;
+    const res = await api.loginUser(userInfo);
+    dispatch({ type: "LOGIN", payload: jwt(res.token) });
+    return res;
     
   } catch (error) {
     return error;
