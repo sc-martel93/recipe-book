@@ -9,9 +9,8 @@ const RegistrationForm = (props) => {
   const [password, setPassword] = useState("");
   const [passwordCopy, setPasswordCopy] = useState("");
 
+  const [error, setError] = useState(undefined)
   const [isRegistered, setIsRegistered] = useState(false);
-  const [isNameTaken, setIsNameTaken] = useState(false);
-  const [isPassMatch, setIsPassMatch] = useState(true);
 
   const nameInput = useRef(null);
   const passInput = useRef(null);
@@ -20,9 +19,8 @@ const RegistrationForm = (props) => {
     e.preventDefault();
 
     if (password !== passwordCopy) {
+      setError("Passwords must match!");
       passInput.current.focus();
-      setIsNameTaken(false);
-      setIsPassMatch(false);
       return;
     }
 
@@ -42,15 +40,15 @@ const RegistrationForm = (props) => {
         // Handle server down
         if (result.message === "Network Error")
         {
+          setError("Network Error, Please try again later.");
           alert("Network Error! Please try again later.")
         }
 
          // Handle if duplicate username
         if (result.message === "Request failed with status code 409")
         {
+          setError("Username already in use.")
           nameInput.current.focus();
-          setIsNameTaken(true);
-          setIsPassMatch(true);
         }
     })
     
@@ -86,12 +84,8 @@ const RegistrationForm = (props) => {
                   shadow-slate-600"
         >
           <section className="flex justify-evenly flex-col">
-            {isNameTaken && (
-              <p className="text-yellow-400">Username already registered.</p>
-            )}
-
-            {!isPassMatch && (
-              <p className="text-yellow-400">Passwords must match!</p>
+            {error && (
+              <p className="text-yellow-400">{error}</p>
             )}
 
             <label className="text-white pt-5">Username</label>
