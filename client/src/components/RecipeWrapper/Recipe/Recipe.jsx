@@ -27,7 +27,7 @@ const Recipe = ({ recipe }) => {
   };
 
   return (
-    <article className="w-5/6 max-w-3xl mx-auto px-10 py-10 space-y-10 mt-10  break-words bg-neutral-300 rounded-lg shadow-lg shadow-emerald-800">
+    <article className="w-5/6 max-w-3xl mx-auto px-10 py-10 space-y-10 mt-10  break-words bg-yellow-100 rounded-lg shadow-lg shadow-slate-600">
       <section className="flex justify-between border-b-4 border-zinc-900">
         <button
           title="Edit"
