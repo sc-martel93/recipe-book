@@ -39,11 +39,8 @@ const RegistrationForm = (props) => {
         
         // Handle server down
         if (result.message === "Network Error")
-        {
           setError("Network Error, Please try again later.");
-          alert("Network Error! Please try again later.")
-        }
-
+      
          // Handle if duplicate username
         if (result.message === "Request failed with status code 409")
         {
