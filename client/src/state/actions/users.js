@@ -17,7 +17,7 @@ export const loginUser = (userInfo) => async (dispatch) => {
       dispatch({ type: "LOGIN", payload: jwt(res.token) });
     return res;
   
-  } catch (error) {
+  } catch (error) {    
     return error;
   }
 }

@@ -16,6 +16,11 @@ export const loginUser = (userInfo) =>
   axios
     .post(`${URL}/user/login`, userInfo)
     .then(res => res.data)
-    .catch(err => err.response.data);
+    .catch(err => {
+      if(err.response)
+        return err.response.data;
+
+      return err;
+    });
  
   

@@ -19,17 +19,15 @@ const handleLogin = (e) => {
   dispatch(loginUser(userInfo))
     .then((result) =>
     {
-     
+      if(result.message === "Network Error")
+        setError(`${result.message}, please try again later.`);
 
       if(result.status === "ok")
-      {
         navigate("/recipes");
-        return;
-      }
-      else
-      {
+      
+      if(result.status === "error")
         setError(result.message);
-      }
+
     })
     .catch((error) => 
     {
