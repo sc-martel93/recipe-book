@@ -37,12 +37,11 @@ exports.login = async (req, res, next) => {
         return res.status(201).json({ status: "ok", token: token });
       }
       else
-     
-        return res.status(401).send({ status: "error", message: "Incorrect login."})
+        return res.status(401).json({ status: "error", message: "Invalid login."});
     })
 
   } catch (error) {
-    return res.status(500).json({ status : "error", message: "Internal server error." })
+      return res.status(500).json({ status : "error", message: "Internal server error." })
   }
  
 }

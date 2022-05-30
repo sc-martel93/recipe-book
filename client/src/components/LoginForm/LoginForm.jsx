@@ -10,8 +10,7 @@ const LoginForm = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isError, setIsError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [error, setError] = useState("");
 
 const handleLogin = (e) => {
   e.preventDefault();
@@ -20,18 +19,16 @@ const handleLogin = (e) => {
   dispatch(loginUser(userInfo))
     .then((result) =>
     {
+     
+
       if(result.status === "ok")
       {
-        setIsError(false);
-        setErrorMessage("")
         navigate("/recipes");
         return;
       }
       else
       {
-        setIsError(true);
-        setErrorMessage(result.message)
-        console.log(result.message)
+        setError(result.message);
       }
     })
     .catch((error) => 
@@ -49,8 +46,8 @@ const handleLogin = (e) => {
                 shadow-slate-600"
       >
         <section className="flex justify-evenly flex-col">
-          { isError &&
-              <p className="text-yellow-400 text-center">{errorMessage}</p> 
+          { error &&
+              <p className="text-yellow-400 text-center">{error}</p> 
           }
           <label className="text-white pt-5">Username</label>
           <input

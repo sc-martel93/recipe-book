@@ -15,6 +15,7 @@ export const createUser = (newUser) =>
 export const loginUser = (userInfo) =>
   axios
     .post(`${URL}/user/login`, userInfo)
-    .then(results => results.data)
-    .catch(err => err.response.data); 
+    .then(res => res.data)
+    .catch(err => err.response.data);
+ 
   
