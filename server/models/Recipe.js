@@ -34,7 +34,7 @@ class Recipe {
       this.ingredients,
       this.directions,
       this.notes,
-      this.likes,
+      this.likes
     ]);
   }
 

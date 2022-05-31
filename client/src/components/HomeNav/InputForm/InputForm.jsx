@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createRecipe } from "../../../state/actions/recipes";
 
 const InputForm = (props) => {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  
   const [recipeData, setRecipeData] = useState({
     name: "",
+    created_by: user?.username,
     ingredients: "",
     directions: "",
     notes: "",
@@ -13,10 +16,14 @@ const InputForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!user.isLoggedIn) return;
+  
+    console.log(recipeData)
     dispatch(createRecipe(recipeData));
 
     setRecipeData({
       name: "",
+      created_by: "",
       ingredients: "",
       directions: "",
       notes: "",
