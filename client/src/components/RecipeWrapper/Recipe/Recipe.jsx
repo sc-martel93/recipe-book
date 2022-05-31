@@ -4,12 +4,12 @@ import { deleteRecipe } from "../../../state/actions/recipes";
 import { setIndex } from "../../../state/actions/recipeIndex";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faTrash, faHeart} from "@fortawesome/free-solid-svg-icons";
+
 
 const Recipe = ({ recipe, username }) => {
   const dispatch = useDispatch();
-
-  const { name, created_by, ingredients, directions, notes } = recipe;
+  const { name, created_by, ingredients, directions, notes, likes } = recipe;
   const ingredientArray = ingredients.split(", ");
 
   const isAuth = created_by === username && username !== "";
@@ -82,6 +82,16 @@ const Recipe = ({ recipe, username }) => {
           <p className="ml-5 md:ml-7 lg:ml-10">{notes}</p>
         </section>
       )}
+
+      <section className="flex justify-end items-center w-100">
+        <p className="mx-5">{likes}</p>
+        <button  
+          className="text-red-300 text-2xl hover:text-red-700 focus:text-red-700"
+        >
+          <FontAwesomeIcon icon={faHeart} />
+        </button>
+      </section>
+    
     </article>
   );
 };
