@@ -40,7 +40,16 @@ const RecipeWrapper = () => {
           alert("Login to view your recipes!");
           setCurrentOpt(defaultOption);
         }
-          
+      case 3:
+        if(username !== "")
+        {
+          // dispatch();
+        }
+        else
+        {
+          alert("Login to view your liked recipes!");
+          setCurrentOpt(defaultOption);
+        }
         break;
     }
   }, [dispatch, currentOpt]);
