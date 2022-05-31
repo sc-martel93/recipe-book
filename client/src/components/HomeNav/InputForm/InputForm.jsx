@@ -11,8 +11,6 @@ const InputForm = (props) => {
     notes: "",
   });
 
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createRecipe(recipeData));
@@ -48,7 +46,7 @@ const InputForm = (props) => {
         />
 
         <label className="mt-2">Ingredients (comma between):  </label>
-        <input
+        <textarea
           type="text"
           name="ingredient"
           value={recipeData.ingredients}
@@ -56,7 +54,7 @@ const InputForm = (props) => {
           onChange={(e) =>
             setRecipeData({ ...recipeData, ingredients: e.target.value })
           }
-          className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
+          className="rounded px-2 py-1.5 outline-none resize-none hover:bg-yellow-200 focus:bg-yellow-200 h-20"
           required
         />
 
@@ -68,7 +66,7 @@ const InputForm = (props) => {
           onChange={(e) =>
             setRecipeData({ ...recipeData, directions: e.target.value })
           }
-          className="rounded px-2 py-1.5 resize-none outline-none hover:bg-yellow-200 focus:bg-yellow-200"
+          className="rounded px-2 py-1.5 resize-none outline-none hover:bg-yellow-200 focus:bg-yellow-200 h-32"
           required
         />
 
@@ -80,7 +78,7 @@ const InputForm = (props) => {
           onChange={(e) =>
             setRecipeData({ ...recipeData, notes: e.target.value })
           }
-          className="rounded px-2 py-1.5 resize-none outline-none hover:bg-yellow-200 focus:bg-yellow-200"
+          className="rounded px-2 py-1.5 resize-none outline-none hover:bg-yellow-200 focus:bg-yellow-200 h-32"
         />
 
         <button
