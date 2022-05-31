@@ -10,6 +10,17 @@ exports.getAllRecipes = async (req, res, next) => {
   }
 };
 
+exports.getMyRecipes = async (req, res, next) => {
+  try {
+    const { username } = req.body;
+    const [recipes, _] = await Recipe.findCreatedBy(username);
+    res.status(200).json({ recipes });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+}
+
 exports.createNewRecipe = async (req, res, next) => {
   try {
     const recipeData = req.body;

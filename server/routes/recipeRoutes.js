@@ -7,6 +7,10 @@ router
   .get(recipeControllers.getAllRecipes)
   .post(recipeControllers.createNewRecipe);
 
+  router
+    .route("/myrecipes")
+    .get(recipeControllers.getMyRecipes)
+
 router.route("/:id").delete(recipeControllers.deleteRecipeById);
 
 module.exports = router;

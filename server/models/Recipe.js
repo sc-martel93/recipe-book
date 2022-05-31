@@ -39,13 +39,18 @@ class Recipe {
   }
 
   static findAll = () => {
-    const sql = `SELECT * FROM recipes ORDER BY name`;
-    return db.execute(sql);
+    const SQL = `SELECT * FROM recipes ORDER BY name`;
+    return db.execute(SQL);
   };
 
+  static findCreatedBy = (username) => {
+    const SQL = `SELECT * FROM recipes WHERE created_by = (?) ORDER BY name`;
+    return db.execute(SQL, [username]);
+  }
+
   static deleteById = (id) => {
-    const sql = "DELETE FROM recipes WHERE id = ?";
-    return db.execute(sql, [id]);
+    const SQL = "DELETE FROM recipes WHERE id = ?";
+    return db.execute(SQL, [id]);
   };
 }
 
