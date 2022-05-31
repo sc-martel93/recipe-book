@@ -9,7 +9,7 @@ router
 
   router
     .route("/myrecipes")
-    .get(recipeControllers.getMyRecipes)
+    .post(recipeControllers.getMyRecipes)
 
 router.route("/:id").delete(recipeControllers.deleteRecipeById);
 

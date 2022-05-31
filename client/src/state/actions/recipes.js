@@ -9,6 +9,15 @@ export const getAllRecipes = () => async (dispatch) => {
   }
 };
 
+export const getMyRecipes = (username) => async (dispatch) => {
+  try {
+    const { data } = await api.fetchMyRecipes(username);
+    dispatch({ type: "FETCH_ALL", payload: data.recipes });
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
 export const createRecipe = (recipe) => async (dispatch) => {
   try {
     await api.createRecipe(recipe);

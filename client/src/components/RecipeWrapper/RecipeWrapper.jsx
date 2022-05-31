@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Dropdown from 'react-dropdown';
 import { next, previous, setIndex } from "../../state/actions/recipeIndex";
-import { getAllRecipes } from "../../state/actions/recipes";
+import { getAllRecipes, getMyRecipes } from "../../state/actions/recipes";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -10,9 +10,12 @@ import Recipe from "./Recipe/Recipe";
 
 const RecipeWrapper = () => {
   const dispatch = useDispatch();
+
   const recipeIndex = useSelector((state) => state.recipeIndex);
   const recipes = useSelector((state) => state.recipes);
   const recipeCount = recipes.length;
+
+  const username = useSelector((state) => state.user.username);
 
   const options = [
     {value: 1, label: "All Recipes"},
@@ -23,8 +26,20 @@ const RecipeWrapper = () => {
   const [currentOpt, setCurrentOpt] = useState(options[0]);
 
   useEffect(() => {
-    dispatch(getAllRecipes());
-  }, [dispatch]);
+    switch(currentOpt.value) 
+    {
+      case 1: 
+        dispatch(getAllRecipes());
+        break;
+
+      case 2:
+        if(username !== "")
+          dispatch(getMyRecipes(username));
+        else
+          alert("Login to view your recipes!");
+        break;
+    }
+  }, [dispatch, currentOpt]);
 
   const handlePrevious = () => {
     if (recipeCount === 0) return;

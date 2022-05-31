@@ -3,6 +3,8 @@ import axios from "axios";
 const URL = "http://localhost:3001";
 
 export const fetchRecipes = () => axios.get(`${URL}/recipes`);
+export const fetchMyRecipes = (username) => axios.post(`${URL}/recipes/myrecipes`, {username: username});
+
 export const createRecipe = (newRecipe) => axios.post(`${URL}/recipes`, newRecipe);
 export const deleteRecipe = (id) => axios.delete(`${URL}/recipes/${id}`);
 
