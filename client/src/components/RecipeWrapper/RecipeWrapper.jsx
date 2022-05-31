@@ -22,8 +22,8 @@ const RecipeWrapper = () => {
     {value: 2, label: "My Recipes"},
     {value: 3, label: "Liked Recipes"}
   ];
-
-  const [currentOpt, setCurrentOpt] = useState(options[0]);
+  const defaultOption = options[0];
+  const [currentOpt, setCurrentOpt] = useState(defaultOption);
 
   useEffect(() => {
     switch(currentOpt.value) 
@@ -36,7 +36,11 @@ const RecipeWrapper = () => {
         if(username !== "")
           dispatch(getMyRecipes(username));
         else
+        {
           alert("Login to view your recipes!");
+          setCurrentOpt(defaultOption);
+        }
+          
         break;
     }
   }, [dispatch, currentOpt]);
