@@ -1,6 +1,6 @@
 import * as api from "../api";
 
-export const getRecipes = () => async (dispatch) => {
+export const getAllRecipes = () => async (dispatch) => {
   try {
     const { data } = await api.fetchRecipes();
     dispatch({ type: "FETCH_ALL", payload: data.recipes });
