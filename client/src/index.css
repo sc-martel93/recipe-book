@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.Dropdown-option {
+  margin: 1.5rem;
+}
+
+.Dropdown-option:hover,
+.Dropdown-option:focus {
+  color: white;
+  cursor: pointer;
+  letter-spacing: 0.2rem;
+}
