@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Dropdown from 'react-dropdown';
 import { next, previous, setIndex } from "../../state/actions/recipeIndex";
@@ -19,8 +19,8 @@ const RecipeWrapper = () => {
     {value: 2, label: "My Recipes"},
     {value: 3, label: "Liked Recipes"}
   ];
-  const defaultOption = options[0];
 
+  const [currentOpt, setCurrentOpt] = useState(options[0]);
 
   useEffect(() => {
     dispatch(getAllRecipes());
@@ -62,8 +62,8 @@ const RecipeWrapper = () => {
       <div className="flex justify-evenly text-center max-w-4xl mx-auto mt-10">
         <Dropdown 
           options={options} 
-          onChange={e => console.log(e)}
-          value={defaultOption} 
+          onChange={e => setCurrentOpt(e)}
+          value={currentOpt} 
           className="w-72"
           placeholderClassName="cursor-pointer text-white bg-blue-900 hover:bg-yellow-400 focus:bg-yellow-400 hover:text-blue-900 focus:text-blue-900 transition-colors rounded px-5 py-1.5"
           menuClassName="bg-blue-500 p-5 mt-1 rounded-lg shadow-lg shadow-slate-600"
