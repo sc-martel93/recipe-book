@@ -86,7 +86,7 @@ const Recipe = ({ recipe, username }) => {
       <section className="flex justify-end items-center w-100">
         <p className="mx-5">{likes}</p>
         <button  
-          className="text-red-300 text-2xl hover:text-red-700 focus:text-red-700"
+          className="text-red-400 text-2xl hover:text-red-700 focus:text-red-700"
         >
           <FontAwesomeIcon icon={faHeart} />
         </button>
