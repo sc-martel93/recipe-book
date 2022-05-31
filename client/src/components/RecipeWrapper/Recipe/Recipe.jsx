@@ -35,10 +35,10 @@ const Recipe = ({ recipe }) => {
         >
           <FontAwesomeIcon icon={faEdit} />
         </button>
-        <div>
-          <h2 className="text-3xl font-bold text-center py-5">{name}</h2>
-          <h3 className="text-center">By: {created_by}</h3>
-        </div>
+        <section>
+          <h2 className="text-3xl font-bold text-center py-2">{name}</h2>
+          <h3 className="text-center py-2">By: {created_by}</h3>
+        </section>
         
         <button
           title="Delete"
