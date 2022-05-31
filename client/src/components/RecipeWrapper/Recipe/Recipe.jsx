@@ -9,7 +9,7 @@ import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 const Recipe = ({ recipe }) => {
   const dispatch = useDispatch();
 
-  const { name, ingredients, directions, notes } = recipe;
+  const { name, created_by, ingredients, directions, notes } = recipe;
   const ingredientArray = ingredients.split(", ");
 
   const handleDelete = () => {
@@ -35,7 +35,11 @@ const Recipe = ({ recipe }) => {
         >
           <FontAwesomeIcon icon={faEdit} />
         </button>
-        <h2 className="text-3xl font-bold text-center py-5">{name}</h2>
+        <div>
+          <h2 className="text-3xl font-bold text-center py-5">{name}</h2>
+          <h3 className="text-center">By: {created_by}</h3>
+        </div>
+        
         <button
           title="Delete"
           onClick={() => handleDelete()}
@@ -44,7 +48,7 @@ const Recipe = ({ recipe }) => {
           <FontAwesomeIcon icon={faTrash} />
         </button>
       </section>
-
+    
       <section>
         <h3 className="font-bold text-xl mb-2">Ingredients</h3>
         <ol className="list-disc">
