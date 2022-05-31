@@ -18,7 +18,6 @@ const InputForm = (props) => {
     e.preventDefault();
     if (!user.isLoggedIn) return;
   
-    console.log(recipeData)
     dispatch(createRecipe(recipeData));
 
     setRecipeData({
