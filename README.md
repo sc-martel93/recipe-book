@@ -10,13 +10,9 @@ Recipe book is a web app that simplifies storing and sharing recipes
 
 ## TODO
 
+- Favicon
+
 - Add ability to edit recipes client side and server side
-
---- Redesign Recipes in DB
-
-- Add created_by to Recipe
-- Add likes
-- Add optional image to recipe
 - Add sort options ?
 
 - Create public explore page new
