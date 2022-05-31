@@ -30,17 +30,22 @@ const RecipeWrapper = () => {
     {
       case 1: 
         dispatch(getAllRecipes());
+        dispatch(setIndex(0));
         break;
 
       case 2:
         if(username !== "")
+        {
           dispatch(getMyRecipes(username));
+          dispatch(setIndex(0));
+        }
         else
         {
           alert("Login to view your recipes!");
           setCurrentOpt(defaultOption);
         }
         break;
+
       case 3:
         if(username !== "")
         {
@@ -52,6 +57,7 @@ const RecipeWrapper = () => {
           setCurrentOpt(defaultOption);
         }
         break;
+        
     }
   }, [dispatch, currentOpt]);
 
