@@ -3,12 +3,14 @@ const uuid = require("uuid");
 
 class Recipe {
   constructor(recipe) {
-    const { name, ingredients, directions, notes } = recipe;
+    const { name, created_by, ingredients, directions, notes } = recipe;
     this.id = uuid.v4();
+    this.created_by = created_by;
     this.name = name;
     this.ingredients = ingredients;
     this.directions = directions;
     this.notes = notes;
+    this.likes = 0;
 
     return this;
   }
@@ -16,19 +18,23 @@ class Recipe {
   save() {
     const sql = `INSERT INTO recipes(
         id,
+        created_by,
         name,
         ingredients,
         directions,
-        notes
+        notes,
+        likes
      )
-     VALUE ( ?, ?, ?, ?, ?)`;
+     VALUE ( ?, ?, ?, ?, ?, ?, ?)`;
 
     return db.execute(sql, [
       this.id,
+      this.created_by,
       this.name,
       this.ingredients,
       this.directions,
       this.notes,
+      this.likes,
     ]);
   }
 
