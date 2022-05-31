@@ -9,7 +9,7 @@
 
 .Dropdown-option:hover,
 .Dropdown-option:focus {
-  color: white;
+  color: #FACC15;
   cursor: pointer;
   letter-spacing: 0.2rem;
 }
