@@ -40,6 +40,7 @@ const RecipeWrapper = () => {
           alert("Login to view your recipes!");
           setCurrentOpt(defaultOption);
         }
+        break;
       case 3:
         if(username !== "")
         {
@@ -101,7 +102,7 @@ const RecipeWrapper = () => {
       {recipeCount === 0 ? (
         <h2 className="font-bold text-center text-3xl mt-20">No Recipes</h2>
       ) : (
-        <Recipe recipe={recipes[recipeIndex]} />
+        <Recipe recipe={recipes[recipeIndex]} username={username} />
       )}
     </>
   );
