@@ -12,7 +12,7 @@ import { faHeart as faHeartH } from "@fortawesome/free-regular-svg-icons";
 const Recipe = ({ recipe, user }) => {
   const dispatch = useDispatch();
   
-  const { name, created_by, ingredients, directions, notes, likes } = recipe;
+  const { name, created_by, ingredients, directions, notes } = recipe;
   // Recipe id
   const rid = recipe.id;
   const ingredientArray = ingredients.split(", ");
