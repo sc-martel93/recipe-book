@@ -15,7 +15,8 @@ const RecipeWrapper = () => {
   const recipes = useSelector((state) => state.recipes);
   const recipeCount = recipes.length;
 
-  const username = useSelector((state) => state.user.username);
+  const user = useSelector((state) => state.user);
+  const username = user.username;
 
   const options = [
     {value: 1, label: "All Recipes"},
@@ -108,7 +109,7 @@ const RecipeWrapper = () => {
       {recipeCount === 0 ? (
         <h2 className="font-bold text-center text-3xl mt-20">No Recipes</h2>
       ) : (
-        <Recipe recipe={recipes[recipeIndex]} username={username} />
+        <Recipe recipe={recipes[recipeIndex]} user={user} />
       )}
     </>
   );

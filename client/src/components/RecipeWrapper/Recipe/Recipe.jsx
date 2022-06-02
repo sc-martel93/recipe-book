@@ -1,18 +1,25 @@
-import React from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteRecipe } from "../../../state/actions/recipes";
 import { setIndex } from "../../../state/actions/recipeIndex";
+import { addLike } from "../../../state/actions/likes";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash, faHeart} from "@fortawesome/free-solid-svg-icons";
 
 
-const Recipe = ({ recipe, username }) => {
+const Recipe = ({ recipe, user }) => {
   const dispatch = useDispatch();
   const { name, created_by, ingredients, directions, notes, likes } = recipe;
+  const rid = recipe.id;
   const ingredientArray = ingredients.split(", ");
 
+  const uid = user.uid;
+  const username = user.username;
+
   const isAuth = created_by === username && username !== "";
+
+  const [isLiked, setIsLiked] = useState(false);
 
   const handleDelete = () => {
     const confirmDelete = window.confirm(
@@ -24,9 +31,23 @@ const Recipe = ({ recipe, username }) => {
   };
 
   const checkForNotes = (notes) => {
-    if (notes == null || notes == "") return false;
+    if (notes === null || notes === "") return false;
     return true;
   };
+
+  const handleLike = () => {
+    if (!user.isLoggedIn) return;
+
+    dispatch(addLike(uid, rid))
+      .then(res => {
+        if (res.data.status === "ok")
+        {
+          setIsLiked(true);
+          return;
+        } 
+      })
+      .catch(err => console.log(err))
+  }
 
   return (
     <article className="w-5/6 max-w-3xl mx-auto px-10 py-10 space-y-10 mt-10  break-words bg-yellow-100 rounded-lg shadow-lg shadow-slate-600">
@@ -85,7 +106,8 @@ const Recipe = ({ recipe, username }) => {
 
       <section className="flex justify-end items-center w-100">
         <p className="mx-5">{likes}</p>
-        <button  
+        <button
+          onClick={e => handleLike()}  
           className="text-red-400 text-2xl hover:text-red-700 focus:text-red-700"
         >
           <FontAwesomeIcon icon={faHeart} />

@@ -25,4 +25,6 @@ export const loginUser = (userInfo) =>
       return err;
     });
  
+  export const addLike = (uid, pid) => 
+    axios.post(`${URL}/likes`, {data: {uid: uid, pid: pid}});
   

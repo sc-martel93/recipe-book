@@ -2,7 +2,7 @@ const Like = require('../models/Like');
 
 exports.addLike = async (req, res, next) => {
   try {
-    const { uid, pid } = req.body;
+    const { uid, pid } = req.body.data;
     const like = new Like(uid, pid);
     await like.save();
     return res.status(201).json({status: "ok"});
