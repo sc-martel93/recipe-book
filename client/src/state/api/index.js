@@ -26,5 +26,7 @@ export const loginUser = (userInfo) =>
     });
  
   export const addLike = (uid, pid) => 
-    axios.post(`${URL}/likes`, {data: {uid: uid, pid: pid}});
+    axios.post(`${URL}/likes`, { data: { uid: uid, pid: pid } });
   
+  export const removeLike = (id) => 
+    axios.delete(`${URL}/likes`, { data: { like_id: id } })

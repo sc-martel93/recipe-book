@@ -8,3 +8,13 @@ export const addLike = (uid, pid) => async (dispatch) => {
     return error;
   }
 }
+
+export const removeLike = (id) => async (dispatch) => {
+  try {
+    const res = await api.removeLike(id);
+    console.log(res)
+    return res;
+  } catch (error) {
+    return error;
+  }
+}

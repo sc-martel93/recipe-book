@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { deleteRecipe } from "../../../state/actions/recipes";
 import { setIndex } from "../../../state/actions/recipeIndex";
-import { addLike } from "../../../state/actions/likes";
+import { addLike, removeLike } from "../../../state/actions/likes";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash, faHeart} from "@fortawesome/free-solid-svg-icons";
@@ -20,6 +20,11 @@ const Recipe = ({ recipe, user }) => {
   const isAuth = created_by === username && username !== "";
 
   const [isLiked, setIsLiked] = useState(false);
+  const [likeId, setLikeId] = useState("");
+
+  useEffect(() => {
+    setIsLiked(false);
+  }, [rid] )
 
   const handleDelete = () => {
     const confirmDelete = window.confirm(
@@ -38,15 +43,33 @@ const Recipe = ({ recipe, user }) => {
   const handleLike = () => {
     if (!user.isLoggedIn) return;
 
-    dispatch(addLike(uid, rid))
+    if (isLiked)
+    {
+      dispatch(removeLike(likeId))
+        .then(res => {
+          if (res.data.status === "ok")
+          {
+            setIsLiked(false);
+            setLikeId("");
+            return;
+          }
+        })
+        .catch(err => console.log(err));
+    }
+    else
+    {
+      dispatch(addLike(uid, rid))
       .then(res => {
         if (res.data.status === "ok")
         {
           setIsLiked(true);
+          setLikeId(res.data.id);
           return;
         } 
       })
       .catch(err => console.log(err))
+    }
+    
   }
 
   return (
@@ -107,7 +130,7 @@ const Recipe = ({ recipe, user }) => {
       <section className="flex justify-end items-center w-100">
         <p className="mx-5">{likes}</p>
         <button
-          onClick={e => handleLike()}  
+          onClick={() => handleLike()}  
           className="text-red-400 text-2xl hover:text-red-700 focus:text-red-700"
         >
           <FontAwesomeIcon icon={faHeart} />
