@@ -50,3 +50,15 @@ exports.countLikes = async (req, res, next) => {
     next(error);
   }
 }
+
+exports.getLikedRecipes = async (req, res, next) => {
+  try {
+    const { uid } = req.body;
+    const [liked_recipes, _] = await Like.getLikedRecipes(uid);
+    
+    return res.status(200).json({"status": "ok", "liked_recipes": liked_recipes })
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+}

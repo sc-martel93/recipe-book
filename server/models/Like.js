@@ -30,8 +30,9 @@ class Like {
     return db.execute(SQL, [pid]);
   }
 
-  getLikedPosts(uid) {
-
+  static getLikedRecipes = (uid) => {
+    const SQL = `SELECT post_id FROM likes WHERE user_id = ?`;
+    return db.execute(SQL, [uid]);
   }
 
 }

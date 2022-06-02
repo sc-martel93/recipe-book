@@ -15,4 +15,8 @@ router
   .route("/recipes")
   .put(likeControllers.countLikes);
 
+router
+  .route("/user")
+  .put(likeControllers.getLikedRecipes);
+
 module.exports = router;
