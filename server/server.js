@@ -10,6 +10,7 @@ app.use(express.json());
 
 app.use("/recipes", require("./routes/recipeRoutes"));
 app.use("/user", require("./routes/userRoutes"));
+app.use("/likes", require("./routes/likeRoutes"));
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
