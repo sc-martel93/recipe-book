@@ -10,11 +10,12 @@ import { faEdit, faTrash, faHeart} from "@fortawesome/free-solid-svg-icons";
 
 const Recipe = ({ recipe, user }) => {
   const dispatch = useDispatch();
+  
   const { name, created_by, ingredients, directions, notes, likes } = recipe;
-  const rid = recipe.id;
+  const recipeId = recipe.id;
   const ingredientArray = ingredients.split(", ");
 
-  const uid = user.uid;
+  const userId = user.userId;
   const username = user.username;
 
   const isAuth = created_by === username && username !== "";
@@ -24,7 +25,7 @@ const Recipe = ({ recipe, user }) => {
 
   useEffect(() => {
     setIsLiked(false);
-  }, [rid] )
+  }, [recipeId] )
 
   const handleDelete = () => {
     const confirmDelete = window.confirm(
@@ -58,7 +59,7 @@ const Recipe = ({ recipe, user }) => {
     }
     else
     {
-      dispatch(addLike(uid, rid))
+      dispatch(addLike(userId, recipeId))
       .then(res => {
         if (res.data.status === "ok")
         {
