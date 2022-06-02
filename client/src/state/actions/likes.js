@@ -23,6 +23,15 @@ export const checkIfLiked = (uid, pid) => async (dispatch) => {
     const res = await api.checkIfLiked(uid, pid);
     return res.data;
   } catch (error) {
-    
+    return error;
+  }
+}
+
+export const countLikes = (pid) => async (dispatch) => {
+  try {
+    const res = await api.countLikes(pid);
+    return res.data.like_count;
+  } catch (error) {
+    return error;
   }
 }

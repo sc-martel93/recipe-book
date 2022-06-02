@@ -34,4 +34,7 @@ export const loginUser = (userInfo) =>
   export const checkIfLiked = (uid, pid) => 
     axios
       .put(`${URL}/likes/recipe`, {uid: uid, pid: pid });
+
+  export const countLikes = (pid) =>
+    axios.put(`${URL}/likes/recipes`, {pid: pid});
       

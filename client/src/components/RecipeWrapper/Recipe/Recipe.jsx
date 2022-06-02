@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { deleteRecipe } from "../../../state/actions/recipes";
 import { setIndex } from "../../../state/actions/recipeIndex";
-import { addLike, removeLike, checkIfLiked } from "../../../state/actions/likes";
+import { addLike, removeLike, checkIfLiked, countLikes } from "../../../state/actions/likes";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash, faHeart} from "@fortawesome/free-solid-svg-icons";
@@ -22,6 +22,7 @@ const Recipe = ({ recipe, user }) => {
 
   const isAuth = created_by === username && username !== "";
 
+  const [likeCount, setLikeCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
   const [likeId, setLikeId] = useState("");
 
@@ -43,7 +44,13 @@ const Recipe = ({ recipe, user }) => {
         })
         .catch(err => console.log(err));
     }
-  }, [rid, isLiked, dispatch, uid] );
+  }, [rid, isLiked, dispatch, uid]);
+
+  useEffect(() => {
+    dispatch(countLikes(rid, isLiked))
+      .then(res => setLikeCount(res))
+      .catch(err => console.log(err));
+  }, [rid, isLiked]);
 
   const handleDelete = () => {
     const confirmDelete = window.confirm(
@@ -148,7 +155,7 @@ const Recipe = ({ recipe, user }) => {
       )}
 
       <section className="flex justify-end items-center w-100">
-        <p className="mx-5">{likes}</p>
+        <p className="mx-5">{likeCount}</p>
         <button
           onClick={() => handleLike()}  
           className="text-red-700 text-2xl"
