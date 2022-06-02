@@ -32,6 +32,7 @@ exports.checkIfLiked = async (req, res, next) => {
       return res.status(200).json({"status": "ok", "isLiked": false});
 
     return res.status(200).json({"status": "ok", "isLiked": true, "like_id": result[0].id})
+    
   } catch (error) {
     console.log(error);
     next(error);
