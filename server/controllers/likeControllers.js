@@ -11,3 +11,14 @@ exports.addLike = async (req, res, next) => {
     next(error);
   }
 }
+
+exports.removeLike = async (req, res, next) => {
+  try {
+    const { like_id } = req.body;
+    Like.delete(like_id);
+    return res.status(200).json({"status": "ok"});
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+}

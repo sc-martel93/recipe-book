@@ -4,6 +4,7 @@ const router = express.Router();
 
 router
   .route("/")
-  .post(likeControllers.addLike);
+  .post(likeControllers.addLike)
+  .delete(likeControllers.removeLike);
 
 module.exports = router;

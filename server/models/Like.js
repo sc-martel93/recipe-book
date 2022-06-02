@@ -15,15 +15,16 @@ class Like {
     return db.execute(SQL, [this.id, this.user_id, this.post_id]);
   }
 
+  static delete = (id) => {
+    const SQL = `DELETE FROM likes WHERE id = ?`;
+    return db.execute(SQL, [id]);
+  }
+
   getLikedPosts(uid) {
 
   }
 
   getLikeCount(pid) {
-
-  }
-
-  deleteLike(uid, pid) {
 
   }
 }
