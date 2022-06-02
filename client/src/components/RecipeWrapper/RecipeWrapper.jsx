@@ -100,7 +100,7 @@ const RecipeWrapper = () => {
           onChange={e => setCurrentOpt(e)}
           value={currentOpt} 
           className="w-72"
-          placeholderClassName="cursor-pointer text-white bg-blue-900 hover:bg-yellow-400 focus:bg-yellow-400 hover:text-blue-900 focus:text-blue-900 transition-colors rounded px-5 py-1.5"
+          placeholderClassName="cursor-pointer text-white bg-blue-900 hover:bg-yellow-400 focus:bg-yellow-400 hover:text-blue-900 focus:text-blue-900 transition-colors rounded px-5 py-1.5 hover:shadow-lg hover:shadow-slate-600 focus:shadow-lg focus:shadow-slate-600"
           menuClassName="bg-blue-500 p-5 mt-1 rounded-lg shadow-lg shadow-slate-600"
         />
       </div>
