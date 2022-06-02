@@ -9,6 +9,6 @@ router
 
 router
   .route("/recipe")
-  .get(likeControllers.checkIfLiked);
+  .put(likeControllers.checkIfLiked);
 
 module.exports = router;
