@@ -6,6 +6,7 @@ import { addLike, removeLike, checkIfLiked } from "../../../state/actions/likes"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash, faHeart} from "@fortawesome/free-solid-svg-icons";
+import { faHeart as faHeartH } from "@fortawesome/free-regular-svg-icons";
 
 
 const Recipe = ({ recipe, user }) => {
@@ -35,6 +36,11 @@ const Recipe = ({ recipe, user }) => {
             setIsLiked(true);
             setLikeId(res.like_id);
           }
+          else
+          {
+            setIsLiked(false);
+            setLikeId("");
+          }
         })
         .catch(err => console.log(err));
     }
@@ -55,6 +61,7 @@ const Recipe = ({ recipe, user }) => {
   };
 
   const handleLike = () => {
+    // TODO set error message!
     if (!user.isLoggedIn) return;
 
     if (isLiked)
@@ -145,9 +152,14 @@ const Recipe = ({ recipe, user }) => {
         <p className="mx-5">{likes}</p>
         <button
           onClick={() => handleLike()}  
-          className="text-red-400 text-2xl hover:text-red-700 focus:text-red-700"
+          className="text-red-700 text-2xl"
         >
-          <FontAwesomeIcon icon={faHeart} />
+          { isLiked ? 
+              <FontAwesomeIcon icon={faHeart} />
+            :
+              <FontAwesomeIcon icon={faHeartH} />
+          }
+          
         </button>
       </section>
     
