@@ -5,7 +5,7 @@ exports.addLike = async (req, res, next) => {
     const { uid, pid } = req.body.data;
     const like = new Like(uid, pid);
     await like.save();
-    return res.status(201).json({status: "ok"});
+    return res.status(201).json({status: "ok", data: like.id});
   } catch (error) {
     console.log(error);
     next(error);
