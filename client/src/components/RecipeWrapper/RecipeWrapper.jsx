@@ -59,10 +59,10 @@ const RecipeWrapper = () => {
         }
         break;
 
-        default:
-          dispatch(getAllRecipes());
-          dispatch(setIndex(0));
-          break;
+      default:
+        dispatch(getAllRecipes());
+        dispatch(setIndex(0));
+        break;
     }
   }, [dispatch, currentOpt, recipeCount]);
 
