@@ -3,9 +3,11 @@ import axios from "axios";
 const URL = "http://localhost:3001";
 
 export const fetchRecipes = () => axios.get(`${URL}/recipes`);
+
 export const fetchMyRecipes = (username) => axios.post(`${URL}/recipes/myrecipes`, {username: username});
 
 export const createRecipe = (newRecipe) => axios.post(`${URL}/recipes`, newRecipe);
+
 export const deleteRecipe = (id) => axios.delete(`${URL}/recipes/${id}`);
 
 export const createUser = (newUser) =>
@@ -24,17 +26,17 @@ export const loginUser = (userInfo) =>
 
       return err;
     });
- 
-  export const addLike = (uid, pid) => 
-    axios.post(`${URL}/likes`, { data: { uid: uid, pid: pid } });
   
-  export const removeLike = (id) => 
-    axios.delete(`${URL}/likes`, { data: { like_id: id } });
+export const addLike = (uid, pid) => 
+  axios.post(`${URL}/likes`, { data: { uid: uid, pid: pid } });
 
-  export const checkIfLiked = (uid, pid) => 
-    axios
-      .put(`${URL}/likes/recipe`, {uid: uid, pid: pid });
+export const removeLike = (id) => 
+  axios.delete(`${URL}/likes`, { data: { like_id: id } });
 
-  export const countLikes = (pid) =>
-    axios.put(`${URL}/likes/recipes`, {pid: pid});
+export const checkIfLiked = (uid, pid) => 
+  axios
+    .put(`${URL}/likes/recipe`, {uid: uid, pid: pid });
+
+export const countLikes = (pid) =>
+  axios.put(`${URL}/likes/recipes`, {pid: pid});
       
