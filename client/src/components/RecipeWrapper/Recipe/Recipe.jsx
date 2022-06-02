@@ -30,7 +30,6 @@ const Recipe = ({ recipe, user }) => {
     {
       dispatch(checkIfLiked(uid, rid))
         .then(res => {
-          console.log(res.isLiked)
           if (res.isLiked)
           {
             setIsLiked(true);
