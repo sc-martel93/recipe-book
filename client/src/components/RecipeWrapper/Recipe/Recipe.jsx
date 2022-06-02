@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { deleteRecipe } from "../../../state/actions/recipes";
 import { setIndex } from "../../../state/actions/recipeIndex";
-import { addLike, removeLike } from "../../../state/actions/likes";
+import { addLike, removeLike, checkIfLiked } from "../../../state/actions/likes";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash, faHeart} from "@fortawesome/free-solid-svg-icons";
@@ -25,8 +25,20 @@ const Recipe = ({ recipe, user }) => {
   const [likeId, setLikeId] = useState("");
 
   useEffect(() => {
-    setIsLiked(false);
-  }, [rid] )
+    if(uid !== "" && rid !== "")
+    {
+      dispatch(checkIfLiked(uid, rid))
+        .then(res => {
+          console.log(res.isLiked)
+          if (res.isLiked)
+          {
+            setIsLiked(true);
+            setLikeId(res.like_id);
+          }
+        })
+        .catch(err => console.log(err));
+    }
+  }, [rid, isLiked, dispatch, uid] );
 
   const handleDelete = () => {
     const confirmDelete = window.confirm(

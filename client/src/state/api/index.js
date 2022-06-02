@@ -29,4 +29,9 @@ export const loginUser = (userInfo) =>
     axios.post(`${URL}/likes`, { data: { uid: uid, pid: pid } });
   
   export const removeLike = (id) => 
-    axios.delete(`${URL}/likes`, { data: { like_id: id } })
+    axios.delete(`${URL}/likes`, { data: { like_id: id } });
+
+  export const checkIfLiked = (uid, pid) => 
+    axios
+      .put(`${URL}/likes/recipe`, {uid: uid, pid: pid });
+      

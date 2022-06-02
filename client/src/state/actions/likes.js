@@ -17,3 +17,12 @@ export const removeLike = (id) => async (dispatch) => {
     return error;
   }
 }
+
+export const checkIfLiked = (uid, pid) => async (dispatch) => {
+  try {
+    const res = await api.checkIfLiked(uid, pid);
+    return res.data;
+  } catch (error) {
+    
+  }
+}
