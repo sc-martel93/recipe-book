@@ -12,10 +12,11 @@ const Recipe = ({ recipe, user }) => {
   const dispatch = useDispatch();
   
   const { name, created_by, ingredients, directions, notes, likes } = recipe;
-  const recipeId = recipe.id;
+  // Recipe id
+  const rid = recipe.id;
   const ingredientArray = ingredients.split(", ");
 
-  const userId = user.userId;
+  const uid = user.uid;
   const username = user.username;
 
   const isAuth = created_by === username && username !== "";
@@ -25,14 +26,14 @@ const Recipe = ({ recipe, user }) => {
 
   useEffect(() => {
     setIsLiked(false);
-  }, [recipeId] )
+  }, [rid] )
 
   const handleDelete = () => {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this recipe?"
     );
     if (!confirmDelete) return;
-    dispatch(deleteRecipe(recipe.id));
+    dispatch(deleteRecipe(rid));
     dispatch(setIndex(0));
   };
 
@@ -59,7 +60,7 @@ const Recipe = ({ recipe, user }) => {
     }
     else
     {
-      dispatch(addLike(userId, recipeId))
+      dispatch(addLike(uid, rid))
       .then(res => {
         if (res.data.status === "ok")
         {
