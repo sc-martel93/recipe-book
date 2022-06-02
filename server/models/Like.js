@@ -25,13 +25,15 @@ class Like {
     return db.execute(SQL, [uid, pid]);
   }
 
+  static countLikes = (pid) => {
+    const SQL = `SELECT COUNT(*) AS like_count FROM likes WHERE post_id = ?`;
+    return db.execute(SQL, [pid]);
+  }
+
   getLikedPosts(uid) {
 
   }
 
-  getLikeCount(pid) {
-
-  }
 }
 
 module.exports = Like;

@@ -38,3 +38,15 @@ exports.checkIfLiked = async (req, res, next) => {
     next(error);
   }
 }
+
+exports.countLikes = async (req, res, next) => {
+  try {
+    const { pid } = req.body;
+    const [ result, _ ] = await Like.countLikes(pid);
+    const like_count = result[0]?.like_count;
+    return res.status(201).json({ "status": "ok", "like_count": like_count })
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+}
