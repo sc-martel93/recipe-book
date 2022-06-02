@@ -10,7 +10,6 @@ class Recipe {
     this.ingredients = ingredients;
     this.directions = directions;
     this.notes = notes;
-    this.likes = 0;
 
     return this;
   }
@@ -22,10 +21,9 @@ class Recipe {
         name,
         ingredients,
         directions,
-        notes,
-        likes
+        notes
      )
-     VALUE ( ?, ?, ?, ?, ?, ?, ?)`;
+     VALUE ( ?, ?, ?, ?, ?, ?)`;
 
     return db.execute(SQL, [
       this.id,
@@ -33,8 +31,7 @@ class Recipe {
       this.name,
       this.ingredients,
       this.directions,
-      this.notes,
-      this.likes
+      this.notes
     ]);
   }
 
