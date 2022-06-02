@@ -58,9 +58,13 @@ const RecipeWrapper = () => {
           setCurrentOpt(defaultOption);
         }
         break;
-        
+
+        default:
+          dispatch(getAllRecipes());
+          dispatch(setIndex(0));
+          break;
     }
-  }, [dispatch, currentOpt]);
+  }, [dispatch, currentOpt, recipeCount]);
 
   const handlePrevious = () => {
     if (recipeCount === 0) return;

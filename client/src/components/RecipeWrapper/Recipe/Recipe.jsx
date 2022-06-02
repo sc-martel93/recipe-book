@@ -49,7 +49,10 @@ const Recipe = ({ recipe, user }) => {
   useEffect(() => {
     dispatch(countLikes(rid, isLiked))
       .then(res => setLikeCount(res))
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err)
+        setLikeCount(0);
+      });
   }, [rid, isLiked]);
 
   const handleDelete = () => {
