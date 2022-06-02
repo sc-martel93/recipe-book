@@ -16,7 +16,7 @@ class Recipe {
   }
 
   save() {
-    const sql = `INSERT INTO recipes(
+    const SQL = `INSERT INTO recipes(
         id,
         created_by,
         name,
@@ -27,7 +27,7 @@ class Recipe {
      )
      VALUE ( ?, ?, ?, ?, ?, ?, ?)`;
 
-    return db.execute(sql, [
+    return db.execute(SQL, [
       this.id,
       this.created_by,
       this.name,
