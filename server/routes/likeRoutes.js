@@ -7,4 +7,8 @@ router
   .post(likeControllers.addLike)
   .delete(likeControllers.removeLike);
 
+router
+  .route("/recipe")
+  .get(likeControllers.checkIfLiked);
+
 module.exports = router;

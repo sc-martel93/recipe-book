@@ -20,6 +20,11 @@ class Like {
     return db.execute(SQL, [id]);
   }
 
+  static checkIfLiked = (uid, pid) => {
+    const SQL = `SELECT id FROM likes WHERE user_id = ? AND post_id = ?`;
+    return db.execute(SQL, [uid, pid]);
+  }
+
   getLikedPosts(uid) {
 
   }

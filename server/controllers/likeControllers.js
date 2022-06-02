@@ -22,3 +22,18 @@ exports.removeLike = async (req, res, next) => {
     next(error);
   }
 }
+
+exports.checkIfLiked = async (req, res, next) => {
+  try {
+    const { uid, pid } = req.body;
+    const [result, _] = await Like.checkIfLiked(uid, pid);
+
+    if (result.length === 0)
+      return res.status(200).json({"status": "ok", "isLiked": false});
+
+    return res.status(200).json({"status": "ok", "isLiked": true, "like_id": result[0].id})
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+}
