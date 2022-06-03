@@ -51,7 +51,6 @@ const RecipeWrapper = () => {
       case 3:
         if(username !== "")
         {
-          console.log(uid);
           dispatch(getMyLikedRecipes(uid));
           dispatch(setIndex(0));
         }
@@ -67,7 +66,7 @@ const RecipeWrapper = () => {
         dispatch(setIndex(0));
         break;
     }
-  }, [dispatch, currentOpt, recipeCount]);
+  }, [currentOpt, recipeCount]);
 
   const handlePrevious = () => {
     if (recipeCount === 0) return;

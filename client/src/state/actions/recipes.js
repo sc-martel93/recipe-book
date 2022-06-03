@@ -21,7 +21,6 @@ export const getMyRecipes = (username) => async (dispatch) => {
 export const getMyLikedRecipes = (uid) => async (dispatch) => {
   try {
     const { data } = await api.fetchLikedRecipes(uid);
-    console.log(data)
     dispatch({ type: "FETCH_ALL", payload: data.recipes});
   } catch (error) {
     console.error(error.message);
