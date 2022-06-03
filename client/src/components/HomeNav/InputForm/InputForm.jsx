@@ -37,6 +37,7 @@ const InputForm = (props) => {
       <form
         onSubmit={(e) => handleSubmit(e)}
         className="mx-auto flex flex-col w-2/3 max-w-3xl"
+        autoComplete="off"
       >
         <label className="mt-2">Name: </label>
         <input
@@ -49,6 +50,8 @@ const InputForm = (props) => {
           }
           className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
           required
+          minLength="2"
+          maxLength="45"
         />
 
         <label className="mt-2">Ingredients (comma between):  </label>
@@ -62,6 +65,8 @@ const InputForm = (props) => {
           }
           className="rounded px-2 py-1.5 outline-none resize-none hover:bg-yellow-200 focus:bg-yellow-200 h-20"
           required
+          minLength="2"
+          maxLength="500"
         />
 
         <label className="mt-2">Directions: </label>
@@ -74,6 +79,8 @@ const InputForm = (props) => {
           }
           className="rounded px-2 py-1.5 resize-none outline-none hover:bg-yellow-200 focus:bg-yellow-200 h-32"
           required
+          minLength="2"
+          maxLength="500"
         />
 
         <label className="mt-2">Notes: </label>
@@ -85,6 +92,7 @@ const InputForm = (props) => {
             setRecipeData({ ...recipeData, notes: e.target.value })
           }
           className="rounded px-2 py-1.5 resize-none outline-none hover:bg-yellow-200 focus:bg-yellow-200 h-32"
+          maxLength="500"
         />
 
         <button
