@@ -7,9 +7,13 @@ router
   .get(recipeControllers.getAllRecipes)
   .post(recipeControllers.createNewRecipe);
 
-  router
-    .route("/myrecipes")
-    .post(recipeControllers.getMyRecipes)
+router
+  .route("/myrecipes")
+  .post(recipeControllers.getMyRecipes);
+
+router
+  .route("/myrecipes/liked")
+  .put(recipeControllers.getMyLikedRecipes);
 
 router.route("/:id").delete(recipeControllers.deleteRecipeById);
 

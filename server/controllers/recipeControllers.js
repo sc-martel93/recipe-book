@@ -21,6 +21,17 @@ exports.getMyRecipes = async (req, res, next) => {
   }
 }
 
+exports.getMyLikedRecipes = async (req, res, next) => {
+  try {
+    const { uid } = req.body;
+    const [recipes, _] = await Recipe.getMyLikedRecipes(uid);
+    res.status(200).json({ "status": "ok", recipes });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+}
+
 exports.createNewRecipe = async (req, res, next) => {
   try {
     const recipeData = req.body;

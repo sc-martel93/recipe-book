@@ -40,13 +40,29 @@ class Recipe {
     return db.execute(SQL);
   };
 
+  static getMyLikedRecipes = (uid) => {
+    const SQL = `SELECT
+                recipes.id,
+                recipes.created_by,
+                recipes.name,
+                recipes.ingredients,
+                recipes.directions,
+                recipes.notes
+                FROM recipes 
+                INNER JOIN likes
+                ON recipes.id = likes.post_id
+                AND likes.user_id = (?);`
+
+    return db.execute(SQL, [uid]);
+  }
+
   static findCreatedBy = (username) => {
     const SQL = `SELECT * FROM recipes WHERE created_by = (?) ORDER BY name`;
     return db.execute(SQL, [username]);
   }
 
   static deleteById = (id) => {
-    const SQL = "DELETE FROM recipes WHERE id = ?";
+    const SQL = "DELETE FROM recipes WHERE id = (?)";
     return db.execute(SQL, [id]);
   };
 }
