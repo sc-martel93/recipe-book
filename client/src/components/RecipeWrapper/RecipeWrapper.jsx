@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Dropdown from 'react-dropdown';
 import { next, previous, setIndex } from "../../state/actions/recipeIndex";
-import { getAllRecipes, getMyRecipes } from "../../state/actions/recipes";
+import { getAllRecipes, getMyRecipes, getMyLikedRecipes } from "../../state/actions/recipes";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -16,7 +16,8 @@ const RecipeWrapper = () => {
   const recipeCount = recipes.length;
 
   const user = useSelector((state) => state.user);
-  const username = user.username;
+  const uid = user?.uid;
+  const username = user?.username;
 
   const options = [
     {value: 1, label: "All Recipes"},
@@ -50,7 +51,9 @@ const RecipeWrapper = () => {
       case 3:
         if(username !== "")
         {
-          // dispatch();
+          console.log(uid);
+          dispatch(getMyLikedRecipes(uid));
+          dispatch(setIndex(0));
         }
         else
         {
