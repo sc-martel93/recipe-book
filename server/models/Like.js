@@ -29,12 +29,6 @@ class Like {
     const SQL = `SELECT COUNT(*) AS like_count FROM likes WHERE post_id = ?`;
     return db.execute(SQL, [pid]);
   }
-
-  static getLikedRecipes = (uid) => {
-    const SQL = `SELECT post_id FROM likes WHERE user_id = ?`;
-    return db.execute(SQL, [uid]);
-  }
-
 }
 
 module.exports = Like;
