@@ -23,7 +23,7 @@ const RegistrationForm = (props) => {
       passInput.current.focus();
       return;
     }
-
+    
     const newUser = { username: username, password: password };
 
     dispatch(createUser(newUser))
@@ -93,6 +93,8 @@ const RegistrationForm = (props) => {
               placeholder="Username"
               className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
               required
+              minLength="4"
+              maxLength="40"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -107,6 +109,8 @@ const RegistrationForm = (props) => {
               placeholder="Password"
               className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
               required
+              minLength="8"
+              maxLength="40"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -120,6 +124,8 @@ const RegistrationForm = (props) => {
               placeholder="Confirm Password"
               className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
               required
+              minLength="8"
+              maxLength="40"
               value={passwordCopy}
               onChange={(e) => setPasswordCopy(e.target.value)}
             />
