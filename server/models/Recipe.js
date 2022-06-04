@@ -51,7 +51,8 @@ class Recipe {
                 FROM recipes 
                 INNER JOIN likes
                 ON recipes.id = likes.post_id
-                AND likes.user_id = (?);`
+                AND likes.user_id = (?)
+                ORDER BY name;`
 
     return db.execute(SQL, [uid]);
   }
