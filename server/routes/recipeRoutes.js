@@ -5,7 +5,8 @@ const router = express.Router();
 router
   .route("/")
   .get(recipeControllers.getAllRecipes)
-  .post(recipeControllers.createNewRecipe);
+  .post(recipeControllers.createNewRecipe)
+  .put(recipeControllers.updateRecipe);
 
 router
   .route("/myrecipes")

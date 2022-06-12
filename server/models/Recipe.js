@@ -35,6 +35,20 @@ class Recipe {
     ]);
   }
 
+  static update = ({uid, name, ingredients, directions, notes}) => {
+    const SQL = `UPDATE recipes 
+      SET name = ?, ingredients = ?, directions = ?, notes = ? 
+      WHERE id = ?`;
+
+    return db.execute(SQL, [
+      name,
+      ingredients,
+      directions,
+      notes,
+      uid
+    ])
+  }
+
   static findAll = () => {
     const SQL = `SELECT * FROM recipes ORDER BY name`;
     return db.execute(SQL);
