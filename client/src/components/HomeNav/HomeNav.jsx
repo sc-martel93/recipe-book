@@ -19,6 +19,8 @@ const HomeNav = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
+    if (searchValue === "") return;
+
     const target = searchValue.toLowerCase();
 
     recipes.map((recipe, index) => {
