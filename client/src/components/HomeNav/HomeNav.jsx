@@ -54,7 +54,7 @@ const HomeNav = () => {
         :
           <button
             onClick={() => navigate("/")}
-            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 w-56 md:w-fit lg:w-fit transition-colors font-bold rounded px-5 py-1.5 md:ml-20"
+            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 w-56 md:w-44 lg:w-44 transition-colors font-bold rounded px-5 py-1.5 md:ml-20"
           >
             Login
           </button>
