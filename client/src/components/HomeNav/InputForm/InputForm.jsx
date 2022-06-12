@@ -57,7 +57,7 @@ const InputForm = (props) => {
         <label className="mt-2">Ingredients (comma between):  </label>
         <textarea
           type="text"
-          name="ingredient"
+          name="ingredients"
           value={recipeData.ingredients}
           placeholder="Ingredient 1, ingredient 2, ..."
           onChange={(e) =>
