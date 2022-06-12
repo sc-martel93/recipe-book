@@ -52,9 +52,8 @@ const Recipe = ({ recipe, user }) => {
     }
   }, [rid, isLiked, dispatch, uid]);
 
-  // counts likes for current recipe and resets edit state
+  // counts likes for current recipe
   useEffect(() => {
-    setIsEdit(false);
     dispatch(countLikes(rid, isLiked))
       .then(res => setLikeCount(res))
       .catch(err => {
@@ -62,6 +61,15 @@ const Recipe = ({ recipe, user }) => {
         setLikeCount(0);
       });
   }, [rid, isLiked]);
+
+  // Reset edit recipe data when load new recipe
+  useEffect(() => {
+    setIsEdit(false);
+    setEdName(recipe.name);
+    setEdIngredients(recipe.name);
+    setEdDirections(recipe.directions);
+    setEdNotes(recipe.notes);
+  }, [recipe])
 
   const handleDelete = () => {
     const confirmDelete = window.confirm(
