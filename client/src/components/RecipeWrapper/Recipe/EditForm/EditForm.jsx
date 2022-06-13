@@ -11,15 +11,21 @@ const EditForm = ({ recipe, setIsEdit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    dispatch(updateRecipe({
-      id: recipe.id,
-      name: edName,
-      created_by: recipe.created_by,
-      ingredients: edIngredients,
-      directions: edDirections,
-      notes: edNotes,
-    }))
+    // Only dispatch update is changes are made
+    if(recipe.name !== edName || 
+      recipe.ingredients !== edIngredients || 
+      recipe.directions !== edDirections || 
+      recipe.notes !== edNotes)
+    {
+      dispatch(updateRecipe({
+        id: recipe.id,
+        name: edName,
+        created_by: recipe.created_by,
+        ingredients: edIngredients,
+        directions: edDirections,
+        notes: edNotes,
+      }))
+    }
       
     setIsEdit(false);
   }
