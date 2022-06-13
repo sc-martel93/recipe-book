@@ -36,6 +36,15 @@ export const createRecipe = (recipe) => async (dispatch) => {
   }
 };
 
+export const updateRecipe = (recipe) => async (dispatch) => {
+  try {
+    await api.updateRecipe(recipe);
+    dispatch({ type: "UPDATE", payload: recipe});
+  } catch (error) {
+    console.error(error.message);
+  }
+} 
+
 export const deleteRecipe = (id) => async (dispatch) => {
   try {
     await api.deleteRecipe(id);

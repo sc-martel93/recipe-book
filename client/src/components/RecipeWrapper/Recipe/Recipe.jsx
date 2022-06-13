@@ -103,7 +103,7 @@ const Recipe = ({ recipe, user }) => {
   return (
     <>
       {isEdit ? (
-        <EditForm recipe={ recipe } />
+        <EditForm recipe={ recipe } setIsEdit= { setIsEdit } />
       ) : (
         <article className="w-5/6 max-w-3xl mx-auto px-10 py-10 space-y-10 mt-10 break-words bg-yellow-100 rounded-lg shadow-lg shadow-slate-600">
           <section className="flex justify-between border-b-4 border-zinc-900">

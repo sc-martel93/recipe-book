@@ -11,6 +11,8 @@ export const fetchLikedRecipes = (uid) =>
 
 export const createRecipe = (newRecipe) => axios.post(`${URL}/recipes`, newRecipe);
 
+export const updateRecipe = (recipeData) => axios.put(`${URL}/recipes`, recipeData);
+
 export const deleteRecipe = (id) => axios.delete(`${URL}/recipes/${id}`);
 
 export const createUser = (newUser) =>

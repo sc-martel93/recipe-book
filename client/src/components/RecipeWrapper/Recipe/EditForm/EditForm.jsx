@@ -1,15 +1,34 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateRecipe } from '../../../../state/actions/recipes';
 
-const EditForm = ({ recipe }) => {
+const EditForm = ({ recipe, setIsEdit }) => {
+  const dispatch = useDispatch();
   const [edName, setEdName] = useState(recipe.name);
   const [edIngredients, setEdIngredients] = useState(recipe.ingredients);
   const [edDirections, setEdDirections] = useState(recipe.directions);
   const [edNotes, setEdNotes] = useState(recipe.notes);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(updateRecipe({
+      id: recipe.id,
+      name: edName,
+      created_by: recipe.created_by,
+      ingredients: edIngredients,
+      directions: edDirections,
+      notes: edNotes,
+    }))
+      
+    setIsEdit(false);
+  }
+
   return (
     <form
       className="mx-auto flex flex-col w-5/6 max-w-3xl mt-10 p-10 bg-blue-400 rounded-lg shadow-lg shadow-slate-600"
       autoComplete="off"
+      onSubmit={e => handleSubmit(e)}
     >
       <label for="name">Name:</label>
       <input
