@@ -12,6 +12,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartH } from "@fortawesome/free-regular-svg-icons";
+import EditForm from "./EditForm/EditForm";
 
 const Recipe = ({ recipe, user }) => {
   const dispatch = useDispatch();
@@ -20,11 +21,6 @@ const Recipe = ({ recipe, user }) => {
   // Recipe id
   const rid = recipe.id;
   const ingredientArray = ingredients.split(", ");
-
-  const [edName, setEdName] = useState(recipe.name);
-  const [edIngredients, setEdIngredients] = useState(recipe.ingredients);
-  const [edDirections, setEdDirections] = useState(recipe.directions);
-  const [edNotes, setEdNotes] = useState(recipe.notes);
 
   const uid = user.uid;
   const username = user.username;
@@ -52,8 +48,9 @@ const Recipe = ({ recipe, user }) => {
     }
   }, [rid, isLiked, dispatch, uid]);
 
-  // counts likes for current recipe
+  // counts likes for current recipe, resets edit state
   useEffect(() => {
+    setIsEdit(false);
     dispatch(countLikes(rid, isLiked))
       .then((res) => setLikeCount(res))
       .catch((err) => {
@@ -61,15 +58,6 @@ const Recipe = ({ recipe, user }) => {
         setLikeCount(0);
       });
   }, [rid, isLiked]);
-
-  // Reset edit recipe data when load new recipe
-  useEffect(() => {
-    setIsEdit(false);
-    setEdName(recipe.name);
-    setEdIngredients(recipe.ingredients);
-    setEdDirections(recipe.directions);
-    setEdNotes(recipe.notes);
-  }, [recipe]);
 
   const handleDelete = () => {
     const confirmDelete = window.confirm(
@@ -115,69 +103,7 @@ const Recipe = ({ recipe, user }) => {
   return (
     <>
       {isEdit ? (
-        <form
-          className="mx-auto flex flex-col w-5/6 max-w-3xl mt-10 p-10 bg-blue-400 rounded-lg shadow-lg shadow-slate-600"
-          autoComplete="off"
-        >
-          <label for="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={edName}
-            onChange={(e) => setEdName(e.target.value)}
-            required
-            minLength="2"
-            maxLength="45"
-            className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
-          />
-          <label for="ingredients" className="mt-2">
-            Ingredients:
-          </label>
-          <textarea
-            type="text"
-            id="ingredients"
-            name="ingredients"
-            value={edIngredients}
-            onChange={(e) => setEdIngredients(e.target.value)}
-            required
-            minLength="2"
-            maxLength="500"
-            className="rounded px-2 py-1.5 outline-none resize-none hover:bg-yellow-200 focus:bg-yellow-200 h-20"
-          />
-          <label for="directions" className="mt-2">
-            Directions
-          </label>
-          <textarea
-            type="text"
-            id="directions"
-            name="directions"
-            value={edDirections}
-            onChange={(e) => setEdDirections(e.target.value)}
-            required
-            minLength="2"
-            maxLength="500"
-            className="rounded px-2 py-1.5 resize-none outline-none hover:bg-yellow-200 focus:bg-yellow-200 h-32"
-          />
-          <label for="notes" className="mt-2">
-            Notes:{" "}
-          </label>
-          <textarea
-            type="text"
-            id="notes"
-            name="notes"
-            value={edNotes}
-            onChange={(e) => setEdNotes(e.target.value)}
-            maxLength="500"
-            className="rounded px-2 py-1.5 resize-none outline-none hover:bg-yellow-200 focus:bg-yellow-200 h-32"
-          />
-          <button
-            type="submit"
-            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 transition-colors font-bold rounded px-5 py-1.5 mt-3"
-          >
-            Submit
-          </button>
-        </form>
+        <EditForm recipe={ recipe } />
       ) : (
         <article className="w-5/6 max-w-3xl mx-auto px-10 py-10 space-y-10 mt-10 break-words bg-yellow-100 rounded-lg shadow-lg shadow-slate-600">
           <section className="flex justify-between border-b-4 border-zinc-900">
