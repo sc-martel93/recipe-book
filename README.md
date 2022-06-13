@@ -12,6 +12,5 @@ Recipe book is a web app that simplifies storing and sharing recipes
 
 - Favicon
 - Add ability to edit recipes client side and server side
-- Add sort options alphabetically, most liked
 - Create explore button
--- CREATE 404 NOT FOUND PAGE ON SERVER!!!
+
