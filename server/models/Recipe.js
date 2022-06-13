@@ -35,7 +35,7 @@ class Recipe {
     ]);
   }
 
-  static update = ({uid, name, ingredients, directions, notes}) => {
+  static update = ({id, name, ingredients, directions, notes}) => {
     const SQL = `UPDATE recipes 
       SET name = ?, ingredients = ?, directions = ?, notes = ? 
       WHERE id = ?`;
@@ -45,7 +45,7 @@ class Recipe {
       ingredients,
       directions,
       notes,
-      uid
+      id
     ])
   }
 
