@@ -39,9 +39,14 @@ const InputForm = (props) => {
         className="mx-auto flex flex-col w-2/3 max-w-3xl"
         autoComplete="off"
       >
-        <label className="mt-2">Name: </label>
+        <label
+          htmlFor="name"
+          className="mt-2"
+        >Name: 
+        </label>
         <input
           type="text"
+          id="name"
           name="name"
           placeholder="Recipe Name"
           value={recipeData.name}
@@ -54,9 +59,14 @@ const InputForm = (props) => {
           maxLength="45"
         />
 
-        <label className="mt-2">Ingredients (comma between):  </label>
+        <label
+          htmlFor="ingredients"
+          className="mt-2"
+        >Ingredients (comma between):  
+        </label>
         <textarea
           type="text"
+          id="ingredients"
           name="ingredients"
           value={recipeData.ingredients}
           placeholder="Ingredient 1, ingredient 2, ..."
@@ -69,8 +79,13 @@ const InputForm = (props) => {
           maxLength="500"
         />
 
-        <label className="mt-2">Directions: </label>
+        <label
+          htmlFor="directions"
+          className="mt-2"
+        >Directions: 
+        </label>
         <textarea
+          id="directions"
           name="directions"
           value={recipeData.directions}
           placeholder="Directions..."
@@ -83,8 +98,13 @@ const InputForm = (props) => {
           maxLength="500"
         />
 
-        <label className="mt-2">Notes: </label>
+        <label
+          htmlFor="notes"
+          className="mt-2"
+        >Notes: 
+        </label>
         <textarea
+          id="notes"
           name="notes"
           value={recipeData.notes}
           placeholder="Optional notes..."
