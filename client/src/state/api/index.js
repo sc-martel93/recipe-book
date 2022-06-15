@@ -7,7 +7,7 @@ export const fetchRecipes = () => axios.get(`${URL}/recipes`);
 export const fetchMyRecipes = (username) => axios.get(`${URL}/recipes/myrecipes/${username}`);
 
 export const fetchLikedRecipes = (uid) => 
-  axios.put(`${URL}/recipes/myrecipes/liked`, {uid: uid});
+  axios.get(`${URL}/recipes/myrecipes/liked/${uid}`);
 
 export const createRecipe = (newRecipe) => axios.post(`${URL}/recipes`, newRecipe);
 
