@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { slide as Menu } from 'react-burger-menu'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowCircleRight, faDoorClosed, faPlusCircle, faSearch } from "@fortawesome/free-solid-svg-icons";
+import {faDoorClosed, faPlusCircle, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faCircleRight, faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
 
 import { setIndex } from "../../state/actions/recipeIndex";
+import { logout } from "../../state/actions/users";
 import InputForm from "./InputForm/InputForm";
-import { faCircleRight, faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
+
 
 const HomeNav = () => {
   const dispatch = useDispatch();
@@ -23,6 +25,12 @@ const HomeNav = () => {
   const handleCreateRecipe = () => {
     setIsCreating(isCreating => !isCreating);
     setIsOpen(isOpen => !isOpen);
+  }
+
+  const handleLogout = () => {
+    dispatch(logout);
+    window.localStorage.removeItem("RECIPE_USER");
+    navigate("/");
   }
 
   const handleSearch = (e) => {
@@ -92,7 +100,7 @@ const HomeNav = () => {
           }
 
           <button
-
+            onClick={handleLogout}
             title="Logout"
             className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider"
           >
