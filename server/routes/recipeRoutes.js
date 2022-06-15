@@ -6,7 +6,8 @@ router
   .route("/")
   .get(recipeControllers.getAllRecipes)
   .post(recipeControllers.createNewRecipe)
-  .put(recipeControllers.updateRecipe);
+  .put(recipeControllers.updateRecipe)
+  .delete(recipeControllers.deleteRecipeById);
 
 router
   .route("/myrecipes/:username")
@@ -15,7 +16,5 @@ router
 router
   .route("/myrecipes/liked/:uid")
   .get(recipeControllers.getMyLikedRecipes);
-
-router.route("/:id").delete(recipeControllers.deleteRecipeById);
 
 module.exports = router;

@@ -13,7 +13,7 @@ export const createRecipe = (newRecipe) => axios.post(`${URL}/recipes`, newRecip
 
 export const updateRecipe = (recipeData) => axios.put(`${URL}/recipes`, recipeData);
 
-export const deleteRecipe = (id) => axios.delete(`${URL}/recipes/${id}`);
+export const deleteRecipe = (id) => axios.delete(`${URL}/recipes/`, {data: {id: id}});
 
 export const createUser = (newUser) =>
   axios
