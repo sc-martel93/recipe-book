@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { slide as Menu } from 'react-burger-menu'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowCircleRight, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleRight, faDoorClosed, faPlusCircle, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { setIndex } from "../../state/actions/recipeIndex";
 import InputForm from "./InputForm/InputForm";
+import { faCircleRight, faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
 
 const HomeNav = () => {
   const dispatch = useDispatch();
@@ -15,7 +17,13 @@ const HomeNav = () => {
   
   const [isCreating, setIsCreating] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
   let targetIndex = -1;
+
+  const handleCreateRecipe = () => {
+    setIsCreating(!isCreating);
+    setIsOpen(false);
+  }
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -42,34 +50,57 @@ const HomeNav = () => {
       id="navBar"
       className="bg-blue-900 shadow-lg shadow-slate-600 sticky top-0"
     >
-      <nav className="max-w-6xl mx-auto flex flex-col md:flex-row lg:flex-row justify-evenly items-center h-44 md:h-16 lg:h-16">
+      <nav className="max-w-7xl mx-auto flex justify-around items-center h-16">
         <h1 className="text-yellow-400 text-4xl">Recipes</h1>
-        {loggedIn ?
-          <button
-            onClick={() => setIsCreating(!isCreating)}
-            title="Create Recipe"
-            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 hover:text-blue-900 focus:text-blue-900 w-56 md:w-44 lg:w-44 transition-colors font-bold rounded px-5 py-1.5 md:ml-4"
-          >
-            {isCreating ? "Close" : "Create"}
-          </button>
-        :
-          <button
-            onClick={() => navigate("/")}
-            title="Login"
-            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 hover:text-blue-900 focus:text-blue-900 w-56 md:w-44 lg:w-44 transition-colors font-bold rounded px-5 py-1.5 md:ml-4"
-          >
-            Login
-          </button>
-        }
-        
 
-        
-        <button
-          className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 hover:text-blue-900 focus:text-blue-900 w-20 transition-colors font-bold rounded px-5 py-1.5 md:ml-20"
-          title="Logout"
+        <Menu 
+          right 
+          noOverlay
+          disableAutoFocus
+          isOpen={isOpen}
+          onOpen={() => setIsOpen(true)}
+          onClose={() => setIsOpen(false)}
         >
-          <FontAwesomeIcon icon={faArrowCircleRight} className="" />
-        </button>
+          {loggedIn ?
+            <button
+              onClick={handleCreateRecipe}
+              title="Create Recipe"
+              className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider"
+            >
+              {isCreating ?(
+                <>
+                  <FontAwesomeIcon icon={faXmarkCircle} className={"mr-5"} />
+                  Close Form
+              </>
+              )
+              : (
+                <>
+                  <FontAwesomeIcon icon={faPlusCircle} className={"mr-5"} />
+                  Create Recipe
+                </>
+              )}
+            </button>
+          :
+            <button
+              onClick={() => navigate("/")}
+              title="Login"
+              className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider"
+            >
+              <FontAwesomeIcon icon={faDoorClosed} />
+              Login
+            </button>
+          }
+
+          <button
+
+            title="Logout"
+            className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider"
+          >
+            <FontAwesomeIcon icon={faCircleRight} className={"mr-5"} />
+            Logout 
+          </button>
+
+        </Menu>
       </nav>
 
       {isCreating && <InputForm setIsCreating={setIsCreating} />}
