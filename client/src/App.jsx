@@ -11,7 +11,10 @@ function App() {
 
   // Checks if a user is saved on local storage and load their data
   useEffect(() => {
-    let currentUser = JSON.parse(window.localStorage.getItem("RECIPE_USER"));
+    let currentUser = undefined;
+   
+    if(window.localStorage.getItem("RECIPE_USER"))
+      currentUser = JSON.parse(window.localStorage.getItem("RECIPE_USER"));
     
     if(currentUser?.isLoggedIn)
     {
