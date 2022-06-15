@@ -6,7 +6,7 @@ export const userReducer = (user = {uid:"", username: "", isLoggedIn: false, iat
               isLoggedIn: true,
               iat: action.payload.iat
             };
-
+            
     default:
       return user;
   }
