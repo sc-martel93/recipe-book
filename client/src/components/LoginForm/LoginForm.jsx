@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { loginUser } from "../../state/actions/users"
@@ -7,6 +7,7 @@ import { loginUser } from "../../state/actions/users"
 const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const user = useSelector(state => state.user);
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -25,16 +26,17 @@ const handleLogin = (e) => {
         setError(`${result.message}, please try again later.`);
 
       if(result.status === "ok")
-        navigate("/recipes");
-      
+      {
+        window.localStorage.setItem("RECIPE_USER", JSON.stringify(user));
+        navigate("/recipes");    
+      }
+        
       if(result.status === "error")
       {
         setError(result.message);
         nameInput.current.focus();
         setPassword("");
       }
-        
-
     })
     .catch((error) => 
     {
