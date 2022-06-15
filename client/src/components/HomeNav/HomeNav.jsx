@@ -21,8 +21,8 @@ const HomeNav = () => {
   let targetIndex = -1;
 
   const handleCreateRecipe = () => {
-    setIsCreating(!isCreating);
-    setIsOpen(false);
+    setIsCreating(isCreating => !isCreating);
+    setIsOpen(isOpen => !isOpen);
   }
 
   const handleSearch = (e) => {
