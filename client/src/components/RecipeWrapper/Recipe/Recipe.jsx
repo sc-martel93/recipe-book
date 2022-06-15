@@ -33,7 +33,7 @@ const Recipe = ({ recipe, user }) => {
 
   // Checks if current user liked recipe
   useEffect(() => {
-    if (uid !== "" && rid !== "") {
+    if (uid && rid) {
       dispatch(checkIfLiked(uid, rid))
         .then((res) => {
           if (res.isLiked) {
