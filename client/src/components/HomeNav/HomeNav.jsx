@@ -58,7 +58,7 @@ const HomeNav = () => {
       id="navBar"
       className="bg-blue-900 shadow-lg shadow-slate-600 sticky top-0"
     >
-      <nav className="max-w-7xl mx-auto flex justify-around items-center h-16">
+      <nav className="max-w-3xl w-3/4 mx-auto flex justify-between items-center h-16">
         <h1 className="text-yellow-400 text-4xl">Recipes</h1>
 
         <Menu 
