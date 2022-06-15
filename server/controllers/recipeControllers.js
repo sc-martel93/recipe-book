@@ -14,7 +14,7 @@ exports.getMyRecipes = async (req, res, next) => {
   try {
     const username = req.params.username;
     const [recipes, _] = await Recipe.findCreatedBy(username);
-    res.status(200).json({ recipes });
+    res.status(200).json({ "status": "ok", recipes });
   } catch (error) {
     console.log(error);
     next(error);
@@ -23,7 +23,7 @@ exports.getMyRecipes = async (req, res, next) => {
 
 exports.getMyLikedRecipes = async (req, res, next) => {
   try {
-    const { uid } = req.body;
+    const uid  = req.params.uid;
     const [recipes, _] = await Recipe.getMyLikedRecipes(uid);
     res.status(200).json({ "status": "ok", recipes });
   } catch (error) {

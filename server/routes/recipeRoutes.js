@@ -13,8 +13,8 @@ router
   .get(recipeControllers.getMyRecipes);
 
 router
-  .route("/myrecipes/liked")
-  .put(recipeControllers.getMyLikedRecipes);
+  .route("/myrecipes/liked/:uid")
+  .get(recipeControllers.getMyLikedRecipes);
 
 router.route("/:id").delete(recipeControllers.deleteRecipeById);
 
