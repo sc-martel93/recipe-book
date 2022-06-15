@@ -9,8 +9,8 @@ router
   .put(recipeControllers.updateRecipe);
 
 router
-  .route("/myrecipes")
-  .post(recipeControllers.getMyRecipes);
+  .route("/myrecipes/:username")
+  .get(recipeControllers.getMyRecipes);
 
 router
   .route("/myrecipes/liked")

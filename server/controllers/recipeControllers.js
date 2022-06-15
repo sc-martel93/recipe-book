@@ -12,7 +12,7 @@ exports.getAllRecipes = async (req, res, next) => {
 
 exports.getMyRecipes = async (req, res, next) => {
   try {
-    const { username } = req.body;
+    const username = req.params.username;
     const [recipes, _] = await Recipe.findCreatedBy(username);
     res.status(200).json({ recipes });
   } catch (error) {
