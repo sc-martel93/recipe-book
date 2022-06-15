@@ -32,7 +32,7 @@ exports.login = async (req, res, next) => {
 
     bcrypt.compare(password, user[0].password, (err, result) => {
       if(result){
-        const token = jwt.sign({ id: user[0].id, username: user[0].username}, JWT_SECRET);
+        const token = jwt.sign({ uid: user[0].id, username: user[0].username}, JWT_SECRET);
 
         return res.status(201).json({ status: "ok", token: token });
       }
