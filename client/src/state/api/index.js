@@ -4,7 +4,7 @@ const URL = process.env.REACT_APP_API_URL;
 
 export const fetchRecipes = () => axios.get(`${URL}/recipes`);
 
-export const fetchMyRecipes = (username) => axios.post(`${URL}/recipes/myrecipes`, {username: username});
+export const fetchMyRecipes = (username) => axios.get(`${URL}/recipes/myrecipes/${username}`);
 
 export const fetchLikedRecipes = (uid) => 
   axios.put(`${URL}/recipes/myrecipes/liked`, {uid: uid});
