@@ -70,10 +70,11 @@ const HomeNav = () => {
           onClose={() => setIsOpen(false)}
         >
           {loggedIn ?
+          <>
             <button
               onClick={handleCreateRecipe}
               title="Create Recipe"
-              className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider"
+              className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider mt-5"
             >
               {isCreating ?(
                 <>
@@ -88,26 +89,26 @@ const HomeNav = () => {
                 </>
               )}
             </button>
+
+            <button
+              onClick={handleLogout}
+              title="Logout"
+              className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider mt-5"
+            >
+              <FontAwesomeIcon icon={faCircleRight} className={"mr-5"} />
+              Logout 
+            </button>
+          </>
           :
             <button
               onClick={() => navigate("/")}
               title="Login"
-              className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider"
+              className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider mt-5"
             >
-              <FontAwesomeIcon icon={faDoorClosed} />
+              <FontAwesomeIcon icon={faDoorClosed} className={"mr-5"} />
               Login
             </button>
           }
-
-          <button
-            onClick={handleLogout}
-            title="Logout"
-            className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider"
-          >
-            <FontAwesomeIcon icon={faCircleRight} className={"mr-5"} />
-            Logout 
-          </button>
-
         </Menu>
       </nav>
 
