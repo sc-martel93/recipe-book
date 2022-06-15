@@ -3,24 +3,22 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { slide as Menu } from 'react-burger-menu'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faDoorClosed, faPlusCircle, faSearch } from "@fortawesome/free-solid-svg-icons";
+import {faDoorClosed, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { faCircleRight, faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
 
-import { setIndex } from "../../state/actions/recipeIndex";
 import { logout } from "../../state/actions/users";
 import InputForm from "./InputForm/InputForm";
+import SearchBar from "./SearchBar/SearchBar";
 
 
 const HomeNav = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const recipes = useSelector((state) => state.recipes);
+ 
   const loggedIn = useSelector((state) => state.user.isLoggedIn);
-  
+
   const [isCreating, setIsCreating] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  let targetIndex = -1;
 
   const handleCreateRecipe = () => {
     setIsCreating(isCreating => !isCreating);
@@ -33,27 +31,7 @@ const HomeNav = () => {
     navigate("/");
   }
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (searchValue === "") return;
-
-    const target = searchValue.toLowerCase();
-
-    recipes.map((recipe, index) => {
-      let recipeName = recipe.name.toLowerCase();
-
-      if (recipeName.includes(target)) {
-        targetIndex = index;
-        dispatch(setIndex(targetIndex));
-      }
-    });
-
-    if (targetIndex === -1) alert("Not found!");
-    setSearchValue("");
-  };
-
   return (
-    <>
     <section
       id="navBar"
       className="bg-blue-900 shadow-lg shadow-slate-600 sticky top-0"
@@ -109,31 +87,12 @@ const HomeNav = () => {
               Login
             </button>
           }
+          <SearchBar />
         </Menu>
       </nav>
 
       {isCreating && <InputForm setIsCreating={setIsCreating} />}
     </section>
-
-    {/* <form 
-      onSubmit={(e) => handleSearch(e)} 
-      className="max-w-6xl flex justify-center mt-10"
-    >
-          <input
-            type="text"
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-            className="w-44 outline-none hover:bg-yellow-200 focus:bg-yellow-200 rounded px-2 py-1.5 mr-1"
-          />
-          <button
-            type="submit"
-            title="Search"
-            className="w-10 outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 transition-colors rounded px-2 py-1.5"
-          >
-            <FontAwesomeIcon icon={faSearch} />
-          </button>
-        </form> */}
-    </>
   );
 };
 
