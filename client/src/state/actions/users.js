@@ -25,3 +25,7 @@ export const loginUser = (userInfo) => async (dispatch) => {
 export const setUser = (user) => (dispatch) => {
   dispatch({ type: "LOGIN", payload: user});
 }
+
+export const logout = () => (dispatch) => {
+  dispatch({ type: "LOGOUT" });
+}
