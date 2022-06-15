@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleRight, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { setIndex } from "../../state/actions/recipeIndex";
 import InputForm from "./InputForm/InputForm";
@@ -37,6 +37,7 @@ const HomeNav = () => {
   };
 
   return (
+    <>
     <section
       id="navBar"
       className="bg-blue-900 shadow-lg shadow-slate-600 sticky top-0"
@@ -47,21 +48,37 @@ const HomeNav = () => {
           <button
             onClick={() => setIsCreating(!isCreating)}
             title="Create Recipe"
-            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 w-56 md:w-44 lg:w-44 transition-colors font-bold rounded px-5 py-1.5 md:ml-20"
+            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 hover:text-blue-900 focus:text-blue-900 w-56 md:w-44 lg:w-44 transition-colors font-bold rounded px-5 py-1.5 md:ml-4"
           >
             {isCreating ? "Close" : "Create"}
           </button>
         :
           <button
             onClick={() => navigate("/")}
-            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 w-56 md:w-44 lg:w-44 transition-colors font-bold rounded px-5 py-1.5 md:ml-20"
+            title="Login"
+            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 hover:text-blue-900 focus:text-blue-900 w-56 md:w-44 lg:w-44 transition-colors font-bold rounded px-5 py-1.5 md:ml-4"
           >
             Login
           </button>
         }
         
 
-        <form onSubmit={(e) => handleSearch(e)} className="">
+        
+        <button
+          className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 hover:text-blue-900 focus:text-blue-900 w-20 transition-colors font-bold rounded px-5 py-1.5 md:ml-20"
+          title="Logout"
+        >
+          <FontAwesomeIcon icon={faArrowCircleRight} className="" />
+        </button>
+      </nav>
+
+      {isCreating && <InputForm setIsCreating={setIsCreating} />}
+    </section>
+
+    {/* <form 
+      onSubmit={(e) => handleSearch(e)} 
+      className="max-w-6xl flex justify-center mt-10"
+    >
           <input
             type="text"
             value={searchValue}
@@ -75,11 +92,8 @@ const HomeNav = () => {
           >
             <FontAwesomeIcon icon={faSearch} />
           </button>
-        </form>
-      </nav>
-
-      {isCreating && <InputForm setIsCreating={setIsCreating} />}
-    </section>
+        </form> */}
+    </>
   );
 };
 
