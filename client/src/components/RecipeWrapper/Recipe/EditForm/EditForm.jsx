@@ -49,7 +49,7 @@ const EditForm = ({ recipe, setIsEdit }) => {
         className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
       />
       <label htmlFor="ingredients" className="mt-2">
-        Ingredients:
+        Ingredients (comma between): 
       </label>
       <textarea
         type="text"
