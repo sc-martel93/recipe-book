@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -27,7 +27,6 @@ const handleLogin = (e) => {
 
       if(result.status === "ok")
       {
-        window.localStorage.setItem("RECIPE_USER", JSON.stringify(user));
         navigate("/recipes");    
       }
         
@@ -44,6 +43,12 @@ const handleLogin = (e) => {
       throw error;
     })
 }
+
+// Save user data to local storage if logged in
+useEffect(() => {
+  if(user.isLoggedIn)
+    window.localStorage.setItem("RECIPE_USER", JSON.stringify(user));
+}, [user])
 
   return (
       <form
