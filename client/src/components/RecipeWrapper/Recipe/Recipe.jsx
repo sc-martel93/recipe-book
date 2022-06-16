@@ -30,7 +30,7 @@ const Recipe = ({ recipe, user }) => {
   const [likeCount, setLikeCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
   const [likeId, setLikeId] = useState("");
-
+  
   // Checks if current user liked recipe
   useEffect(() => {
     if (uid && rid) {
@@ -165,6 +165,7 @@ const Recipe = ({ recipe, user }) => {
             <button
               onClick={() => handleLike()}
               className="text-red-700 text-2xl"
+              disabled={!user.isLoggedIn}
             >
               {isLiked ? (
                 <FontAwesomeIcon icon={faHeart} />
