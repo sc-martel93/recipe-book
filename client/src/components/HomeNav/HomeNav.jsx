@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { slide as Menu } from 'react-burger-menu'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faDoorClosed, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import {faDoorClosed, faEnvelope, faMailBulk, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { faCircleRight, faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
 
 import { logout } from "../../state/actions/users";
@@ -56,13 +56,19 @@ const HomeNav = () => {
             >
               {isCreating ?(
                 <>
-                  <FontAwesomeIcon icon={faXmarkCircle} className={"mr-5"} />
+                  <FontAwesomeIcon 
+                    icon={faXmarkCircle} 
+                    className={"mr-5"} 
+                  />
                   Close Form
               </>
               )
               : (
                 <>
-                  <FontAwesomeIcon icon={faPlusCircle} className={"mr-5"} />
+                  <FontAwesomeIcon 
+                    icon={faPlusCircle}
+                    className={"mr-5"}
+                  />
                   Create Recipe
                 </>
               )}
@@ -73,7 +79,10 @@ const HomeNav = () => {
               title="Logout"
               className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider mt-5"
             >
-              <FontAwesomeIcon icon={faCircleRight} className={"mr-5"} />
+              <FontAwesomeIcon 
+                icon={faCircleRight} className=
+                {"mr-5"} 
+              />
               Logout 
             </button>
           </>
@@ -83,10 +92,23 @@ const HomeNav = () => {
               title="Login"
               className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider mt-5"
             >
-              <FontAwesomeIcon icon={faDoorClosed} className={"mr-5"} />
+              <FontAwesomeIcon 
+                icon={faDoorClosed} 
+                className={"mr-5"} 
+              />
               Login
             </button>
           }
+          <a 
+            href="mailto:scott.martel06@qc.quincycollege.edu"
+            className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider mt-5"
+          >
+            <FontAwesomeIcon 
+              icon={faEnvelope} 
+              className={"mr-5"}
+            />
+            Contact Us
+          </a>
           <SearchBar isOpen={isOpen} setIsOpen={setIsOpen} />
         </Menu>
       </nav>
