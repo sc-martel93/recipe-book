@@ -17,6 +17,10 @@ export const recipeReducer = (recipes = [], action) => {
     case "DELETE":
       return recipes.filter((recipe) => recipe.id !== action.payload);
 
+    case  "CLEAR":
+      return [];
+
+
     default:
       return recipes;
   }

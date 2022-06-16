@@ -53,3 +53,7 @@ export const deleteRecipe = (id) => async (dispatch) => {
     console.error(error.message);
   }
 };
+
+export const clearRecipes = () =>  (dispatch) => {
+  dispatch({type: "CLEAR" });
+}
