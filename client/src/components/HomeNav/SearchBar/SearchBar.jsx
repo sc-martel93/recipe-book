@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { setIndex } from "../../../state/actions/recipeIndex";
 
-const SearchBar = ({ isOpen }) => {
+const SearchBar = ({ isOpen, setIsOpen }) => {
   const dispatch = useDispatch();
   const recipes = useSelector((state) => state.recipes);
   const [searchValue, setSearchValue] = useState("");
@@ -24,6 +24,7 @@ const SearchBar = ({ isOpen }) => {
         targetIndex = index;
         dispatch(setIndex(targetIndex));
         setIsFound(true);
+        setIsOpen(false);
       }
     });
 
@@ -33,6 +34,7 @@ const SearchBar = ({ isOpen }) => {
     setSearchValue("");
   };
 
+  // Reset search error when open and close menu
   useEffect(() => {
     setIsFound(true);
   }, [isOpen]);

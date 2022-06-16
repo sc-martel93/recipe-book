@@ -87,7 +87,7 @@ const HomeNav = () => {
               Login
             </button>
           }
-          <SearchBar isOpen={isOpen} />
+          <SearchBar isOpen={isOpen} setIsOpen={setIsOpen} />
         </Menu>
       </nav>
 
