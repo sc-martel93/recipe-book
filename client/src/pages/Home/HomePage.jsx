@@ -2,12 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import LoginForm from "../../components/LoginForm/LoginForm";
 import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
-
-import cake from "../../assets/images/cake.jpg";
-import spaghetti from "../../assets/images/spaghetti.jpg";
-import vegetables from "../../assets/images/vegetables.jpg";
-import salmon from "../../assets/images/salmon.jpg";
 import Footer from "../../components/Footer/Footer";
+import ImageWrapper from "../../components/ImageWrapper/ImageWrapper";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -71,24 +67,11 @@ const HomePage = () => {
           <RegistrationForm handleLogin={handleLogin}/> : 
         login ? 
           <LoginForm /> 
-        : null }
+        : null 
+      }
       
-      <section className="max-w-6xl space-y-5 mx-auto">
-        <h2 className="text-xl text-center font-bold mt-5">Desserts!</h2>
-
-        <img src={cake} alt="cake" className="w-5/6 mx-auto rounded-lg shadow-xl shadow-slate-600" />
-        <h2 className="text-xl text-center font-bold">Pasta!</h2>
-        <img src={spaghetti} alt="spaghetti" className="w-5/6 mx-auto rounded-lg shadow-xl shadow-slate-600" />
-
-        <h2 className="text-xl text-center font-bold">Vegetarian!</h2>
-        <img src={vegetables} alt="vegetables" className="w-5/6 mx-auto rounded-lg shadow-xl shadow-slate-600" />
-
-        <h2 className="text-xl text-center font-bold">Seafood!</h2>
-        <img src={salmon} alt="salmon" className="w-5/6 mx-auto rounded-lg shadow-xl shadow-slate-600" />
-      </section>
-      
+      <ImageWrapper />
       <Footer />
-      
     </section>
   );
 };
