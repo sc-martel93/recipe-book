@@ -12,6 +12,8 @@ server/node_modules
 # production
 /build
 
+server/.gitignore
+
 # misc
 server/.env
 client/.env
