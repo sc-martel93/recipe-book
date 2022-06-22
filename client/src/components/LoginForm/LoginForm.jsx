@@ -71,7 +71,6 @@ useEffect(() => {
             onChange={e => setUsername(e.target.value)}
             className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
             required
-            minLength="4"
             maxLength="40"
           />
         </section>
