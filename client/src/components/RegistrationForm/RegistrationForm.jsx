@@ -18,7 +18,7 @@ const RegistrationForm = (props) => {
    // Focus username input on mount
   useEffect(() => {
     nameInput.current.focus();
-  });
+  }, []);
 
   const registerUser = (e) => {
     e.preventDefault();
