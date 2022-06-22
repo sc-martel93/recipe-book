@@ -84,7 +84,7 @@ const RecipeWrapper = () => {
   };
 
   return (
-    <>
+    <section className="min-h-screen">
       <section className="flex justify-around items-center font-bold max-w-4xl mx-auto mt-10">
         <button
           onClick={() => handlePrevious()}
@@ -136,7 +136,7 @@ const RecipeWrapper = () => {
           )}
         </>
       )}
-    </>
+    </section>
   );
 };
 
