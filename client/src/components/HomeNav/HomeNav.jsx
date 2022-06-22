@@ -51,8 +51,8 @@ const HomeNav = () => {
           <>
             <button
               onClick={handleCreateRecipe}
-              title="Create Recipe"
-              className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider mt-5"
+              title="Create Recipe"   
+              className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider focus:tracking-wider outline-none focusmt-5"
             >
               {isCreating ?(
                 <>
@@ -77,7 +77,7 @@ const HomeNav = () => {
             <button
               onClick={handleLogout}
               title="Logout"
-              className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider mt-5"
+              className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider focus:tracking-wider outline-none mt-5"
             >
               <FontAwesomeIcon 
                 icon={faCircleRight} className=
@@ -90,7 +90,7 @@ const HomeNav = () => {
             <button
               onClick={() => navigate("/")}
               title="Login"
-              className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider mt-5"
+              className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider focus:tracking-wider outline-none mt-5"
             >
               <FontAwesomeIcon 
                 icon={faDoorClosed} 
@@ -101,7 +101,7 @@ const HomeNav = () => {
           }
           <a 
             href="mailto:scott.martel06@qc.quincycollege.edu"
-            className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider mt-5"
+            className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider focus:tracking-wider outline-none mt-5"
           >
             <FontAwesomeIcon 
               icon={faEnvelope} 
