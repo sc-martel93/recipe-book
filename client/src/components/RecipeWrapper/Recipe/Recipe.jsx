@@ -104,13 +104,13 @@ const Recipe = ({ recipe, user }) => {
       {isEdit ? (
         <EditForm recipe={ recipe } setIsEdit= { setIsEdit } />
       ) : (
-        <article className="w-5/6 max-w-3xl mx-auto px-10 py-10 space-y-10 mt-10 break-words bg-yellow-100 rounded-lg shadow-lg shadow-slate-600">
+        <article className="w-5/6 max-w-3xl mx-auto lg:px-10 md:px-10 px-5 lg:py-10 md:py-10 py-7 space-y-10 mt-10 break-words bg-yellow-100 rounded-lg shadow-lg shadow-slate-600">
           <section className="flex justify-between border-b-4 border-zinc-900">
             {isAuth && (
               <button
                 title="Edit"
                 onClick={() => setIsEdit((isEdit) => !isEdit)}
-                className="outline-none text-xl hover:text-sky-500 hover:text-2xl focus:text-sky-500 focus:text-2xl ease-in duration-100"
+                className="outline-none lg:text-2xl md:text-xl text-lg hover:text-sky-500 focus:text-sky-500 ease-in duration-100"
               >
                 <FontAwesomeIcon icon={faEdit} />
               </button>
@@ -127,7 +127,7 @@ const Recipe = ({ recipe, user }) => {
               <button
                 title="Delete"
                 onClick={() => handleDelete()}
-                className="outline-none text-xl hover:text-red-700 hover:text-2xl focus:text-red-700 focus:text-2xl ease-in duration-100"
+                className="outline-none lg:text-2xl md:text-xl text-lg  hover:text-red-700 focus:text-red-700 ease-in duration-100"
               >
                 <FontAwesomeIcon icon={faTrash} />
               </button>
