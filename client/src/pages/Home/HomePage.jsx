@@ -61,8 +61,11 @@ const HomePage = () => {
           </button>
         </nav>
       </header> 
-      { register ? <RegistrationForm handleLogin={handleLogin}/> : null }
-      { login ? <LoginForm /> : null }
+      { register ? 
+          <RegistrationForm handleLogin={handleLogin}/> : 
+        login ? 
+          <LoginForm /> 
+        : null }
       
       <section className="max-w-6xl space-y-5 mx-auto">
         <h3 className="text-xl text-center font-bold mt-5">Desserts!</h3>
