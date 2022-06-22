@@ -32,7 +32,7 @@ const EditForm = ({ recipe, setIsEdit }) => {
 
   return (
     <form
-      className="mx-auto flex flex-col w-5/6 max-w-3xl mt-10 py-10 lg:px-10 md:px-10 px-5 bg-blue-400 rounded-lg shadow-lg shadow-slate-600"
+      className="mx-auto flex flex-col lg:w-5/6 md:w-5/6 w-11/12 max-w-3xl mt-10 py-10 lg:px-10 md:px-10 px-5 bg-blue-400 rounded-lg shadow-lg shadow-slate-600"
       autoComplete="off"
       onSubmit={e => handleSubmit(e)}
     >
