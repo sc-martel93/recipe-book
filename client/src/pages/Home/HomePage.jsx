@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
 import LoginForm from "../../components/LoginForm/LoginForm";
 import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
 
@@ -8,6 +9,7 @@ import vegetables from "../../assets/images/vegetables.jpg";
 import salmon from "../../assets/images/salmon.jpg";
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const [login, setLogin] = useState(false);
   const [register, setRegister] = useState(false);
 
@@ -27,7 +29,7 @@ const HomePage = () => {
 
   return (
     <section>
-      <header className="bg-blue-900 shadow-lg shadow-slate-600 h-72 flex items-center justify-center flex-col space-y-8">
+      <header className="bg-blue-900 shadow-lg shadow-slate-600 h-96 flex items-center justify-center flex-col space-y-8">
         <h1 className="text-white text-5xl md:text-6xl lg:text-6xl">
           Recipe <span className="font-semibold text-yellow-400">Book</span>
         </h1>
@@ -42,25 +44,28 @@ const HomePage = () => {
           </p>
         </section>
 
-        <nav className="flex justify-evenly mx-auto lg:w-7/12 md:w-7/12 w-full">
+        <nav className="flex flex-col space-y-5 justify-evenly mx-auto lg:w-1/4 md:w-1/2 w-9/12 h-1/4">
           <button
             onClick={handleLogin}
-            className="outline-none bg-slate-300 hover:bg-yellow-400 
-                    focus:bg-yellow-400 transition-colors font-bold 
-                      rounded px-5 py-1.5 mx-auto w-1/3 min-w-fit"
+            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 transition-colors font-bold rounded px-5 py-1.5 mx-auto w-full min-w-fit"
           >
             Login
           </button>
           <button
             onClick={handleRegister}
-            className="outline-none bg-slate-300 hover:bg-yellow-400 
-                    focus:bg-yellow-400 transition-colors font-bold 
-                      rounded px-5 py-1.5 mx-auto w-1/3 min-w-fit"
+            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 transition-colors font-bold rounded px-5 py-1.5 mx-auto w-full min-w-fit"
           >
             Register
           </button>
+          <button
+            onClick={() => navigate("/recipes")}
+            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 transition-colors font-bold rounded px-5 py-1.5 mx-auto w-full min-w-fit"
+          >
+            Explore
+          </button>
         </nav>
-      </header> 
+      </header>
+      
       { register ? 
           <RegistrationForm handleLogin={handleLogin}/> : 
         login ? 
