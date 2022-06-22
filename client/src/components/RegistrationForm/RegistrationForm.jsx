@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { createUser } from "../../state/actions/users";
 
@@ -14,6 +14,11 @@ const RegistrationForm = (props) => {
 
   const nameInput = useRef(null);
   const passInput = useRef(null);
+
+   // Focus username input on mount
+  useEffect(() => {
+    nameInput.current.focus();
+  });
 
   const registerUser = (e) => {
     e.preventDefault();

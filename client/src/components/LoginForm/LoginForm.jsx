@@ -15,6 +15,11 @@ const LoginForm = () => {
 
   const nameInput = useRef(null);
 
+  // Focus username input on mount
+  useEffect(() => {
+    nameInput.current.focus();
+  }, [])
+
 const handleLogin = (e) => {
   e.preventDefault();
 
