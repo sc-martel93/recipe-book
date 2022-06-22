@@ -74,7 +74,6 @@ const Recipe = ({ recipe, user }) => {
   };
 
   const handleLike = () => {
-    // TODO set error message!
     if (!user.isLoggedIn) return;
 
     if (isLiked) {
