@@ -72,6 +72,7 @@ useEffect(() => {
             className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
             required
             maxLength="40"
+            autoComplete="on"
           />
         </section>
 
@@ -86,6 +87,7 @@ useEffect(() => {
             className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
             required
             maxLength="40"
+            autoComplete="on"
           />
         </section>
       <button

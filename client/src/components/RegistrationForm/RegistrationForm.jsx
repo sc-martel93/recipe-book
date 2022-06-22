@@ -75,7 +75,6 @@ const RegistrationForm = (props) => {
       : (
         <form
           onSubmit={registerUser}
-          autoComplete="off"
           className="mx-auto flex flex-col w-4/5 max-w-lg space-y-7 
                   bg-blue-900 pt-5 pb-10 px-5 my-10 rounded shadow-xl
                   shadow-slate-600"
@@ -97,6 +96,7 @@ const RegistrationForm = (props) => {
               maxLength="40"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              autoComplete="off"
             />
           </section>
 
@@ -113,6 +113,7 @@ const RegistrationForm = (props) => {
               maxLength="40"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              autoComplete="off"
             />
           </section>
 
@@ -128,6 +129,7 @@ const RegistrationForm = (props) => {
               maxLength="40"
               value={passwordCopy}
               onChange={(e) => setPasswordCopy(e.target.value)}
+              autoComplete="off"
             />
           </section>
 
