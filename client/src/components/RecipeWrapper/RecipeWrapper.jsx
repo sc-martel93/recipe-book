@@ -70,7 +70,7 @@ const RecipeWrapper = () => {
         dispatch(setIndex(0));
         break;
     }
-  }, [currentOpt, recipeCount]);
+  }, [dispatch, uid, username, currentOpt, recipeCount]);
 
   const handlePrevious = () => {
     if (recipeCount === 0) return;
