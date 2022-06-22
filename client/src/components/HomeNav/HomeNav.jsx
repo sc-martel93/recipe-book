@@ -58,7 +58,7 @@ const HomeNav = () => {
                 <>
                   <FontAwesomeIcon 
                     icon={faXmarkCircle} 
-                    className={"mr-5"} 
+                    className="mr-5" 
                   />
                   Close Form
               </>
@@ -67,7 +67,7 @@ const HomeNav = () => {
                 <>
                   <FontAwesomeIcon 
                     icon={faPlusCircle}
-                    className={"mr-5"}
+                    className="mr-5"
                   />
                   Create Recipe
                 </>
@@ -81,7 +81,7 @@ const HomeNav = () => {
             >
               <FontAwesomeIcon 
                 icon={faCircleRight} className=
-                {"mr-5"} 
+                "mr-5" 
               />
               Logout 
             </button>
@@ -94,7 +94,7 @@ const HomeNav = () => {
             >
               <FontAwesomeIcon 
                 icon={faDoorClosed} 
-                className={"mr-5"} 
+                className="mr-5" 
               />
               Login
             </button>
@@ -105,7 +105,7 @@ const HomeNav = () => {
           >
             <FontAwesomeIcon 
               icon={faEnvelope} 
-              className={"mr-5"}
+              className="mr-5"
             />
             Contact Us
           </a>
