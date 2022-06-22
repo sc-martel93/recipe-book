@@ -26,7 +26,7 @@ const HomeNav = () => {
   }
 
   const handleLogout = () => {
-    dispatch(logout);
+    dispatch(logout());
     window.localStorage.removeItem("RECIPE_USER");
     navigate("/");
   }
