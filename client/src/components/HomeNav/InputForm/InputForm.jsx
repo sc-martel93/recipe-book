@@ -36,7 +36,7 @@ const InputForm = (props) => {
     <section className="bg-blue-400">
       <form
         onSubmit={(e) => handleSubmit(e)}
-        className="mx-auto flex flex-col w-2/3 max-w-3xl"
+        className="mx-auto flex flex-col lg:w-2/3 md:w-2/3 w-4/5 max-w-3xl"
         autoComplete="off"
       >
         <label
