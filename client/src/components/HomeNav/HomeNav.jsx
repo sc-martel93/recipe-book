@@ -32,7 +32,7 @@ const HomeNav = () => {
   }
 
   return (
-    <section
+    <header
       id="navBar"
       className="bg-blue-900 shadow-lg shadow-slate-600"
     >
@@ -114,7 +114,7 @@ const HomeNav = () => {
       </nav>
 
       {isCreating && <InputForm setIsCreating={setIsCreating} />}
-    </section>
+    </header>
   );
 };
 
