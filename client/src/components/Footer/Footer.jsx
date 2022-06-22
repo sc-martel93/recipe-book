@@ -8,7 +8,7 @@ const Footer = () => {
           <li className="mt-5">
             <a 
               href="mailto:scott.martel06@qc.quincycollege.edu"
-              className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider"
+              className="hover:text-yellow-300 focus:text-yellow-300 outline-none"
             >
               <FontAwesomeIcon 
                 icon={faEnvelope} 
@@ -18,11 +18,18 @@ const Footer = () => {
             </a>
           </li>
           <li className="mt-5">
-            <FontAwesomeIcon 
-              icon={faCopyright}
-              className="mr-5"
-            />
-            Scott Martel            
+            <a
+              href="https://main.ddpf6bmb59zbu.amplifyapp.com/"
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-yellow-300 focus:text-yellow-300 outline-none"
+            >
+              <FontAwesomeIcon 
+                icon={faCopyright}
+                className="mr-5"
+              />
+              Scott Martel
+            </a>            
           </li>
           <li className="mt-5">
             <FontAwesomeIcon 
