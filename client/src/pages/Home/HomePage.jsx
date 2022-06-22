@@ -4,11 +4,11 @@ import ImageWrapper from "../../components/ImageWrapper/ImageWrapper";
 
 const HomePage = () => {
   return (
-    <section>
+    <>
       <HomeHeader />
       <ImageWrapper />
       <Footer />
-    </section>
+    </>
   );
 };
 
