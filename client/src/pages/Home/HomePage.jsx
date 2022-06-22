@@ -7,6 +7,7 @@ import cake from "../../assets/images/cake.jpg";
 import spaghetti from "../../assets/images/spaghetti.jpg";
 import vegetables from "../../assets/images/vegetables.jpg";
 import salmon from "../../assets/images/salmon.jpg";
+import Footer from "../../components/Footer/Footer";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -85,6 +86,8 @@ const HomePage = () => {
         <h2 className="text-xl text-center font-bold">Seafood!</h2>
         <img src={salmon} alt="salmon" className="w-5/6 mx-auto rounded-lg shadow-xl shadow-slate-600" />
       </section>
+      
+      <Footer />
       
     </section>
   );
