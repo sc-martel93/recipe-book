@@ -11,7 +11,7 @@ import InputForm from "./InputForm/InputForm";
 import SearchBar from "./SearchBar/SearchBar";
 
 
-const HomeNav = () => {
+const HomeHeader = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
  
@@ -118,4 +118,4 @@ const HomeNav = () => {
   );
 };
 
-export default HomeNav;
+export default HomeHeader;
