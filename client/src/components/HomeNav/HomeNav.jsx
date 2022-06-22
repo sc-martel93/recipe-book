@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { slide as Menu } from 'react-burger-menu'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faDoorClosed, faEnvelope, faMailBulk, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import {faDoorClosed, faEnvelope, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { faCircleRight, faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
 
 import { logout } from "../../state/actions/users";
