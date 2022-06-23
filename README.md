@@ -6,8 +6,8 @@ date: 6/22/2022
 
 ## About
 
-Recipe book is a web app that simplifies storing and sharing recipes
+Recipe book is a web app that simplifies storing and sharing recipes.
 
-## Deployed with heroku
+## Deployed with AWS amplify and Heroku
 
 https://main.d4u3ts97tb3ea.amplifyapp.com/
