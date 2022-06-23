@@ -162,6 +162,7 @@ const Recipe = ({ recipe, user }) => {
           <section className="flex justify-end items-center w-100">
             <p className="mx-5">{likeCount}</p>
             <button
+              title="like"
               onClick={() => handleLike()}
               className="text-red-700 text-2xl"
               disabled={!user.isLoggedIn}
