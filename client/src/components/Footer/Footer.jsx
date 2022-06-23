@@ -19,7 +19,7 @@ const Footer = () => {
           </li>
           <li className="mt-5">
             <a
-              href="https://main.ddpf6bmb59zbu.amplifyapp.com/"
+              href="https://www.scottadev.com"
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-yellow-300 focus:text-yellow-300 outline-none"
