@@ -93,9 +93,9 @@ const RecipeWrapper = () => {
         >
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
-        <h3>
+        <h2>
           Page {recipeCount === 0 ? 0 : recipeIndex + 1} out of {recipeCount}
-        </h3>
+        </h2>
         <button
           onClick={() => handleNext()}
           title="Next"
