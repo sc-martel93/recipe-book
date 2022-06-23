@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./state/store";
 
-// disableReactDevTools();
+disableReactDevTools();
 
 ReactDOM.render(
   <React.StrictMode>
