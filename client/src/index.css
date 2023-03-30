@@ -24,7 +24,7 @@
 
 .Dropdown-option:hover,
 .Dropdown-option:focus {
-  color: #FACC15;
+  color: var(--primary-color);
   cursor: pointer;
   letter-spacing: 0.2rem;
 }

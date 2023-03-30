@@ -34,7 +34,7 @@ const HomeHeader = () => {
   return (
     <header
       id="navBar"
-      className="bg-blue-900 shadow-lg shadow-slate-600"
+      className="bg-primary shadow-lg shadow-slate-600"
     >
       <nav className="max-w-3xl w-3/4 mx-auto flex justify-between items-center h-16">
         <h1 className="text-yellow-400 text-4xl">Recipes</h1>

@@ -89,7 +89,7 @@ const RecipeWrapper = () => {
         <button
           onClick={() => handlePrevious()}
           title="Previous"
-          className="text-white outline-none bg-blue-900 hover:bg-yellow-400 focus:bg-yellow-400 hover:text-blue-900 focus:text-blue-900 transition-colors rounded px-5 py-1.5"
+          className="text-black outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 transition-colors rounded px-5 py-1.5"
         >
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
@@ -99,7 +99,7 @@ const RecipeWrapper = () => {
         <button
           onClick={() => handleNext()}
           title="Next"
-          className="text-white outline-none bg-blue-900 hover:bg-yellow-400 focus:bg-yellow-400 hover:text-blue-900 focus:text-blue-900 transition-colors rounded px-5 py-1.5"
+          className="text-black outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 transition-colors rounded px-5 py-1.5"
         >
           <FontAwesomeIcon icon={faArrowRight} />
         </button>
@@ -111,14 +111,14 @@ const RecipeWrapper = () => {
           onChange={e => setCurrentOpt(e)}
           value={currentOpt} 
           className="w-72"
-          placeholderClassName="cursor-pointer text-white bg-blue-900 hover:bg-yellow-400 focus:bg-yellow-400 hover:text-blue-900 focus:text-blue-900 transition-colors rounded px-5 py-1.5 hover:shadow-lg hover:shadow-slate-600 focus:shadow-lg focus:shadow-slate-600"
-          menuClassName="bg-blue-500 p-5 mt-1 rounded-lg shadow-lg shadow-slate-600"
+          placeholderClassName="cursor-pointer bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 transition-colors rounded px-5 py-1.5 hover:shadow-lg hover:shadow-slate-600 focus:shadow-lg focus:shadow-slate-600"
+          menuClassName="bg-slate-300 p-5 mt-1 rounded-lg shadow-lg shadow-slate-600"
         />
       </div>
       {errMsg ? (
         <section className="flex justify-center font-bold text-center text-xl md:text-3xl lg:text-3xl sm:text-lg mt-20">
           <button
-            className="font-bold mr-2 text-blue-800 hover:text-white focus:text-white"
+            className="font-bold mr-2 text-yellow-400 hover:text-white focus:text-white"
             onClick={() => navigate("/")}
           >
             Login
