@@ -5,6 +5,7 @@
 :root {
   --primary-color: #2E3440;
   --secondary-color: #4C566A;
+  --between-color: #3B4252;
   --accent-color: #FBBF24; 
   --background-color: #ECEFF4;
   --text-color: #D8DEE9;
@@ -13,6 +14,7 @@
 /* Tailwind CSS utility classes */
 .bg-primary { background-color: var(--primary-color); }
 .bg-secondary { background-color: var(--secondary-color); }
+.bg-between { background-color: var(--between-color); }
 .bg-accent { background-color: var(--accent-color); }
 .bg-background { background-color: var(--background-color); }
 .text-text { color: var(--text-color); }

@@ -33,7 +33,7 @@ const InputForm = (props) => {
   };
 
   return (
-    <section className="bg-blue-400">
+    <section className="bg-between">
       <form
         onSubmit={(e) => handleSubmit(e)}
         className="mx-auto flex flex-col lg:w-2/3 md:w-2/3 w-4/5 max-w-3xl"
@@ -41,7 +41,7 @@ const InputForm = (props) => {
       >
         <label
           htmlFor="name"
-          className="mt-2"
+          className="mt-2 text-yellow-400"
         >Name: 
         </label>
         <input
@@ -61,7 +61,7 @@ const InputForm = (props) => {
 
         <label
           htmlFor="ingredients"
-          className="mt-2"
+          className="mt-2 text-yellow-400" 
         >Ingredients (comma between):  
         </label>
         <textarea
@@ -81,7 +81,7 @@ const InputForm = (props) => {
 
         <label
           htmlFor="directions"
-          className="mt-2"
+          className="mt-2 text-yellow-400"
         >Directions: 
         </label>
         <textarea
@@ -100,7 +100,7 @@ const InputForm = (props) => {
 
         <label
           htmlFor="notes"
-          className="mt-2"
+          className="mt-2 text-yellow-400"
         >Notes: 
         </label>
         <textarea
