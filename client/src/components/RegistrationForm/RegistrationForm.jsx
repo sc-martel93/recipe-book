@@ -61,7 +61,7 @@ const RegistrationForm = (props) => {
       {isRegistered ? (
         <section
           className="mx-auto flex flex-col w-2/3 max-w-lg space-y- 
-          bg-blue-900 py-10 px-5 my-10 rounded"
+          bg-primary py-10 px-5 my-10 rounded"
         >
           <p className="text-white text-center text-lg">
             Registration successful! Click to login.
@@ -81,7 +81,7 @@ const RegistrationForm = (props) => {
         <form
           onSubmit={registerUser}
           className="mx-auto flex flex-col w-4/5 max-w-lg space-y-7 
-                  bg-blue-900 pt-5 pb-10 px-5 my-10 rounded shadow-xl
+                  bg-primary pt-5 pb-10 px-5 my-10 rounded shadow-xl
                   shadow-slate-600"
         >
           <section className="flex justify-evenly flex-col">

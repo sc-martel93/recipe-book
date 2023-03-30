@@ -25,15 +25,15 @@ const HomeHeader = () => {
 
   return (
     <>
-      <header className="bg-blue-900 shadow-lg shadow-slate-600 h-96 flex items-center justify-center flex-col space-y-8">
-          <h1 className="text-white text-5xl md:text-6xl lg:text-6xl">
-            Recipe <span className="font-semibold text-yellow-400">Book</span>
+      <header className="bg-primary shadow-lg shadow-slate-600 h-96 flex items-center justify-center flex-col space-y-8">
+          <h1 className="text-text text-5xl md:text-6xl lg:text-6xl">
+            Recipe <span className="font-semibold text-yellow-300">Book</span>
           </h1>
           <section>
-            <p className="text-white text-center text-lg pb-7">
+            <p className="text-text text-center text-lg pb-7">
               A place to
-              <span className="font-semibold text-yellow-400"> share </span>
-              and <span className="font-semibold text-yellow-400">
+              <span className="font-semibold text-yellow-300"> share </span>
+              and <span className="font-semibold text-yellow-300">
                 explore
               </span>{" "}
               recipes
@@ -41,21 +41,26 @@ const HomeHeader = () => {
           </section>
 
         <nav className="flex flex-col space-y-5 justify-evenly mx-auto lg:w-1/4 md:w-1/2 w-9/12 h-1/4">
-          <button
-            onClick={handleLogin}
-            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 transition-colors font-bold rounded px-5 py-1.5 mx-auto w-full min-w-fit"
-          >
-            Login
-          </button>
-          <button
-            onClick={handleRegister}
-            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 transition-colors font-bold rounded px-5 py-1.5 mx-auto w-full min-w-fit"
-          >
-            Register
-          </button>
+          { register ? 
+          
+            <button
+              onClick={handleLogin}
+              className="outline-none bg-slate-300 hover:bg-yellow-300 focus:bg-yellow-300 transition-colors font-bold rounded px-5 py-1.5 mx-auto w-full min-w-fit"
+            >
+              Login
+            </button>
+          :
+            <button
+              onClick={handleRegister}
+              className="outline-none bg-slate-300 hover:bg-yellow-300 focus:bg-yellow-300 transition-colors font-bold rounded px-5 py-1.5 mx-auto w-full min-w-fit"
+            >
+              Register
+            </button>
+          }
+          
           <button
             onClick={() => navigate("/recipes")}
-            className="outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 transition-colors font-bold rounded px-5 py-1.5 mx-auto w-full min-w-fit"
+            className="outline-none bg-slate-300 hover:bg-yellow-300 focus:bg-yellow-300 transition-colors font-bold rounded px-5 py-1.5 mx-auto w-full min-w-fit"
           >
             Explore
           </button>
@@ -63,10 +68,9 @@ const HomeHeader = () => {
       </header>
         
         { register ? 
-            <RegistrationForm handleLogin={handleLogin}/> : 
-          login ? 
+            <RegistrationForm handleLogin={handleLogin}/> 
+            :
             <LoginForm /> 
-          : null 
         }
         
     </>

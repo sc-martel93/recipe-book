@@ -24,7 +24,7 @@ function App() {
   }, [dispatch, navigate])
 
   return (
-    <main className="h-100 min-h-screen bg-blue-300 font-poppins">
+    <main className="h-100 min-h-screen bg-secondary font-poppins">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="recipes" element={<RecipePage />} />

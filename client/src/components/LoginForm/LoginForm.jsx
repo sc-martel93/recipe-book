@@ -59,7 +59,7 @@ useEffect(() => {
       <form
         onSubmit={e => handleLogin(e)}
         className="mx-auto flex flex-col w-4/5 max-w-lg space-y-7 
-                bg-blue-900 pt-5 pb-10 px-5 my-10 rounded shadow-xl
+                bg-primary pt-5 pb-10 px-5 my-10 rounded shadow-xl
                 shadow-slate-600"
       >
         <section className="flex justify-evenly flex-col">
