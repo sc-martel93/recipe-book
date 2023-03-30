@@ -32,11 +32,11 @@ const EditForm = ({ recipe, setIsEdit }) => {
 
   return (
     <form
-      className="mx-auto flex flex-col lg:w-5/6 md:w-5/6 w-11/12 max-w-3xl mt-10 py-10 lg:px-10 md:px-10 px-5 bg-blue-400 rounded-lg shadow-lg shadow-slate-600"
+      className="mx-auto flex flex-col lg:w-5/6 md:w-5/6 w-11/12 max-w-3xl mt-10 py-10 lg:px-10 md:px-10 px-5 bg-primary rounded-lg shadow-lg shadow-slate-600"
       autoComplete="off"
       onSubmit={e => handleSubmit(e)}
     >
-      <label htmlFor="name">Name:</label>
+      <label htmlFor="name" className="text-yellow-400">Name:</label>
       <input
         type="text"
         id="name"
@@ -48,7 +48,7 @@ const EditForm = ({ recipe, setIsEdit }) => {
         maxLength="45"
         className="rounded px-2 py-1.5 outline-none hover:bg-yellow-200 focus:bg-yellow-200"
       />
-      <label htmlFor="ingredients" className="mt-2">
+      <label htmlFor="ingredients" className="mt-2 text-yellow-400">
         Ingredients (comma between): 
       </label>
       <textarea
@@ -62,7 +62,7 @@ const EditForm = ({ recipe, setIsEdit }) => {
         maxLength="500"
         className="rounded px-2 py-1.5 outline-none resize-none hover:bg-yellow-200 focus:bg-yellow-200 h-20"
       />
-      <label htmlFor="directions" className="mt-2">
+      <label htmlFor="directions" className="mt-2 text-yellow-400">
         Directions
       </label>
       <textarea
@@ -76,7 +76,7 @@ const EditForm = ({ recipe, setIsEdit }) => {
         maxLength="500"
         className="rounded px-2 py-1.5 resize-none outline-none hover:bg-yellow-200 focus:bg-yellow-200 h-32"
       />
-      <label htmlFor="notes" className="mt-2">
+      <label htmlFor="notes" className="mt-2 text-yellow-400">
         Notes:{" "}
       </label>
       <textarea
