@@ -100,7 +100,7 @@ const HomeHeader = () => {
             </button>
           }
           <a 
-            href="mailto:scott.martel06@qc.quincycollege.edu"
+            href="mailto:scmartel2022@gmail.com"
             className="hover:text-yellow-300 focus:text-yellow-300 hover:tracking-wider focus:tracking-wider outline-none mt-5"
           >
             <FontAwesomeIcon 
