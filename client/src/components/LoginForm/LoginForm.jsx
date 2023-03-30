@@ -64,7 +64,7 @@ useEffect(() => {
       >
         <section className="flex justify-evenly flex-col">
           { error &&
-              <p className="text-yellow-400 text-center">{error}</p> 
+              <p className="text-red-500 text-center">{error}</p> 
           }
           <label className="text-white pt-5">Username</label>
           <input
