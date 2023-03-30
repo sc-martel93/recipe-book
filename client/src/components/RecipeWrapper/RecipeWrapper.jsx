@@ -93,7 +93,7 @@ const RecipeWrapper = () => {
         >
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
-        <h2>
+        <h2 className="text-yellow-400">
           Page {recipeCount === 0 ? 0 : recipeIndex + 1} out of {recipeCount}
         </h2>
         <button
