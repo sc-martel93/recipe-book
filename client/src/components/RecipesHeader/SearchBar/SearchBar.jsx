@@ -55,13 +55,13 @@ const SearchBar = ({ isOpen, setIsOpen }) => {
         <button
           type="submit"
           title="Search"
-          className="w-10 outline-none bg-slate-300 hover:bg-yellow-300 focus:bg-yellow-300 hover:text-blue-800 transition-colors rounded px-2 py-1.5 text-black"
+          className="w-10 outline-none bg-slate-300 hover:bg-yellow-400 focus:bg-yellow-400 transition-colors rounded px-2 py-1.5 text-black"
         >
           <FontAwesomeIcon icon={faSearch} />
         </button>
       </form>
       {!isFound && 
-        <h1 className="text-center mt-5 text-yellow-300">Recipe not found!</h1>
+        <h1 className="text-center mt-5 text-red-500">Recipe not found!</h1>
       }
     </>
   )
