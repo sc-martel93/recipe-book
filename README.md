@@ -1,8 +1,8 @@
 ## Recipe Book
 
 author: Scott Martel
-email: scott.martel06@qc.quincycollege.edu
-date: 6/22/2022
+email: scmartel2022@gmail.com
+date: 03/30/2023
 
 ## About
 
